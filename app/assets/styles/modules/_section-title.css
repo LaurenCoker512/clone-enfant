@@ -1,0 +1,20 @@
+.section-title {
+    
+
+    &__title {
+        text-transform: uppercase;
+        color: $darkGray;
+        font-weight: 400;
+        font-size: 2rem;
+        letter-spacing: 1.2px;
+        margin-top: 3.5rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    &__subtitle {
+        color: $darkGray;
+        text-align: center;
+        font-weight: 300;
+    }
+}

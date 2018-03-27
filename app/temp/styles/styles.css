@@ -349,16 +349,20 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
 .header {
     background-color: #002749;
     color: #fff;
     height: 6.25rem;
-    padding: 2rem 6.5rem;
+    padding: 1.7rem 6.5rem;
 }
 
-.header img {
+.header > img {
         width: 10rem;
-        margin-top: 0.1rem;
+        margin-top: 0.4rem;
     }
 
 .header__title {
@@ -377,30 +381,203 @@ body {
         font-size: 0.85rem;
         font-weight: 300;
         margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
     }
 
 .header--right__section {
             float: right;
-            margin-left: 2rem;
+            margin-left: 2.3rem;
         }
 
 .header--right__section img {
                 width: 3rem;
+                margin-right: 1rem;
             }
 
 .header--right__section__text {
                 padding-left: 1.5rem;
+                margin-top: 0.3rem;
                 border-left: 1px solid rgba(255, 255, 255, 0.15);
+                float: right;
             }
 
 .main-nav {
-    
+    height: 5.25rem;
 }
 
-.large-hero {
-    
-}
+.main-nav nav {
+        float: left;
+    }
+
+.main-nav__main-menu__item {
+            float: left;
+            
+            font-size: 0.9rem;
+            padding: 1rem;
+        }
+
+.main-nav__main-menu__item a {
+                color: #002749;
+                text-decoration: none;
+                font-weight: 700;
+            }
+
+.large-hero__hero {
+        /* background-image: url("../../assets/images/slide_min_2.jpg");
+        background-attachment: fixed;
+        background-size: cover; */
+        height: 37.5rem;
+        background-repeat: no-repeat;
+        /* background-position: center; */
+        background: transparent;
+        background-size: cover;
+        color: #fff;
+        text-transform: uppercase;
+        padding-top: 10%;
+        padding-left: 8%;
+    }
+
+.large-hero__text {
+    }
+
+.large-hero__title-small {
+        font-weight: 100;
+        font-size: 2.2rem;
+    }
+
+.large-hero__title-large {
+        font-weight: 400;
+        font-size: 2.5rem;
+        letter-spacing: 1.5px;
+    }
+
+.large-hero__btn {
+        background-color: #ff4e31;
+        border: 2px solid transparent;
+        border-radius: 3rem;
+        padding: 0.8rem 1.5rem;
+        color: #fff;
+        font-weight: 300;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        transition: all 0.2s linear;
+    }
+
+.large-hero__btn:hover {
+            background-color: transparent;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+.large-hero__enroll {
+        background-color: #002749;
+        /* margin-top: -1.2rem; */
+        color: #fff;
+        height: 10rem;
+        padding: 1.5rem 7.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.large-hero__enroll__img {
+            background-color: #fff;
+            width: 6.8rem;
+            height: 6.8rem;
+            border: transparent;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+.large-hero__enroll__img img {
+                width: 3.5rem;
+                margin: 25%;
+            }
+
+.large-hero__enroll__text {
+            float: right;
+            margin-left: 2rem;
+        }
+
+.large-hero__enroll__text h3 {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 1.4rem;
+                margin-bottom: 0;
+                letter-spacing: 1.5px;
+            }
+
+.large-hero__enroll__text p {
+                font-weight: 300;
+            }
+
+.large-hero__enroll__btn {
+            border: 2px solid #fff;
+            border-radius: 3rem;
+            height: 2.5rem;
+            padding: 0 1.3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            background-color: transparent;
+            color: #fff;
+            font-weight: 300;
+            transition: all 0.2s linear;
+        }
+
+.large-hero__enroll__btn:hover {
+                background-color: #ff4e31;
+                border: 2px solid #ff4e31;
+                cursor: pointer;
+            }
 
 .services {
-    
+    padding: 0 6rem;
+    color: #545454;
 }
+
+.services__content {
+        display: flex;
+    }
+
+.services__overview {
+        width: 33%;
+    }
+
+.services__overview h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 1.3px;
+            font-size: 1.5rem;
+            margin-bottom: 0.7rem;
+        }
+
+.services__overview h4 {
+            text-transform: uppercase;
+            font-weight: 100;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+.services__overview p {
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+.section-title__title {
+        text-transform: uppercase;
+        color: #545454;
+        font-weight: 400;
+        font-size: 2rem;
+        letter-spacing: 1.2px;
+        margin-top: 3.5rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+.section-title__subtitle {
+        color: #545454;
+        text-align: center;
+        font-weight: 300;
+    }

@@ -7,13 +7,10 @@
     <title>Stepping Stones Academy</title>
     <meta name="keywords" content="school, academy, open classroom, liberal arts, science, education, children">
     <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="temp/styles/styles.css">
+    <script src="assets/scripts/jarallax.min.js"></script>
 </head>
-
-<!--  
-    https://www.flaticon.com/
--->
 
 <body>
 
@@ -21,7 +18,6 @@
         <img src="assets/images/logo_first.png">
         <div class="header--right__section">
             <img src="assets/images/alarm-clock.png">
-            <!-- https://www.flaticon.com/free-icon/alarm-clock_212841#term=alarm%20clock&page=1&position=70 -->
             <div class="header--right__section__text">
                 <span class="header__title">OPEN TIME:</span>
                 <span class="header__title__info">09:00 - 17:00</span>
@@ -30,7 +26,7 @@
             
         </div>
         <div class="header--right__section">
-            <!-- https://www.flaticon.com/free-icon/compass_710825#term=compass&page=1&position=51 -->
+            <img src="assets/images/compass.png">
             <div class="header--right__section__text">
                 <span class="header__title">FIND US:</span>
                 <span class="header__title__info">London UK</span>
@@ -42,14 +38,14 @@
 
     <section class="main-nav">
         <nav>
-            <ul>
-                <li>Home</li>
-                <li>Blog</li>
-                <li>Pages</li>
-                <li>Contact</li>
-                <li>Plans</li>
-                <li>Shop</li>
-                <li>About</li>
+            <ul class="main-nav__main-menu">
+                <li class="main-nav__main-menu__item"><a href="#">Home</a></li>
+                <li class="main-nav__main-menu__item"><a href="#">Blog</a></li>
+                <li class="main-nav__main-menu__item"><a href="#">Pages</a></li>
+                <li class="main-nav__main-menu__item"><a href="#">Contact</a></li>
+                <li class="main-nav__main-menu__item"><a href="#">Plans</a></li>
+                <li class="main-nav__main-menu__item"><a href="#">Shop</a></li>
+                <li class="main-nav__main-menu__item"><a href="#">About</a></li>
             </ul>
         </nav>
         <div class="main-nav__other">
@@ -58,65 +54,78 @@
     </section>
 
     <section class="large-hero">
-        <h2>Enfant Primary School</h2>
-        <h1>We're Making Every Child's World Better</h1>
-        <button>Contact Us</button>
+        <div class="large-hero__hero jarallax" style="background-image: url('./assets/images/slide_min_2.jpg'); background-repeat: no-repeat;" data-jarallax data-speed="0.9">
+            <div class="large-hero__text">
+                <h2 class="large-hero__title-small">Enfant Primary School</h2>
+                <h1 class="large-hero__title-large">We're Making Every <br>Child's World Better</h1>
+                <button class="large-hero__btn">Contact Us</button>
+            </div>
+        </div>
         <div class="large-hero__enroll">
-            <!-- https://www.flaticon.com/free-icon/board_158280#term=board%20math&page=1&position=3 -->
-            <h3>Enroll a Child</h3>
-            <p>We provide the perfect education for your child every day</p>
-            <button>Contact Us</button>
+            <div class="large-hero__enroll__left">
+                <div class="large-hero__enroll__img">
+                    <img src="assets/images/board.png">
+                </div>
+                <div class="large-hero__enroll__text">
+                    <h3>Enroll a Child</h3>
+                    <p>We provide the perfect education for your child every day</p>
+                </div>
+            </div>
+            <button class="large-hero__enroll__btn">Contact Us</button>
         </div>
     </section>
 
     <section class="services">
-        <h2>Our Services</h2>
-        <p>We make your child happy day after day</p>
-        <div class="services__overview">
-            <h3>Our Daily Care</h3>
-            <h4>Popular Education For Your Child</h4>
-            <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum honestatis, ad his consulatu pertinacia deterruisset. Te bonorum ancillae nec. Mea errem alterum in, harum iudico vel et, nec atqui propriae id.</p>
-            <ul>
-                <li>Learning program with after-school</li>
-                <li>Opportunities to scientific experiments</li>
-                <li>Positive learning environment</li>
-                <li>Learning through play</li>
-                <li>Individual attention in small classes</li>
-            </ul>
-            <button>More Info</button>
+        <h2 class="section-title__title">Our Services</h2>
+        <p class="section-title__subtitle">We make your child happy day after day</p>
+        <div class="services__content">
+            <div class="services__overview">
+                <h3>Our Daily Care</h3>
+                <h4>Popular Education For Your Child</h4>
+                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum honestatis, ad his consulatu pertinacia deterruisset. Te bonorum ancillae nec. Mea errem alterum in, harum iudico vel et, nec atqui propriae id.</p>
+                <ul>
+                    <li>Learning program with after-school</li>
+                    <li>Opportunities to scientific experiments</li>
+                    <li>Positive learning environment</li>
+                    <li>Learning through play</li>
+                    <li>Individual attention in small classes</li>
+                </ul>
+                <button>More Info</button>
+            </div>
+            <div class="services__options">
+                <div class="services__options__option">
+                    <!-- https://www.flaticon.com/free-icon/school_158234#term=school&page=1&position=75 -->
+                    <h4>Great Facilities</h4>
+                    <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
+                </div>
+                <div class="services__options__option">
+                    <!-- https://www.flaticon.com/free-icon/two-test-tubes_74890#term=test%20tubes&page=1&position=49 -->
+                    <h4>Funny Games</h4>
+                    <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
+                </div>
+                <div class="services__options__option">
+                    <!-- https://www.flaticon.com/free-icon/easel_257799#term=easel&page=1&position=13 -->
+                    <h4>Varied Classes</h4>
+                    <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
+                </div>
+                <div class="services__options__option">
+                    <!-- https://www.flaticon.com/free-icon/momentum_158263#term=momentum&page=1&position=13 -->
+                    <h4>Science Labs</h4>
+                    <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
+                </div>
+                <div class="services__options__option">
+                    <!-- https://www.flaticon.com/free-icon/popsicle_376289#term=popsicle&page=1&position=37 -->
+                    <h4>Delicious Meals</h4>
+                    <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
+                </div>
+                <div class="services__options__option">
+                    <!-- https://www.flaticon.com/free-icon/school-bus_257790#term=school%20bus&page=1&position=64 -->
+                    <h4>School Bus</h4>
+                    <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
+                </div>
+            </div>
         </div>
-        <div class="services__options">
-            <div class="services__options__option">
-                <!-- https://www.flaticon.com/free-icon/school_158234#term=school&page=1&position=75 -->
-                <h4>Great Facilities</h4>
-                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
-            </div>
-            <div class="services__options__option">
-                <!-- https://www.flaticon.com/free-icon/two-test-tubes_74890#term=test%20tubes&page=1&position=49 -->
-                <h4>Funny Games</h4>
-                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
-            </div>
-            <div class="services__options__option">
-                <!-- https://www.flaticon.com/free-icon/easel_257799#term=easel&page=1&position=13 -->
-                <h4>Varied Classes</h4>
-                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
-            </div>
-            <div class="services__options__option">
-                <!-- https://www.flaticon.com/free-icon/momentum_158263#term=momentum&page=1&position=13 -->
-                <h4>Science Labs</h4>
-                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
-            </div>
-            <div class="services__options__option">
-                <!-- https://www.flaticon.com/free-icon/popsicle_376289#term=popsicle&page=1&position=37 -->
-                <h4>Delicious Meals</h4>
-                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
-            </div>
-            <div class="services__options__option">
-                <!-- https://www.flaticon.com/free-icon/school-bus_257790#term=school%20bus&page=1&position=64 -->
-                <h4>School Bus</h4>
-                <p>Alterum accommodare duo cu. Ius labore luptatum efficiendi ex, ne vim enim rebum.</p>
-            </div>
-        </div>
+        
     </section>
 
     <section class="gallery">
@@ -132,8 +141,8 @@
     </section>
 
     <section class="enrollment">
-        <h2>Enrollment</h2>
-        <p>Steps done with heart, soul, mind and strength</p>
+        <h2 class="section-title__title">Enrollment</h2>
+        <p class="section-title__subtitle">Steps done with heart, soul, mind and strength</p>
         
         <div class="enrollment__steps">
             <div class="enrollment__steps__step">
@@ -165,8 +174,8 @@
     </section>
 
     <section class="news">
-        <h2>What's New</h2>
-        <p>Keep up to date with the latest news</p>
+        <h2 class="section-title__title">What's New</h2>
+        <p class="section-title__subtitle">Keep up to date with the latest news</p>
         
         <div class="news__items">
             <div class="news__items__item">
@@ -211,8 +220,8 @@
     </section>
 
     <section class="upgrades">
-        <h2>Plan Upgrades</h2>
-        <p>Building a better world one student one custom plan</p>
+        <h2 class="section-title__title">Plan Upgrades</h2>
+        <p class="section-title__subtitle">Building a better world one student one custom plan</p>
 
         <div class="upgrades__plans">
             <div class="upgrades__plans__plan">
@@ -291,8 +300,8 @@
         <!-- https://www.flaticon.com/free-icon/placeholder_149441#term=map&page=1&position=1
         https://www.flaticon.com/free-icon/clock_109613#term=clock&page=1&position=26
         -->
-        <h2>Our Events</h2>
-        <p>We do all the work, you get all the credit</p>
+        <h2 class="section-title__title">Our Events</h2>
+        <p class="section-title__subtitle">We do all the work, you get all the credit</p>
         
         <div class="events__content">
             <div class="events__content__event">
@@ -329,6 +338,8 @@
             https://www.flaticon.com/free-icon/linkedin_134046#term=linkedin&page=1&position=24
          -->
     </footer>
+
+    <script src="temp/scripts/App.js"></script>
 
 </body>
 

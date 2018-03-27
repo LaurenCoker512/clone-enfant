@@ -1,3 +1,112 @@
 .large-hero {
+    &__hero {
+        /* background-image: url("../../assets/images/slide_min_2.jpg");
+        background-attachment: fixed;
+        background-size: cover; */
+        height: 37.5rem;
+        background-repeat: no-repeat;
+        /* background-position: center; */
+        background: transparent;
+        background-size: cover;
+        color: #fff;
+        text-transform: uppercase;
+        padding-top: 10%;
+        padding-left: 8%;
+    }
+
+    &__text {
+    }
+
+    &__title-small {
+        font-weight: 100;
+        font-size: 2.2rem;
+    }
+
+    &__title-large {
+        font-weight: 400;
+        font-size: 2.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    &__btn {
+        background-color: $mainRed;
+        border: 2px solid transparent;
+        border-radius: 3rem;
+        padding: 0.8rem 1.5rem;
+        color: #fff;
+        font-weight: 300;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background-color: transparent;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+    }
+
+    &__enroll {
+        background-color: $navyBlue;
+        /* margin-top: -1.2rem; */
+        color: #fff;
+        height: 10rem;
+        padding: 1.5rem 7.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__img {
+            background-color: #fff;
+            width: 6.8rem;
+            height: 6.8rem;
+            border: transparent;
+            border-radius: 50%;
+            display: inline-block;
+
+            & img {
+                width: 3.5rem;
+                margin: 25%;
+            }
+        }
+
+        &__text {
+            float: right;
+            margin-left: 2rem;
+
+            & h3 {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 1.4rem;
+                margin-bottom: 0;
+                letter-spacing: 1.5px;
+            }
+
+            & p {
+                font-weight: 300;
+            }
+        }
+
+        &__btn {
+            border: 2px solid #fff;
+            border-radius: 3rem;
+            height: 2.5rem;
+            padding: 0 1.3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            background-color: transparent;
+            color: #fff;
+            font-weight: 300;
+            transition: all 0.2s linear;
+
+            &:hover {
+                background-color: $mainRed;
+                border: 2px solid $mainRed;
+                cursor: pointer;
+            }
+        }
+    }
     
 }
