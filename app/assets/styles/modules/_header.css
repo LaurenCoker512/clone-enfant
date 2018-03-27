@@ -1,4 +1,46 @@
 .header {
     background-color: $navyBlue;
     color: #fff;
+    height: 6.25rem;
+    padding: 2rem 6.5rem;
+
+    & img {
+        width: 10rem;
+        margin-top: 0.1rem;
+    }
+
+    &__title {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: $mainRed;
+
+        &__info {
+            margin-left: 0.3rem;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+    }
+
+    &__info {
+        font-size: 0.85rem;
+        font-weight: 300;
+        margin-top: 0.3rem;
+    }
+
+    &--right {
+
+        &__section {
+            float: right;
+            margin-left: 2rem;
+
+            & img {
+                width: 3rem;
+            }
+
+            &__text {
+                padding-left: 1.5rem;
+                border-left: 1px solid rgba(255, 255, 255, 0.15);
+            }
+        }
+    }
 }

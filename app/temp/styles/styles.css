@@ -345,10 +345,53 @@ template {
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Lato", sans-serif;
+}
+
 .header {
     background-color: #002749;
     color: #fff;
+    height: 6.25rem;
+    padding: 2rem 6.5rem;
 }
+
+.header img {
+        width: 10rem;
+        margin-top: 0.1rem;
+    }
+
+.header__title {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: #ff4e31;
+    }
+
+.header__title__info {
+            margin-left: 0.3rem;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+.header__info {
+        font-size: 0.85rem;
+        font-weight: 300;
+        margin-top: 0.3rem;
+    }
+
+.header--right__section {
+            float: right;
+            margin-left: 2rem;
+        }
+
+.header--right__section img {
+                width: 3rem;
+            }
+
+.header--right__section__text {
+                padding-left: 1.5rem;
+                border-left: 1px solid rgba(255, 255, 255, 0.15);
+            }
 
 .main-nav {
     
