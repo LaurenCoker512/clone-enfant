@@ -470,68 +470,6 @@ ul {
             cursor: pointer;
         }
 
-.large-hero__enroll {
-        background-color: #002749;
-        /* margin-top: -1.2rem; */
-        color: #fff;
-        height: 10rem;
-        padding: 1.5rem 7.75rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-.large-hero__enroll__img {
-            background-color: #fff;
-            width: 6.8rem;
-            height: 6.8rem;
-            border: transparent;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-.large-hero__enroll__img img {
-                width: 3.5rem;
-                margin: 25%;
-            }
-
-.large-hero__enroll__text {
-            float: right;
-            margin-left: 2rem;
-        }
-
-.large-hero__enroll__text h3 {
-                text-transform: uppercase;
-                font-weight: 300;
-                font-size: 1.4rem;
-                margin-bottom: 0;
-                letter-spacing: 1.5px;
-            }
-
-.large-hero__enroll__text p {
-                font-weight: 300;
-            }
-
-.large-hero__enroll__btn {
-            border: 2px solid #fff;
-            border-radius: 3rem;
-            height: 2.5rem;
-            padding: 0 1.3rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.1px;
-            background-color: transparent;
-            color: #fff;
-            font-weight: 300;
-            transition: all 0.2s linear;
-        }
-
-.large-hero__enroll__btn:hover {
-                background-color: #ff4e31;
-                border: 2px solid #ff4e31;
-                cursor: pointer;
-            }
-
 .services {
     padding: 0 6rem;
     color: #545454;
@@ -539,6 +477,7 @@ ul {
 
 .services__content {
         display: flex;
+        margin-top: 2rem;
     }
 
 .services__overview {
@@ -565,6 +504,66 @@ ul {
             line-height: 1.5;
         }
 
+.services__overview button {
+            padding: 0.7rem 1.3rem;
+            border-radius: 3rem;
+            text-transform: uppercase;
+            color: #ff4e31;
+            border: 2px solid #ff4e31;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+.services__overview ul {
+            list-style-image: url("../../assets/images/tick-inside-circle-red.png");
+            margin: 2rem 0;
+            margin-left: -1rem;
+        }
+
+.services__overview li {
+            font-weight: 300;
+            line-height: 2;
+        }
+
+.services__options {
+        width: 66%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1.5rem;
+    }
+
+.services__options__option {
+            width: 33%;
+            padding: 1rem;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+.services__options__option__img {
+                width: 7rem;
+                height: 7rem;
+                border: 2px solid rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                text-align: center;
+                padding: 1.5rem 0;
+            }
+
+.services__options__option__img img {
+                    width: 3.5rem;
+                }
+
+.services__options__option h4 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 1.1rem;
+                letter-spacing: 1.1px;
+                margin-bottom: 0;
+            }
+
+.services__options__option p {
+                margin-top: 0.5rem;
+            }
+
 .section-title__title {
         text-transform: uppercase;
         color: #545454;
@@ -581,3 +580,109 @@ ul {
         text-align: center;
         font-weight: 300;
     }
+
+.gallery {
+    
+
+}
+
+.enrollment {
+    
+}
+
+.cta {
+    
+}
+
+.news {
+    
+}
+
+.current-count {
+    
+}
+
+.upgrades {
+    
+}
+
+.countdown {
+    
+}
+
+.events {
+    
+}
+
+.contact {
+    
+}
+
+.footer-info {
+    
+}
+
+.footer {
+    
+}
+
+.banner {
+    background-color: #002749;
+    color: #fff;
+    height: 10rem;
+    padding: 1.5rem 7.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner__img {
+        background-color: #fff;
+        width: 6.8rem;
+        height: 6.8rem;
+        border: transparent;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+.banner__img img {
+                width: 3.5rem;
+                margin: 25%;
+        }
+
+.banner__text {
+        float: right;
+        margin-left: 2rem;
+    }
+
+.banner__text h3 {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            letter-spacing: 1.5px;
+        }
+
+.banner__text p {
+            font-weight: 300;
+        }
+
+.banner__btn {
+        border: 2px solid #fff;
+        border-radius: 3rem;
+        height: 2.5rem;
+        padding: 0 1.3rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        background-color: transparent;
+        color: #fff;
+        font-weight: 300;
+        transition: all 0.2s linear;
+    }
+
+.banner__btn:hover {
+            background-color: #ff4e31;
+            border: 2px solid #ff4e31;
+            cursor: pointer;
+        }

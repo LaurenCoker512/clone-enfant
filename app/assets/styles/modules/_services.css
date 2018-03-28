@@ -4,6 +4,7 @@
     
     &__content {
         display: flex;
+        margin-top: 2rem;
     }
 
     &__overview {
@@ -27,6 +28,66 @@
         & p {
             font-weight: 300;
             line-height: 1.5;
+        }
+
+        & button {
+            padding: 0.7rem 1.3rem;
+            border-radius: 3rem;
+            text-transform: uppercase;
+            color: $mainRed;
+            border: 2px solid $mainRed;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        & ul {
+            list-style-image: url("../../assets/images/tick-inside-circle-red.png");
+            margin: 2rem 0;
+            margin-left: -1rem;
+        }
+
+        & li {
+            font-weight: 300;
+            line-height: 2;
+        }
+    }
+
+    &__options {
+        width: 66%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1.5rem;
+
+        &__option {
+            width: 33%;
+            padding: 1rem;
+            line-height: 1.5;
+            font-weight: 300;
+
+            &__img {
+                width: 7rem;
+                height: 7rem;
+                border: 2px solid rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                text-align: center;
+                padding: 1.5rem 0;
+
+                & img {
+                    width: 3.5rem;
+                }
+            }
+
+            & h4 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 1.1rem;
+                letter-spacing: 1.1px;
+                margin-bottom: 0;
+            }
+
+            & p {
+                margin-top: 0.5rem;
+            }
         }
     }
 }
