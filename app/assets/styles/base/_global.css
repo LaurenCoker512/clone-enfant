@@ -4,6 +4,7 @@
 
 body {
     font-family: "Lato", sans-serif;
+    color: $darkGray;
 }
 
 ul {

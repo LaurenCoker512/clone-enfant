@@ -7,6 +7,28 @@
     justify-content: space-between;
     align-items: center;
 
+    &--white {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: $navyBlue;
+
+        & .banner__text h3 {
+            font-weight: 400;
+        }
+
+        & .banner__text p {
+            font-weight: 400;
+        }
+
+        & .banner__btn {
+            border: 2px solid $mainRed;
+            color: $mainRed;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
     &__img {
         background-color: #fff;
         width: 6.8rem;

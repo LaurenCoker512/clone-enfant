@@ -1,3 +1,55 @@
 .news {
     
+    &__items {
+        display: flex;
+        margin: 3rem 3rem 0 3rem;
+
+        &__item {
+            width: 33%;
+            margin: 1.3rem;
+
+            & img {
+                width: 100%;
+            }
+
+            & h3 {
+                color: $navyBlue;
+                font-size: 1.5rem;
+                font-weight: 500;
+                font-family: "Montserrat", sans-serif;
+                line-height: 1.5;
+                margin-bottom: 0;
+            }
+
+            & p {
+                color: $darkGray;
+                font-size: 1rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    & button {
+        border: 2px solid $mainRed;
+        border-radius: 3rem;
+        height: 2.5rem;
+        padding: 0 1.3rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        background-color: transparent;
+        color: $mainRed;
+        font-weight: 300;
+        transition: all 0.2s linear;
+        display: block;
+        margin: 0 auto;
+
+        &:hover {
+            background-color: $mainRed;
+            border: 2px solid $mainRed;
+            cursor: pointer;
+            color: #fff;
+        }
+    }
 }
