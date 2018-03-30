@@ -714,16 +714,56 @@ ul {
 }
 
 .contact {
-    
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #002749;
+    height: 10rem;
+    padding: 1.5rem 7.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.contact__img {
+        background-color: #fff;
+        width: 6.8rem;
+        height: 6.8rem;
+        border: transparent;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+.contact__img img {
+                width: 3.5rem;
+                margin: 25%;
+        }
 
 .footer-info {
     
 }
 
 .footer {
-    
+    text-align: center;
+    margin-bottom: 3rem;
 }
+
+.footer__icon {
+        height: 8rem;
+        width: 8rem;
+        padding: 1.1rem;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: inline;
+        margin: 0.8rem;
+    }
+
+.footer__icon img {
+            width: 1.3rem;
+        }
+
+.footer p {
+        margin-top: 3rem;
+        color: #002749;
+    }
 
 .banner {
     background-color: #002749;
