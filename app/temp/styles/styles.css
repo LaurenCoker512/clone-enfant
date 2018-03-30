@@ -710,8 +710,63 @@ ul {
 }
 
 .events {
-    
+    margin-bottom: 2rem;
 }
+
+.events__content__event {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+.events__content__event__img {
+                width: 35%;
+                margin: 1.5rem;
+            }
+
+.events__content__event__img img {
+                    width: 100%;
+                }
+
+.events__content__event__text {
+                width: 40%;
+            }
+
+.events__content__event__text h3 {
+                    color: #002749;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    margin-bottom: 0;
+                }
+
+.events__content__event__text p {
+                    font-weight: 300;
+                    color: #545454;
+                    line-height: 1.5;
+                }
+
+.events__content__event button {
+                border: 2px solid #ff4e31;
+                border-radius: 3rem;
+                height: 2.5rem;
+                padding: 0 1.3rem;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1.1px;
+                background-color: transparent;
+                color: #ff4e31;
+                font-weight: 300;
+                transition: all 0.2s linear;
+                display: block;
+                margin: 0 auto;
+            }
+
+.events__content__event button:hover {
+                    background-color: #ff4e31;
+                    border: 2px solid #ff4e31;
+                    cursor: pointer;
+                    color: #fff;
+                }
 
 .contact {
     background-color: rgba(0, 0, 0, 0.05);
@@ -721,6 +776,8 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    
 }
 
 .contact__img {
@@ -736,6 +793,47 @@ ul {
                 width: 3.5rem;
                 margin: 25%;
         }
+
+.contact__form {
+        text-align: center;
+        width: 38rem;
+    }
+
+.contact__form h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+.contact__form input {
+            width: 35rem;
+            padding: 0.8rem 5rem 0.8rem 1.5rem;
+            border: 1px solid transparent;
+            border-radius: 3rem;
+            font-size: 0.9rem;
+        }
+
+.contact__form button {
+            margin-left: -5rem;
+            border: 2px solid #ff4e31;
+            border-radius: 3rem;
+            height: 2.5rem;
+            padding: 0 1.3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            background-color: #ff4e31;
+            color: #fff;
+            font-weight: 300;
+            transition: all 0.2s linear;
+        }
+
+.contact__form button:hover {
+                background-color: transparent;
+                border: 2px solid #ff4e31;
+                cursor: pointer;
+                color: #ff4e31;
+            }
 
 .footer-info {
     
