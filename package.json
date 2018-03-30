@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "jarallax": "^1.10.2",
+    "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
     "picturefill": "^3.0.2"
   }
