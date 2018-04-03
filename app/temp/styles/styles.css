@@ -931,12 +931,28 @@ ul {
 .banner {
     background-color: #002749;
     color: #fff;
-    height: 10rem;
-    padding: 1.5rem 7.75rem;
+    height: 18.75rem;
+    padding: 1.5rem 1.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
+
+@media (min-width: 750px) {
+
+.banner {
+        flex-direction: row;
+        height: 10rem
+}
+    }
+
+@media (min-width: 1400px) {
+
+.banner {
+        justify-content: center
+}
+    }
 
 .banner--white {
         background-color: rgba(0, 0, 0, 0.05);
@@ -960,6 +976,38 @@ ul {
                 color: #fff;
             }
 
+.banner__left {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+
+@media (min-width: 750px) {
+
+.banner__left {
+            text-align: left;
+            display: block
+        
+    }
+    }
+
+@media (min-width: 1020px) {
+
+.banner__left {
+            margin-right: 23rem
+        
+    }
+    }
+
+@media (min-width: 1400px) {
+
+.banner__left {
+            margin-right: 29rem
+        
+    }
+    }
+
 .banner__img {
         background-color: #fff;
         width: 6.8rem;
@@ -967,6 +1015,14 @@ ul {
         border: transparent;
         border-radius: 50%;
         display: inline-block;
+        margin: 0 auto;
+    }
+
+@media (min-width: 750px) {
+
+.banner__img {
+            margin: auto
+    }
     }
 
 .banner__img img {
