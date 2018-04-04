@@ -17,4 +17,35 @@
         text-align: center;
         font-weight: 300;
     }
+
+    &__underline {
+        display: block;
+        margin: 0 auto;
+        background-color: transparent;
+        border: 2px solid $mainRed;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: $mainRed;
+            top: 0.25rem;
+            left: -1.9rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: $mainRed;
+            top: 0.25rem;
+            right: -1.9rem;
+        }
+    }
 }

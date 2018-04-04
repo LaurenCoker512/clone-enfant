@@ -6,6 +6,11 @@
     }
 
     &__main-menu {
+        display: none;
+
+        @mixin atSmall {
+            display: block;
+        }
 
         &__item {
             float: left;

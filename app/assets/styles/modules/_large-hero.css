@@ -1,26 +1,35 @@
 .large-hero {
     position: relative;
+    overflow: hidden;
 
     &__hero {
-        /* background-repeat: no-repeat;
-        background: transparent;
-        background-size: 100%; */
-        /* padding-top: 12%; */
-        /* padding-left: 14%; */
+        height: 25.625rem;
+        position: relative;
+        z-index: 0;
+
+        @mixin atSmall {
+            height: auto;
+            max-height: 37.5rem;
+        }
 
         & img {
-            width: 100%;
+            height: 100%;
+
+            @mixin atSmall {
+                width: 100%;
+                height: auto;
+            }
         }
 
         @mixin atLarger {
-            height: 37.5rem;
             overflow: hidden;
         }
     }
 
     &__text {
-        width: 65rem;
+        width: 35rem;
         margin: 0 auto;
+        padding-left: 1rem;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -29,11 +38,27 @@
         transform: translateY(20%);
         color: #fff;
         text-transform: uppercase;
+
+        @mixin atXSmall {
+            padding-left: 2rem;
+        }
+
+        @mixin atLarge {
+            width: 69rem;
+        }
     }
 
     &__title-small {
         font-weight: 100;
-        font-size: 1.7rem;
+        font-size: 1.2rem;
+
+        @mixin atXSmall {
+            font-size: 1.5rem;
+        }
+
+        @mixin atSmall {
+            font-size: 1.7rem;
+        }
 
         @mixin atLarge {
             font-size: 2rem;
@@ -47,8 +72,17 @@
     &__title-large {
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
-        font-size: 2rem;
+        font-size: 1.4rem;
         letter-spacing: 1.5px;
+        line-height: 1.5;
+
+        @mixin atXSmall {
+            font-size: 1.8rem;
+        }
+
+        @mixin atSmall {
+            font-size: 2rem;
+        }
 
         @mixin atLarge {
             font-size: 2.3rem;
