@@ -1,20 +1,15 @@
 .banner {
     background-color: $navyBlue;
     color: #fff;
-    height: 18.75rem;
+    height: 20.5rem;
     padding: 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 
-    @mixin atSmall {
-        flex-direction: row;
-        height: 10rem;
+    @mixin atXSmall {
+        height: 18.5rem;
     }
 
-    @mixin atXLarge {
-        justify-content: center;
+    @mixin atSmall {
+        height: 10rem;
     }
 
     &--white {
@@ -39,6 +34,26 @@
         }
     }
 
+    &__content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @mixin atSmall {
+            flex-direction: row;
+        }
+        
+        @mixin atLarge {
+            width: 61rem;
+        }
+
+        @mixin atXLarge {
+            width: 66rem;
+        }
+    }
+
     &__left {
         display: flex;
         flex-direction: column;
@@ -48,15 +63,6 @@
             text-align: left;
             display: block;
         }
-
-        @mixin atLarge {
-            margin-right: 23rem;
-        }
-
-        @mixin atXLarge {
-            margin-right: 29rem;
-        }
-        
     }
 
     &__img {
@@ -80,7 +86,11 @@
 
     &__text {
         float: right;
-        margin-left: 2rem;
+        line-height: 1.5;
+
+        @mixin atSmall {
+            margin-left: 2rem;
+        }
 
         & h3 {
             text-transform: uppercase;
@@ -92,6 +102,8 @@
 
         & p {
             font-weight: 300;
+            margin-top: 0.5rem;
+            margin-left: 0;
         }
     }
 
@@ -100,7 +112,7 @@
         border-radius: 3rem;
         height: 2.5rem;
         padding: 0 1.3rem;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 1.1px;
         background-color: transparent;
@@ -112,6 +124,10 @@
             background-color: $mainRed;
             border: 2px solid $mainRed;
             cursor: pointer;
+        }
+
+        @mixin atLarge {
+            font-size: 0.9rem;
         }
     }
 }

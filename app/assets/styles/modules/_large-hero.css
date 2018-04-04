@@ -1,31 +1,62 @@
 .large-hero {
+    position: relative;
+
     &__hero {
-        /* background-image: url("../../assets/images/slide_min_2.jpg");
-        background-attachment: fixed;
-        background-size: cover; */
-        height: 37.5rem;
-        background-repeat: no-repeat;
-        /* background-position: center; */
+        /* background-repeat: no-repeat;
         background: transparent;
-        background-size: cover;
-        color: #fff;
-        text-transform: uppercase;
-        padding-top: 10%;
-        padding-left: 8%;
+        background-size: 100%; */
+        /* padding-top: 12%; */
+        /* padding-left: 14%; */
+
+        & img {
+            width: 100%;
+        }
+
+        @mixin atLarger {
+            height: 37.5rem;
+            overflow: hidden;
+        }
     }
 
     &__text {
+        width: 65rem;
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(20%);
+        color: #fff;
+        text-transform: uppercase;
     }
 
     &__title-small {
         font-weight: 100;
-        font-size: 2.2rem;
+        font-size: 1.7rem;
+
+        @mixin atLarge {
+            font-size: 2rem;
+        }
+
+        @mixin atLarger {
+            font-size: 2.2rem;
+        }
     }
 
     &__title-large {
+        font-family: "Montserrat", sans-serif;
         font-weight: 400;
-        font-size: 2.5rem;
+        font-size: 2rem;
         letter-spacing: 1.5px;
+
+        @mixin atLarge {
+            font-size: 2.3rem;
+        }
+
+        @mixin atLarger {
+            font-size: 2.5rem;
+        }
     }
 
     &__btn {
@@ -39,11 +70,16 @@
         text-transform: uppercase;
         letter-spacing: 1.1px;
         transition: all 0.2s linear;
+        display: none;
 
         &:hover {
             background-color: transparent;
             border: 2px solid #fff;
             cursor: pointer;
+        }
+
+        @mixin atSmall {
+            display: block;
         }
     }
 }
