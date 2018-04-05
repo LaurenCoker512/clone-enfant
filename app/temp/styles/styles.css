@@ -701,8 +701,9 @@ ul {
 .section-title__title {
         text-transform: uppercase;
         color: #545454;
-        font-weight: 400;
-        font-size: 2rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 1.8rem;
         letter-spacing: 1.2px;
         margin-top: 3.5rem;
         margin-bottom: 0;
@@ -998,8 +999,36 @@ ul {
                     border-radius: 50%;
                     color: #fff;
                     text-align: center;
-                    padding: 2.5rem;
+                    position: relative;
                 }
+
+.upgrades__plans__plan__price__container__num {
+                        font-size: 1.5rem;
+                        font-weight: 300;
+                        font-family: "Montserrat", sans-serif;
+                        position: absolute;
+                        top: 2rem;
+                        left: 1.5rem;
+                    }
+
+.upgrades__plans__plan__price__container__cents {
+                        font-size: 0.8rem;
+                        font-weight: 300;
+                        position: absolute;
+                        top: 1.3rem;
+                        left: 4.3rem;
+                    }
+
+.upgrades__plans__plan__price__container__frequency {
+                        position: absolute;
+                        width: 7rem;
+                        top: 3rem;
+                        left: 0;
+                        text-transform: uppercase;
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        letter-spacing: 1.3px;
+                    }
 
 .upgrades__plans__plan__price__container--blue {
                     background-color: #002749;
@@ -1022,9 +1051,43 @@ ul {
                     margin-top: 0.5rem;
                 }
 
-.countdown {
-    
-}
+.countdown__background {
+        height: 16.75rem;
+        padding: 4rem 0;
+    }
+
+.countdown__content {
+        width: 66rem;
+        margin: 0 auto;
+        display: flex;
+    }
+
+.countdown__content__section {
+            width: 25%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+.countdown__content__section__number {
+                font-family: "Montserrat", sans-serif;
+                font-size: 3.5rem;
+            }
+
+.countdown__content__section__number--seconds {
+                    font-size: 4.7rem;
+                }
+
+.countdown__content__section__time {
+                font-size: 1.2rem;
+                font-weight: 300;
+            }
+
+.countdown__content__section__time--seconds {
+                    margin-top: 0.5rem;
+                }
 
 .events {
     margin-bottom: 2rem;
@@ -1158,13 +1221,14 @@ ul {
 
 .footer {
     text-align: center;
-    margin-bottom: 3rem;
+    height: 9.875rem;
+    padding: 2.5rem;
 }
 
 .footer__icon {
         height: 8rem;
         width: 8rem;
-        padding: 1.1rem;
+        padding: 1rem;
         border: 2px solid rgba(0, 0, 0, 0.1);
         border-radius: 50%;
         display: inline;
@@ -1178,6 +1242,10 @@ ul {
 .footer p {
         margin-top: 3rem;
         color: #002749;
+    }
+
+.footer__heart {
+        color: #ff4e31;
     }
 
 .banner {

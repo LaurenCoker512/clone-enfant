@@ -1,11 +1,12 @@
 .footer {
     text-align: center;
-    margin-bottom: 3rem;
+    height: 9.875rem;
+    padding: 2.5rem;
 
     &__icon {
         height: 8rem;
         width: 8rem;
-        padding: 1.1rem;
+        padding: 1rem;
         border: 2px solid rgba(0, 0, 0, 0.1);
         border-radius: 50%;
         display: inline;
@@ -19,5 +20,9 @@
     & p {
         margin-top: 3rem;
         color: $navyBlue;
+    }
+
+    &__heart {
+        color: $mainRed;
     }
 }
