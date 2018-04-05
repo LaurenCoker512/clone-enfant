@@ -2,13 +2,23 @@
     
     &__background {
         height: 16.75rem;
-        padding: 4rem 0;
+        padding: 4.5rem 0;
+
+        @mixin atSmall {
+            padding: 4rem 0;
+        }
     }
 
     &__content {
-        width: 66rem;
+        width: 100%;
         margin: 0 auto;
         display: flex;
+        justify-content: space-around;
+        padding: 0 1rem;
+
+        @mixin atLarger {
+            width: 66rem;
+        }
 
         &__section {
             width: 25%;
@@ -20,19 +30,43 @@
 
             &__number {
                 font-family: "Montserrat", sans-serif;
-                font-size: 3.5rem;
+                font-size: 2.5rem;
+
+                @mixin atXSmall {
+                    font-size: 3rem;
+                }
+
+                @mixin atSmall {
+                    font-size: 3.5rem;
+                }
 
                 &--seconds {
-                    font-size: 4.7rem;
+                    font-size: 3.2rem;
+
+                    @mixin atXSmall {
+                        font-size: 4rem;
+                    }
+
+                    @mixin atSmall {
+                        font-size: 4.7rem;
+                    }
                 }
             }
 
             &__time {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 font-weight: 300;
 
+                @mixin atSmall {
+                    font-size: 1.2rem;
+                }
+
                 &--seconds {
-                    margin-top: 0.5rem;
+                    margin-top: 0.7rem;
+
+                    @mixin atXSmall {
+                        margin-top: 0.5rem;
+                    }
                 }
             }
         }

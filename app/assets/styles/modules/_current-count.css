@@ -1,19 +1,75 @@
 .current-count {
-    height: 16.625rem;
-    padding-top: 6rem;
+    height: 51.5rem;
+    padding-top: 5rem;
     margin-top: 4.5rem;
+
+    @mixin atSmall {
+        height: 28.25rem;
+    }
+
+    @mixin atML {
+        height: 18.375rem;
+        padding-top: 6rem;
+    }
+
+    @mixin atLarge {
+        height: 16.625rem;
+    }
     
     &__content {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
         margin: 0 auto;
-        width: 62.5rem;
+        width: 45rem;
+        height: 40rem;
+
+        @mixin atSmall {
+            flex-direction: row;
+            height: auto;
+        }
+
+        @mixin atML {
+            flex-wrap: nowrap;
+            width: 57rem;
+        }
+
+        @mixin atLarge {
+            width: 66rem;
+        }
     }
 
     &__section {
-        width: 25%;
         color: #fff;
         display: flex;
+        align-items: flex-start;
+        
+        @mixin atSmall {
+            width: 50%;
+            align-items: stretch;
+        }
+
+        @mixin atML {
+            width: 25%;
+            margin: auto;
+        }
+
+        &--top {
+
+            @mixin atSmall {
+                margin-bottom: 2.5rem;
+            }
+            
+        }
+
+        &--bottom {
+
+            @mixin atSmall {
+                margin-top: 2.5rem;
+            }
+        }
 
         &__img {
             width: 3.5rem;

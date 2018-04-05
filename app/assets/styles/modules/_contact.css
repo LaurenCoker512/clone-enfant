@@ -1,11 +1,33 @@
 .contact {
     background-color: rgba(0, 0, 0, 0.05);
     color: $navyBlue;
-    height: 10rem;
-    padding: 1.5rem 7.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 16.125rem;
+    padding: 1.5rem 1.5rem;
+
+    @mixin atMedium {
+        height: 10rem;
+    }
+
+    &__content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @mixin atMedium {
+            width: 46rem;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @mixin atLarge {
+            width: 61rem;
+        }
+
+        @mixin atXLarge {
+            width: 66rem;
+        }
+    }
 
     &__img {
         background-color: #fff;
@@ -24,19 +46,31 @@
     &__form {
         text-align: center;
         width: 38rem;
+        display: flex;
+        flex-direction: column;
 
         & h2 {
             font-size: 1.8rem;
             font-weight: 400;
             margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
         }
 
         & input {
-            width: 37rem;
             padding: 0.8rem 7rem 0.8rem 1.5rem;
             border: 1px solid transparent;
             border-radius: 3rem;
             font-size: 0.9rem;
+            flex-grow: 2;
+            width: 60%;
+
+            @mixin atXSmall {
+                width: 75%;
+            }
+
+            @mixin atSmall {
+                width: 37rem;
+            }
         }
 
         & button {
