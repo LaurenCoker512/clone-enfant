@@ -1,6 +1,10 @@
 import jarallax from "jarallax";
 import $ from "jquery";
 
+window.onload = function() {
+  imageZoom();
+}
+
 //Direction-aware hover
 
 $('.gallery__slider__img').on('mouseenter mouseleave', hoverDirection);
@@ -39,6 +43,15 @@ function getMouseDirection(event) {
       y = (event.pageY - offset.top - h / 2) * ((h > w) ? w / h: 1),
       direction = Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90  + 3) % 4;
   return direction;
+}
+
+//Image Zoom
+
+function imageZoom() {
+  var images = document.querySelectorAll(".image-zoom");
+  for (var i = 0; i < images.length; i++) {
+    images[i].classList.add("image-zoom--active");
+  }
 }
 
 //Parallax scrolling

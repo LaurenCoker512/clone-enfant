@@ -3,6 +3,7 @@
     color: #fff;
     height: 20.5rem;
     padding: 1.5rem 1.5rem;
+    z-index: 3;
 
     @mixin atXSmall {
         height: 18.5rem;

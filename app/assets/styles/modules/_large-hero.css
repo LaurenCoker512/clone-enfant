@@ -14,6 +14,7 @@
 
         & img {
             height: 100%;
+            transition: all 5s linear;
 
             @mixin atSmall {
                 width: 100%;
@@ -116,4 +117,8 @@
             display: block;
         }
     }
+}
+
+.image-zoom--active {
+    transform: scale(1.1);
 }

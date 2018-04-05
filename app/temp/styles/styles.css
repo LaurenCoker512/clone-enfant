@@ -456,6 +456,7 @@ ul {
 
 .large-hero__hero img {
             height: 100%;
+            transition: all 5s linear;
         }
 
 @media (min-width: 750px) {
@@ -597,6 +598,11 @@ ul {
             display: block
     }
     }
+
+.image-zoom--active {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+}
 
 .services {
     padding: 0 6rem;
@@ -923,6 +929,7 @@ ul {
 .current-count {
     height: 16.625rem;
     padding-top: 6rem;
+    margin-top: 4.5rem;
 }
 
 .current-count__content {
@@ -943,15 +950,77 @@ ul {
 .current-count__section__img {
             width: 3.5rem;
             margin-right: 1.5rem;
+            padding-top: 0.5rem;
         }
 
 .current-count__section__img img {
                 width: 100%;
             }
 
-.upgrades {
-    
-}
+.current-count__section__number {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 300;
+            font-size: 3.7rem;
+        }
+
+.current-count__section__text {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+.current-count__section__text p {
+                margin-top: 0.5rem;
+            }
+
+.upgrades__plans {
+        display: flex;
+        flex-wrap: wrap;
+        width: 66rem;
+        margin: 2rem auto 0 auto;
+    }
+
+.upgrades__plans__plan {
+            width: 33%;
+            display: flex;
+            margin-bottom: 3.5rem;
+        }
+
+.upgrades__plans__plan__price {
+                padding-top: 2rem;
+                margin-right: 1.5rem;
+            }
+
+.upgrades__plans__plan__price__container {
+                    width: 7rem;
+                    height: 7rem;
+                    background-color: #ff4e31;
+                    border: 1px solid #ff4e31;
+                    border-radius: 50%;
+                    color: #fff;
+                    text-align: center;
+                    padding: 2.5rem;
+                }
+
+.upgrades__plans__plan__price__container--blue {
+                    background-color: #002749;
+                    border: 1px solid #002749;
+                }
+
+.upgrades__plans__plan__text {
+                max-width: 12rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+
+.upgrades__plans__plan__text h3 {
+                    font-weight: 400;
+                    font-size: 1.3rem;
+                    margin-bottom: 0;
+                }
+
+.upgrades__plans__plan__text p {
+                    margin-top: 0.5rem;
+                }
 
 .countdown {
     
@@ -1116,6 +1185,7 @@ ul {
     color: #fff;
     height: 20.5rem;
     padding: 1.5rem 1.5rem;
+    z-index: 3;
 }
 
 @media (min-width: 448px) {
