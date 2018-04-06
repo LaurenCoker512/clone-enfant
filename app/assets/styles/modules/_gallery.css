@@ -14,6 +14,22 @@
                 width: 100%;
             }
 
+            &--xsmall {
+                width: 100%;
+
+                @mixin atSmall {
+                    width: 25%;
+                }
+            }
+
+            &--small {
+                display: none;
+
+                @mixin atSmall {
+                    display: block;
+                }
+            }
+
             &--large {
                 display: none;
 

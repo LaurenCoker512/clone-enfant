@@ -362,10 +362,15 @@ ul {
     overflow: hidden;
 }
 
-.header > img {
-        width: 10rem;
-        margin-top: 0.4rem;
+.header__content {
+        width: 66rem;
+        margin: 0 auto;
     }
+
+.header__content > img {
+            width: 10rem;
+            margin-top: 0.4rem;
+        }
 
 .header__title {
         font-size: 0.9rem;
@@ -407,6 +412,11 @@ ul {
     height: 5.25rem;
 }
 
+.main-nav__content {
+        width: 66rem;
+        margin: 0 auto;
+    }
+
 .main-nav nav {
         float: left;
     }
@@ -422,6 +432,10 @@ ul {
     }
     }
 
+.main-nav__main-menu:first-child {
+            padding-left: 0;
+        }
+
 .main-nav__main-menu__item {
             float: left;
             
@@ -435,6 +449,55 @@ ul {
                 font-weight: 700;
             }
 
+.main-nav__other {
+        float: right;
+        margin-top: 2rem;
+    }
+
+.main-nav__other__img {
+            display: inline;
+            padding: 0.2rem 1rem;
+            border-left: 0.5px solid rgba(0, 0, 0, 0.2);
+        }
+
+.main-nav__other__img--shopping {
+                position: relative;
+            }
+
+.main-nav__other__img img {
+                width: 20px;
+                transition: all 0.2s linear;
+            }
+
+.main-nav__other__img img:hover {
+                    cursor: pointer;
+                    -webkit-filter:
+                        invert(100%)
+                        brightness(50%)
+                        sepia(1)
+                        hue-rotate(-40deg)
+                        saturate(1626%)
+                        brightness(99.4%);
+                            filter:
+                        invert(100%)
+                        brightness(50%)
+                        sepia(1)
+                        hue-rotate(-40deg)
+                        saturate(1626%)
+                        brightness(99.4%)
+                }
+
+.main-nav__other__cart-num {
+            width: 1rem;
+            height: 1rem;
+            background-color: #ff4e31;
+            border: 1px solid #ff4e31;
+            border-radius: 50%;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+
 .large-hero {
     position: relative;
     overflow: hidden;
@@ -444,6 +507,7 @@ ul {
         height: 25.625rem;
         position: relative;
         z-index: 0;
+        overflow: hidden;
     }
 
 @media (min-width: 750px) {
@@ -763,6 +827,28 @@ ul {
                 width: 100%;
             }
 
+.gallery__slider__img--xsmall {
+                width: 100%;
+            }
+
+@media (min-width: 750px) {
+
+.gallery__slider__img--xsmall {
+                    width: 25%
+            }
+    }
+
+.gallery__slider__img--small {
+                display: none;
+            }
+
+@media (min-width: 750px) {
+
+.gallery__slider__img--small {
+                    display: block
+            }
+    }
+
 .gallery__slider__img--large {
                 display: none;
             }
@@ -960,9 +1046,6 @@ ul {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        width: 45rem;
         height: 40rem;
     }
 
@@ -970,7 +1053,10 @@ ul {
 
 .current-count__content {
             flex-direction: row;
-            height: auto
+            height: auto;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 45rem
     }
     }
 
@@ -982,7 +1068,7 @@ ul {
     }
     }
 
-@media (min-width: 1020px) {
+@media (min-width: 1400px) {
 
 .current-count__content {
             width: 66rem
@@ -993,6 +1079,7 @@ ul {
         color: #fff;
         display: flex;
         align-items: flex-start;
+        width: 15rem;
 
         
     }
@@ -1001,7 +1088,8 @@ ul {
 
 .current-count__section {
             width: 50%;
-            align-items: stretch
+            align-items: stretch;
+            justify-content: center
 
         
     }
@@ -1025,10 +1113,25 @@ ul {
         }
     }
 
+@media (min-width: 960px) {
+
+.current-count__section--top {
+                margin-bottom: 0
+            
+        }
+    }
+
 @media (min-width: 750px) {
 
 .current-count__section--bottom {
                 margin-top: 2.5rem
+        }
+    }
+
+@media (min-width: 960px) {
+
+.current-count__section--bottom {
+                margin-top: 0
         }
     }
 

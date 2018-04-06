@@ -1,6 +1,11 @@
 .main-nav {
     height: 5.25rem;
 
+    &__content {
+        width: 66rem;
+        margin: 0 auto;
+    }
+
     & nav {
         float: left;
     }
@@ -10,6 +15,10 @@
 
         @mixin atSmall {
             display: block;
+        }
+
+        &:first-child {
+            padding-left: 0;
         }
 
         &__item {
@@ -23,6 +32,48 @@
                 text-decoration: none;
                 font-weight: 700;
             }
+        }
+    }
+
+    &__other {
+        float: right;
+        margin-top: 2rem;
+
+        &__img {
+            display: inline;
+            padding: 0.2rem 1rem;
+            border-left: 0.5px solid rgba(0, 0, 0, 0.2);
+
+            &--shopping {
+                position: relative;
+            }
+
+            & img {
+                width: 20px;
+                transition: all 0.2s linear;
+
+                &:hover {
+                    cursor: pointer;
+                    filter:
+                        invert(100%)
+                        brightness(50%)
+                        sepia(1)
+                        hue-rotate(-40deg)
+                        saturate(1626%)
+                        brightness(99.4%)
+                }
+            }
+        }
+
+        &__cart-num {
+            width: 1rem;
+            height: 1rem;
+            background-color: $mainRed;
+            border: 1px solid $mainRed;
+            border-radius: 50%;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
         }
     }
 }

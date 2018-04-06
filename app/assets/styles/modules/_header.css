@@ -5,11 +5,15 @@
     padding: 1.7rem 6.5rem;
     overflow: hidden;
 
-    & > img {
-        width: 10rem;
-        margin-top: 0.4rem;
-    }
+    &__content {
+        width: 66rem;
+        margin: 0 auto;
 
+        & > img {
+            width: 10rem;
+            margin-top: 0.4rem;
+        }
+    }
     &__title {
         font-size: 0.9rem;
         font-weight: 300;
