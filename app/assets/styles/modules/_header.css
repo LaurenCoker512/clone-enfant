@@ -4,6 +4,11 @@
     height: 6.25rem;
     padding: 1.7rem 6.5rem;
     overflow: hidden;
+    display: none;
+
+    @mixin atSmall {
+        display: block;
+    }
 
     &__content {
         width: 66rem;

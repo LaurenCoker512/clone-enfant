@@ -360,7 +360,15 @@ ul {
     height: 6.25rem;
     padding: 1.7rem 6.5rem;
     overflow: hidden;
+    display: none;
 }
+
+@media (min-width: 750px) {
+
+.header {
+        display: block
+}
+    }
 
 .header__content {
         width: 66rem;
@@ -412,9 +420,34 @@ ul {
     height: 5.25rem;
 }
 
+.main-nav__logo {
+        padding: 1.6rem;
+    }
+
+@media (min-width: 750px) {
+
+.main-nav__logo {
+            display: none
+    }
+    }
+
+.main-nav__logo img {
+            width: 8rem;
+        }
+
 .main-nav__content {
-        width: 66rem;
         margin: 0 auto;
+        padding: 0 0.5rem;
+    }
+
+@media (min-width: 750px) {
+    }
+
+@media (min-width: 1180px) {
+
+.main-nav__content {
+            width: 66rem
+    }
     }
 
 .main-nav nav {
@@ -451,7 +484,14 @@ ul {
 
 .main-nav__other {
         float: right;
-        margin-top: 2rem;
+        margin-top: -3rem;
+    }
+
+@media (min-width: 750px) {
+
+.main-nav__other {
+            margin-top: 2rem
+    }
     }
 
 .main-nav__other__img {
@@ -669,17 +709,44 @@ ul {
 }
 
 .services {
-    padding: 0 6rem;
+    padding: 0 1rem;
+    margin-bottom: 4rem;
     color: #545454;
 }
 
 .services__content {
         display: flex;
+        flex-direction: column;
+        margin: 0 auto;
         margin-top: 2rem;
     }
 
+@media (min-width: 750px) {
+
+.services__content {
+            flex-direction: row
+    }
+    }
+
+@media (min-width: 1180px) {
+
+.services__content {
+            width: 66rem
+    }
+    }
+
 .services__overview {
-        width: 33%;
+        width: 28rem;
+        margin: 0 auto;
+    }
+
+@media (min-width: 750px) {
+
+.services__overview {
+            width: 33%;
+            margin: auto;
+            padding-left: 1rem
+    }
     }
 
 .services__overview h3 {
@@ -688,14 +755,30 @@ ul {
             letter-spacing: 1.3px;
             font-size: 1.5rem;
             margin-bottom: 0.7rem;
+            text-align: center;
         }
+
+@media (min-width: 750px) {
+
+.services__overview h3 {
+                text-align: left
+        }
+    }
 
 .services__overview h4 {
             text-transform: uppercase;
             font-weight: 100;
             font-size: 1.2rem;
             margin-top: 0;
+            text-align: center;
         }
+
+@media (min-width: 750px) {
+
+.services__overview h4 {
+                text-align: left
+        }
+    }
 
 .services__overview p {
             font-weight: 300;
@@ -710,7 +793,16 @@ ul {
             border: 2px solid #ff4e31;
             font-weight: 300;
             font-size: 0.9rem;
+            display: block;
+            margin: 0 auto 2rem auto;
         }
+
+@media (min-width: 750px) {
+
+.services__overview button {
+                margin: 0
+        }
+    }
 
 .services__overview ul {
             list-style-image: url("../../assets/images/tick-inside-circle-red.png");
@@ -724,18 +816,37 @@ ul {
         }
 
 .services__options {
-        width: 66%;
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        margin-left: 1.5rem;
+        flex-direction: column;
+    }
+
+@media (min-width: 750px) {
+
+.services__options {
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 66%;
+            margin-left: 1.5rem
+    }
     }
 
 .services__options__option {
-            width: 33%;
+            width: 28rem;
+            margin: 0 auto;
             padding: 1rem;
             line-height: 1.5;
             font-weight: 300;
+            text-align: center;
         }
+
+@media (min-width: 750px) {
+
+.services__options__option {
+                width: 33%;
+                text-align: left
+        }
+    }
 
 .services__options__option__img {
                 width: 7rem;
@@ -744,7 +855,15 @@ ul {
                 border-radius: 50%;
                 text-align: center;
                 padding: 1.5rem 0;
+                margin: 0 auto;
             }
+
+@media (min-width: 750px) {
+
+.services__options__option__img {
+                    margin: 0
+            }
+    }
 
 .services__options__option__img img {
                     width: 3.5rem;

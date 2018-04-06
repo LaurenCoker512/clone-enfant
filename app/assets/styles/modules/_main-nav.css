@@ -1,9 +1,29 @@
 .main-nav {
     height: 5.25rem;
 
+    &__logo {
+        padding: 1.6rem;
+
+        @mixin atSmall {
+            display: none;
+        }
+
+        & img {
+            width: 8rem;
+        }
+    }
+
     &__content {
-        width: 66rem;
         margin: 0 auto;
+        padding: 0 0.5rem;
+
+        @mixin atSmall {
+            
+        }
+        
+        @mixin atLarger {
+            width: 66rem;
+        }
     }
 
     & nav {
@@ -37,7 +57,11 @@
 
     &__other {
         float: right;
-        margin-top: 2rem;
+        margin-top: -3rem;
+
+        @mixin atSmall {
+            margin-top: 2rem;
+        }
 
         &__img {
             display: inline;

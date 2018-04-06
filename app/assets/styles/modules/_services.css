@@ -1,14 +1,32 @@
 .services {
-    padding: 0 6rem;
+    padding: 0 1rem;
+    margin-bottom: 4rem;
     color: $darkGray;
     
     &__content {
         display: flex;
+        flex-direction: column;
+        margin: 0 auto;
         margin-top: 2rem;
+
+        @mixin atSmall {
+            flex-direction: row;
+        }
+
+        @mixin atLarger {
+            width: 66rem;
+        }
     }
 
     &__overview {
-        width: 33%;
+        width: 28rem;
+        margin: 0 auto;
+
+        @mixin atSmall {
+            width: 33%;
+            margin: auto;
+            padding-left: 1rem;
+        }
 
         & h3 {
             text-transform: uppercase;
@@ -16,6 +34,11 @@
             letter-spacing: 1.3px;
             font-size: 1.5rem;
             margin-bottom: 0.7rem;
+            text-align: center;
+
+            @mixin atSmall {
+                text-align: left;
+            }
         }
 
         & h4 {
@@ -23,6 +46,11 @@
             font-weight: 100;
             font-size: 1.2rem;
             margin-top: 0;
+            text-align: center;
+
+            @mixin atSmall {
+                text-align: left;
+            }
         }
 
         & p {
@@ -38,6 +66,12 @@
             border: 2px solid $mainRed;
             font-weight: 300;
             font-size: 0.9rem;
+            display: block;
+            margin: 0 auto 2rem auto;
+
+            @mixin atSmall {
+                margin: 0;
+            }
         }
 
         & ul {
@@ -53,16 +87,29 @@
     }
 
     &__options {
-        width: 66%;
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        margin-left: 1.5rem;
+        flex-direction: column;
+
+        @mixin atSmall {
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 66%;
+            margin-left: 1.5rem;
+        }
 
         &__option {
-            width: 33%;
+            width: 28rem;
+            margin: 0 auto;
             padding: 1rem;
             line-height: 1.5;
             font-weight: 300;
+            text-align: center;
+
+            @mixin atSmall {
+                width: 33%;
+                text-align: left;
+            }
 
             &__img {
                 width: 7rem;
@@ -71,6 +118,11 @@
                 border-radius: 50%;
                 text-align: center;
                 padding: 1.5rem 0;
+                margin: 0 auto;
+
+                @mixin atSmall {
+                    margin: 0;
+                }
 
                 & img {
                     width: 3.5rem;
