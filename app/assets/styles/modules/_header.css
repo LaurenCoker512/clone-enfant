@@ -2,7 +2,7 @@
     background-color: $navyBlue;
     color: #fff;
     height: 6.25rem;
-    padding: 1.7rem 6.5rem;
+    padding: 1.7rem 1.7rem;
     overflow: hidden;
     display: none;
 
@@ -11,31 +11,52 @@
     }
 
     &__content {
-        width: 66rem;
+        display: flex;
+        justify-content: space-between;
         margin: 0 auto;
 
+        @mixin atLarger {
+            width: 66rem;
+        }
+
+    }
+
+    &__logo {
         & > img {
             width: 10rem;
             margin-top: 0.4rem;
         }
-    }
+    } 
+
     &__title {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 300;
         color: $mainRed;
 
+        @mixin atML {
+            font-size: 0.9rem;
+        }
+
         &__info {
             margin-left: 0.3rem;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 300;
+
+            @mixin atML {
+                font-size: 0.85rem;
+            }
         }
     }
 
     &__info {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 300;
         margin-top: 0.3rem;
         margin-bottom: 0.3rem;
+
+        @mixin atML {
+            font-size: 0.85rem;
+        }
     }
 
     &--right {
@@ -45,15 +66,24 @@
             margin-left: 2.3rem;
 
             & img {
-                width: 3rem;
-                margin-right: 1rem;
+                width: 2.5rem;
+                margin-right: 0.5rem;
+
+                @mixin atML {
+                    width: 3rem;
+                    margin-right: 1rem;
+                }
             }
 
             &__text {
-                padding-left: 1.5rem;
+                padding-left: 1rem;
                 margin-top: 0.3rem;
                 border-left: 1px solid rgba(255, 255, 255, 0.15);
                 float: right;
+
+                @mixin atML {
+                    padding-left: 1.5rem;
+                }
             }
         }
     }

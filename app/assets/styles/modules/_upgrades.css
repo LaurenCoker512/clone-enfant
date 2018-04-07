@@ -2,18 +2,40 @@
     
     &__plans {
         display: flex;
-        flex-wrap: wrap;
-        width: 66rem;
+        flex-direction: column;
         margin: 2rem auto 0 auto;
 
+        @mixin atSmall {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @mixin atLarger {
+            width: 66rem;
+        }
+
         &__plan {
-            width: 33%;
+            width: 20rem;
             display: flex;
+            margin: 0 auto;
             margin-bottom: 3.5rem;
 
+            @mixin atXSmall {
+                width: 28rem;
+            }
+
+            @mixin atSmall {
+                width: 33%;
+            }
+
             &__price {
-                padding-top: 2rem;
                 margin-right: 1.5rem;
+                margin-left: 1.5rem;
+                padding-top: 1rem;
+
+                @mixin atSmall {
+                    padding-top: 2rem;
+                }
                 
                 &__container {
                     width: 7rem;
@@ -61,9 +83,12 @@
             }
 
             &__text {
-                max-width: 12rem;
                 font-weight: 300;
                 line-height: 1.5;
+
+                @mixin atSmall {
+                    max-width: 12rem;
+                }
 
                 & h3 {
                     font-weight: 400;

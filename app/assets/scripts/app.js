@@ -8,6 +8,7 @@ window.onload = function() {
 //Direction-aware hover
 
 $('.gallery__slider__img').on('mouseenter mouseleave', hoverDirection);
+$('.news__items__item__img').on('mouseenter mouseleave', hoverDirection);
 
 function hoverDirection(event) {
   var $overlay = $(this).find('div'),

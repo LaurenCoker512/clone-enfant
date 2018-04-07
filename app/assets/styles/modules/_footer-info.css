@@ -1,3 +1,14 @@
 .footer-info {
-    
+    background-color: $navyBlue;
+    color: #fff;
+    height: 30.625rem;
+
+    &__content {
+        width: 66rem;
+        display: flex;
+    }
+
+    &__section {
+        width: 33%;
+    }
 }

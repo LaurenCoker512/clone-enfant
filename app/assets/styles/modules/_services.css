@@ -19,8 +19,12 @@
     }
 
     &__overview {
-        width: 28rem;
+        width: 20rem;
         margin: 0 auto;
+
+        @mixin atXSmall {
+            width: 28rem;
+        }
 
         @mixin atSmall {
             width: 33%;
@@ -99,12 +103,16 @@
         }
 
         &__option {
-            width: 28rem;
+            width: 20rem;
             margin: 0 auto;
             padding: 1rem;
             line-height: 1.5;
             font-weight: 300;
             text-align: center;
+
+            @mixin atXSmall {
+                width: 28rem;
+            }
 
             @mixin atSmall {
                 width: 33%;
