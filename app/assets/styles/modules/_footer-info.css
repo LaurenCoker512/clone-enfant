@@ -10,5 +10,34 @@
 
     &__section {
         width: 33%;
+        padding: 1.5rem;
+
+        & h3 {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        & p {
+            font-weight: 300;
+            line-height: 1.5;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        & img {
+            width: 9rem;
+        }
+
+        & ul {
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        &__border {
+            width: 2.5rem;
+            height: 2px;
+            background-color: $mainRed;
+        }
     }
 }

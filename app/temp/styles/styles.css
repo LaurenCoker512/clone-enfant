@@ -1002,6 +1002,13 @@ ul {
             overflow: hidden;
         }
 
+@media (min-width: 750px) {
+
+.gallery__slider__img {
+                width: 33%
+        }
+    }
+
 .gallery__slider__img img {
                 width: 100%;
             }
@@ -1013,7 +1020,7 @@ ul {
 @media (min-width: 750px) {
 
 .gallery__slider__img--xsmall {
-                    width: 25%
+                    width: 33%
             }
     }
 
@@ -1138,9 +1145,16 @@ ul {
     }
 
 .news__items__item {
-            width: 28rem;
+            width: 92%;
             margin: 1.3rem auto;
         }
+
+@media (min-width: 448px) {
+
+.news__items__item {
+                width: 28rem
+        }
+    }
 
 @media (min-width: 750px) {
 
@@ -1600,22 +1614,99 @@ ul {
 
 .events__content__event {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: 2rem 1.5rem;
         }
 
+@media (min-width: 750px) {
+
+.events__content__event {
+                flex-direction: row
+        }
+    }
+
+@media (min-width: 1180px) {
+
+.events__content__event {
+                width: 66rem;
+                margin: 2rem auto
+        }
+    }
+
 .events__content__event__img {
-                width: 35%;
-                margin: 1.5rem;
+                width: 100%;
+                margin: 0 auto;
             }
+
+@media (min-width: 448px) {
+
+.events__content__event__img {
+                    width: 27rem
+            }
+    }
+
+@media (min-width: 750px) {
+
+.events__content__event__img {
+                    margin-right: 1.5rem;
+                    width: 21.25rem
+            }
+    }
 
 .events__content__event__img img {
                     width: 100%;
                 }
 
-.events__content__event__text {
-                width: 40%;
+@media (min-width: 448px) {
+
+.events__content__event__img img {
+                        width: 27rem
+                }
+    }
+
+@media (min-width: 750px) {
+
+.events__content__event__img img {
+                        width: 21.25rem
+                }
+    }
+
+.events__content__event__right {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             }
+
+@media (min-width: 448px) {
+
+.events__content__event__right {
+                    width: 27rem
+            }
+    }
+
+@media (min-width: 750px) {
+
+.events__content__event__right {
+                    width: auto
+            }
+    }
+
+@media (min-width: 960px) {
+
+.events__content__event__right {
+                    flex-direction: row;
+                    align-items: center
+            }
+    }
+
+@media (min-width: 750px) {
+
+.events__content__event__text {
+                    margin-right: 4rem
+            }
+    }
 
 .events__content__event__text h3 {
                     color: #002749;
@@ -1634,6 +1725,7 @@ ul {
                 border: 2px solid #ff4e31;
                 border-radius: 3rem;
                 height: 2.5rem;
+                width: 7.5rem;
                 padding: 0 1.3rem;
                 font-size: 0.9rem;
                 text-transform: uppercase;
@@ -1645,6 +1737,13 @@ ul {
                 display: block;
                 margin: 0 auto;
             }
+
+@media (min-width: 750px) {
+
+.events__content__event button {
+                    margin: 0
+            }
+    }
 
 .events__content__event button:hover {
                     background-color: #ff4e31;
@@ -1787,7 +1886,36 @@ ul {
 
 .footer-info__section {
         width: 33%;
+        padding: 1.5rem;
     }
+
+.footer-info__section h3 {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-family: "Montserrat", sans-serif;
+        }
+
+.footer-info__section p {
+            font-weight: 300;
+            line-height: 1.5;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+.footer-info__section img {
+            width: 9rem;
+        }
+
+.footer-info__section ul {
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+.footer-info__section__border {
+            width: 2.5rem;
+            height: 2px;
+            background-color: #ff4e31;
+        }
 
 .footer {
     text-align: center;

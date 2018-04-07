@@ -12,8 +12,12 @@
         }
 
         &__item {
-            width: 28rem;
+            width: 92%;
             margin: 1.3rem auto;
+
+            @mixin atXSmall {
+                width: 28rem;
+            }
 
             @mixin atSmall {
                 width: 33%;
