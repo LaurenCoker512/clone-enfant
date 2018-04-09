@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Montserrat:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="temp/styles/styles.css">
     <script src="assets/scripts/jarallax.min.js"></script>
+    <script src="assets/scripts/countdown.min.js"></script>
 </head>
 
 <body>
@@ -430,19 +431,19 @@
         <div class="countdown__background parallax-window jarallax" style="background-image: url('./assets/images/slide_min_2.jpg');" data-jarallax data-speed="0.6">
             <div class="countdown__content">
                 <div class="countdown__content__section">
-                    <span class="countdown__content__section__number">170</span>
+                    <span class="countdown__content__section__number" id="time-days">170</span>
                     <p class="countdown__content__section__time">Days</p>
                 </div>
                 <div class="countdown__content__section">
-                    <span class="countdown__content__section__number">23</span>
+                    <span class="countdown__content__section__number" id="time-hours">23</span>
                     <p class="countdown__content__section__time">Hours</p>
                 </div>
                 <div class="countdown__content__section">
-                    <span class="countdown__content__section__number">27</span>
+                    <span class="countdown__content__section__number" id="time-minutes">27</span>
                     <p class="countdown__content__section__time">Minutes</p>
                 </div>
                 <div class="countdown__content__section">
-                    <span class="countdown__content__section__number countdown__content__section__number--seconds">58</span>
+                    <span class="countdown__content__section__number countdown__content__section__number--seconds" id="time-seconds">58</span>
                     <p class="countdown__content__section__time countdown__content__section__time--seconds">Seconds</p>
                 </div>
             </div>

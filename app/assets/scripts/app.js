@@ -1,6 +1,7 @@
 import jarallax from "jarallax";
 import $ from "jquery";
 import CountUp from "countup.js";
+import Countdown from "countdown-js";
 import waypoints from "../../../node_modules/waypoints/lib/noframework.waypoints";
 
 window.onload = function() {
@@ -95,6 +96,24 @@ var options = {
       },
       offset: "70%"
   });
+
+//Countdown
+
+var end = new Date("November 18, 2018 08:30:00");
+var secs = document.getElementById("time-seconds");
+var mins = document.getElementById("time-minutes");
+var hours = document.getElementById("time-hours");
+var days = document.getElementById("time-days");
+
+var timer = Countdown.timer(end, function(timeLeft) {
+    secs.innerText = timeLeft.seconds;
+    mins.innerText = timeLeft.minutes;
+    hours.innerText = timeLeft.hours;
+    days.innerText = timeLeft.days;
+    setTimeout(timer, 1000);
+});
+
+timer();
 
 //Parallax scrolling
 
