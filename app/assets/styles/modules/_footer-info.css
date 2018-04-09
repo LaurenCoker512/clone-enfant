@@ -1,16 +1,41 @@
 .footer-info {
     background-color: $navyBlue;
     color: #fff;
-    height: 30.625rem;
+    height: 84rem;
+
+    @mixin atXSmall {
+        height: 74.125rem;
+    }
+
+    @mixin atSmall {
+        height: 33.75rem;
+    }
+
+    @mixin atML {
+        height: 30.625rem;
+    }
+    
 
     &__content {
-        width: 66rem;
+        margin: 0 auto;
         display: flex;
+        flex-direction: column;
+
+        @mixin atSmall {
+            flex-direction: row;
+        }
+
+        @mixin atLarger {
+            width: 66rem;
+        }
     }
 
     &__section {
-        width: 33%;
         padding: 1.5rem;
+
+        @mixin atSmall {
+            width: 33%;
+        }
 
         & h3 {
             text-transform: uppercase;
@@ -21,23 +46,74 @@
         & p {
             font-weight: 300;
             line-height: 1.5;
-            margin-top: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
-        & img {
+        &__logo {
             width: 9rem;
         }
 
         & ul {
-            line-height: 1.5;
+            line-height: 1.9;
             font-weight: 300;
+            list-style-image: url("../../assets/images/tick-inside-circle-white.png");
+            margin-left: -1rem;
         }
 
         &__border {
             width: 2.5rem;
             height: 2px;
             background-color: $mainRed;
+            margin-bottom: 2.5rem;
+        }
+
+        &__item {
+            display: flex;
+            margin-bottom: 1rem;
+
+            &__img {
+                width: 5rem;
+                height: 5rem;
+                overflow: hidden;
+                margin-right: 1.5rem;
+
+                & img {
+                    width: 7rem;
+                }
+
+            }
+
+            & h4 {
+                margin-top: 0.5rem;
+                font-weight: 300;
+                margin-bottom: 0.5rem;
+            }
+
+            & h5 {
+                text-transform: uppercase;
+                font-size: 0.7rem;
+                font-weight: 300;
+                margin-top: 0;
+            }
+
+            &__text {
+
+                @mixin atSmall {
+                    width: 8rem;
+                }
+
+                @mixin atML {
+                    width: 12rem;
+                }
+
+                &__date {
+                    font-size: 1.5rem;
+                    color: $mainRed;
+                    font-weight: 400;
+                }
+            }
+
+            
         }
     }
 }

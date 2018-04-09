@@ -1,5 +1,7 @@
 import jarallax from "jarallax";
 import $ from "jquery";
+import CountUp from "countup.js";
+import waypoints from "../../../node_modules/waypoints/lib/noframework.waypoints";
 
 window.onload = function() {
   imageZoom();
@@ -54,6 +56,45 @@ function imageZoom() {
     images[i].classList.add("image-zoom--active");
   }
 }
+
+//CountUp
+
+var itemActivities = document.getElementById("item-activities"),
+    countActivities = 75,
+    itemLessons = document.getElementById("item-lessons"),
+    countLessons = 237,
+    itemTeachers = document.getElementById("item-teachers"),
+    countTeachers = 32,
+    itemPencils = document.getElementById("item-pencils"),
+    countPencils = 457,
+    counterArea = document.querySelector(".current-count");
+
+var options = {
+      useEasing: true,
+      useGrouping: true,
+      separator: '',
+      decimal: '.',
+  };
+  
+  function createCounter(item, count) {
+      var countUp = new CountUp(item, 0, count, 0, 2, options);
+      if (!countUp.error) {
+          countUp.start();
+      } else {
+          console.error(countUp.error);
+      }
+  }
+  
+  new Waypoint({
+      element: counterArea,
+      handler: function() {
+          createCounter(itemActivities, countActivities);
+          createCounter(itemLessons, countLessons);
+          createCounter(itemTeachers, countTeachers);
+          createCounter(itemPencils, countPencils);
+      },
+      offset: "70%"
+  });
 
 //Parallax scrolling
 
