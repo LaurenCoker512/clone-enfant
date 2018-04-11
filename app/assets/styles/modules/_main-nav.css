@@ -30,6 +30,11 @@
         float: left;
     }
 
+    &__arrow {
+        width: 0.6rem;
+        margin-left: 0.4rem;
+    }
+
     &__main-menu {
         display: none;
 
@@ -43,14 +48,58 @@
 
         &__item {
             float: left;
-            
+            position: relative;
             font-size: 0.9rem;
-            padding: 1rem;
+            padding: 1rem 1rem 2.25rem 1rem;
 
             & a {
                 color: $navyBlue;
                 text-decoration: none;
                 font-weight: 700;
+            }
+        }
+
+        &__item:hover > .main-nav__sub-menu {
+            display: block;
+        }
+    }
+
+    &__sub-menu {
+        display: none;
+        position: absolute;
+        top: 4.25rem;
+        background-color: $mainRed;
+        color: #fff;
+        z-index: 3;
+        padding: 0.8rem;
+        width: 14rem;
+        border: 1px solid $mainRed;
+        border-radius: 10px;
+        margin-top: 0.6rem;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 15%;
+            width: 0;
+            height: 0;
+            border: 0.7rem solid transparent;
+            border-bottom-color: $mainRed;
+            border-top: 0;
+            margin-left: -0.7rem;
+            margin-top: -0.7rem;
+        }
+
+        &__item {
+            padding: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            transition: all 0.2s linear;
+
+            &:hover {
+                cursor: pointer;
+                transform: translateX(0.4rem);
             }
         }
     }
