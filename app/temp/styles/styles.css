@@ -634,6 +634,80 @@ ul {
             right: 0.5rem;
         }
 
+.main-nav__other__menu-icon {
+            width: 1.7rem;
+            height: 19px;
+            cursor: pointer;
+            position: relative;
+            border-left: none;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+.main-nav__other__menu-icon::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1.7rem;
+                height: 3px;
+                background-color: #ff4e31;
+                -webkit-transform-origin: 0 0;
+                        transform-origin: 0 0;
+                transition: -webkit-transform .3s ease-out;
+                transition: transform .3s ease-out;
+                transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+            }
+
+.main-nav__other__menu-icon__middle {
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 1.7rem;
+                height: 3px;
+                background-color: #ff4e31;
+                transition: all .3s ease-out;
+                /* transform-origin: 0 50%; */
+            }
+
+.main-nav__other__menu-icon::after {
+                content: "";
+                position: absolute;
+                bottom: 6px;
+                left: 0;
+                width: 1.7rem;
+                height: 3px;
+                background-color: #ff4e31;
+                -webkit-transform-origin: 0 100%;
+                        transform-origin: 0 100%;
+                transition: -webkit-transform .3s ease-out;
+                transition: transform .3s ease-out;
+                transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+            }
+
+@media (min-width: 750px) {
+
+.main-nav__other__menu-icon {
+                display: none
+        }
+    }
+
+.main-nav__other__menu-icon--close-x::before {
+                -webkit-transform: rotate(45deg) scaleX(1);
+                        transform: rotate(45deg) scaleX(1);
+            }
+
+.main-nav__other__menu-icon--close-x .main-nav__other__menu-icon__middle {
+                opacity: 0;
+                -webkit-transform: scaleX(0);
+                        transform: scaleX(0);
+            }
+
+.main-nav__other__menu-icon--close-x::after {
+                -webkit-transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
+                        transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
+            }
+
 .large-hero {
     position: relative;
     overflow: hidden;

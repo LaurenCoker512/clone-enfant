@@ -8,6 +8,18 @@ window.onload = function() {
   imageZoom();
 }
 
+//Mobile Menu
+
+var menuBtn = document.querySelector(".main-nav__other__menu-icon");
+
+menuBtn.addEventListener("click", function() {
+    if (menuBtn.classList.contains("main-nav__other__menu-icon--close-x")) {
+        menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
+    } else {
+        menuBtn.classList.add("main-nav__other__menu-icon--close-x");
+    }
+});
+
 //Direction-aware hover
 
 $('.gallery__slider__img').on('mouseenter mouseleave', hoverDirection);
