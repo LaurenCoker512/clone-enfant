@@ -505,6 +505,11 @@ ul {
         margin-left: 0.4rem;
     }
 
+.main-nav__arrow--right {
+            float: right;
+            margin-top: 0.2rem;
+        }
+
 .main-nav__main-menu {
         display: none;
     }
@@ -524,7 +529,7 @@ ul {
             float: left;
             position: relative;
             font-size: 0.9rem;
-            padding: 1rem 1rem 2.25rem 1rem;
+            padding: 1rem 1rem 2.2rem 1rem;
         }
 
 .main-nav__main-menu__item a {
@@ -563,6 +568,17 @@ ul {
             border-top: 0;
             margin-left: -0.7rem;
             margin-top: -0.7rem;
+            z-index: 4;
+        }
+
+.main-nav__sub-menu:after {
+            content: "";
+            position: absolute;
+            top: -0.65rem;
+            left: 0;
+            width: 13rem;
+            height: 1rem;
+            background-color: transparent;
         }
 
 .main-nav__sub-menu__item {
@@ -572,7 +588,73 @@ ul {
             transition: all 0.2s linear;
         }
 
+.main-nav__sub-menu__item a {
+                color: #fff;
+                font-weight: 300;
+            }
+
 .main-nav__sub-menu__item:hover {
+                cursor: pointer;
+                -webkit-transform: translateX(0.4rem);
+                        transform: translateX(0.4rem);
+            }
+
+.main-nav__sub-menu__item:hover > .main-nav__sub-sub-menu {
+            display: block;
+        }
+
+.main-nav__sub-sub-menu {
+        display: none;
+        position: absolute;
+        top: -0.8rem;
+        left: 12.5rem;
+        background-color: #ff4e31;
+        color: #fff;
+        z-index: 3;
+        padding: 0.8rem;
+        width: 14rem;
+        border: 1px solid #ff4e31;
+        border-radius: 10px;
+        margin-left: 1rem;
+    }
+
+.main-nav__sub-sub-menu:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -1.2rem;
+            width: 1.9rem;
+            height: 5rem;
+            background-color: transparent;
+        }
+
+.main-nav__sub-sub-menu:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 30%;
+            width: 0;
+            height: 0;
+            border: 0.7rem solid transparent;
+            border-right-color: #ff4e31;
+            border-left: 0;
+            margin-top: -0.7rem;
+            margin-left: -0.7rem;
+        }
+
+.main-nav__sub-sub-menu__item {
+            padding: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            transition: all 0.2s linear;
+        }
+
+.main-nav__sub-sub-menu__item a {
+                color: #fff;
+                font-weight: 300;
+            }
+
+.main-nav__sub-sub-menu__item:hover {
                 cursor: pointer;
                 -webkit-transform: translateX(0.4rem);
                         transform: translateX(0.4rem);
