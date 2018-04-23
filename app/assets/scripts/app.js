@@ -20,6 +20,23 @@ menuBtn.addEventListener("click", function() {
     }
 });
 
+//Large Hero Slider
+
+var slider = tns({
+    container: ".large-hero__slider",
+    items: 1,
+    slideBy: 1,
+    mode: "gallery",
+    autoplay: true,
+    speed: 2000,
+    controlsText: "",
+    controlsContainer: ".large-hero__nav",
+    nav: false,
+    autoplayText: ["", ""],
+    autoplayButtonOutput: false,
+    autoplayButton: ".large-hero__autoplay"
+});
+
 //Direction-aware hover
 
 $('.gallery__slider__img').on('mouseenter mouseleave', hoverDirection);

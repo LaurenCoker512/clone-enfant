@@ -2,6 +2,10 @@
     position: relative;
     overflow: hidden;
 
+    &:hover .large-hero__arrow {
+        opacity: 1;
+    }
+
     &__hero {
         height: 25.625rem;
         position: relative;
@@ -30,7 +34,6 @@
 
     &__text {
         width: 35rem;
-        margin: 0 auto;
         padding-left: 1rem;
         position: absolute;
         top: 0;
@@ -47,6 +50,7 @@
 
         @mixin atLarge {
             width: 69rem;
+            margin: 0 auto;
         }
     }
 
@@ -116,6 +120,32 @@
 
         @mixin atSmall {
             display: block;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 67%;
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 0.7rem;
+        z-index: 100;
+        opacity: 0;
+        transition: all 0.2s linear;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--left {
+            transform: rotate(135deg);
+            left: 2rem;
+        }
+
+        &--right {
+            transform: rotate(-45deg);
+            right: 2rem;
         }
     }
 }
