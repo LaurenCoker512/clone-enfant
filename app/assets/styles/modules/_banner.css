@@ -91,6 +91,7 @@
 
         @mixin atSmall {
             margin-left: 2rem;
+            max-width: 23rem;
         }
 
         & h3 {
@@ -125,6 +126,10 @@
             background-color: $mainRed;
             border: 2px solid $mainRed;
             cursor: pointer;
+        }
+
+        @mixin atSmall {
+            margin-right: 2rem;
         }
 
         @mixin atLarge {

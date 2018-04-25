@@ -87,6 +87,29 @@ function imageZoom() {
   }
 }
 
+//Enrollment Slider
+
+var enrollmentSlider = tns({
+    container: ".enrollment__steps",
+    items: 1,
+    slideBy: 1,
+    speed: 700,
+    controlsText: "",
+    controlsContainer: ".enrollment__nav",
+    nav: false,
+    responsive: {
+        448: {
+            items: 2
+        },
+        750: {
+            items: 3
+        },
+        960: {
+            items: 4
+        }
+    }
+});
+
 //CountUp
 
 var itemActivities = document.getElementById("item-activities"),

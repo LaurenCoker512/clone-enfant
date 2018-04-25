@@ -1,3 +1,128 @@
 .enrollment {
+    margin: 0 2rem 3rem 2rem;
+
+    @mixin atLarger {
+        width: 65.625rem;
+        margin: 0 auto 3rem auto;
+    }
     
+    &__steps {
+        display: flex;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+
+        &__step {
+            width: 100%;
+
+            @mixin atXSmall {
+                width: 50%;
+            }
+
+            @mixin atSmall {
+                width: 33%;
+            }
+
+            @mixin atML {
+                width: 25%;
+            }
+
+            &__num {
+                height: 5rem;
+                width: 5rem;
+                background-color: $navyBlue;
+                color: #fff;
+                text-align: center;
+                padding-top: 1.3rem;
+                border: 1px solid transparent;
+                border-radius: 50%;
+                font-size: 2rem;
+                font-weight: 300;
+                font-family: "Montserrat", sans-serif;
+                margin: 0 auto;
+                position: relative;
+                z-index: 5;
+
+                &--red {
+                    background-color: $mainRed;
+                }
+
+                &__line {
+                    width: 8rem;
+                    height: 2px;
+                    border: none;
+                    border-top: 2px dashed rgba(0, 0, 0, 0.2);
+                    position: absolute;
+                    top: 27%;
+
+                    &--left {
+                        left: -8rem;
+                    }
+
+                    &--right {
+                        right: -8rem;
+                        z-index: 2;
+                    }
+
+                    @mixin atSmall {
+                        width: 5.6rem;
+
+                        &--left {
+                            left: -5.6rem;
+                        }
+    
+                        &--right {
+                            right: -5.6rem;
+                        }
+                    }
+                }
+            }
+
+            &__text {
+                text-align: center;
+                padding: 0 2rem;
+                line-height: 1.5;
+
+                & h3 {
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    margin-bottom: 0;
+                }
+
+                & p {
+                    font-weight: 300;
+                    margin-top: 0.3rem;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        text-align: center;
+
+        &__btn {
+            text-transform: uppercase;
+            color: $mainRed;
+            font-size: 0.8rem;
+            font-weight: 300;
+            padding: 0.4rem 0.75rem;
+            border: 2px solid $mainRed;
+            transition: all 0.2s linear;
+
+            &--left {
+                border-top-left-radius: 3rem;
+                border-bottom-left-radius: 3rem;
+            }
+
+            &--right {
+                border-top-right-radius: 3rem;
+                border-bottom-right-radius: 3rem;
+            }
+
+            &:hover {
+                background-color: $mainRed;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
 }
