@@ -1370,15 +1370,19 @@ ul {
     }
 
 .enrollment {
-    margin: 0 2rem 3rem 2rem;
+    background-image: url("../../assets/images/pattern.svg");
 }
+
+.enrollment__content {
+        margin: 0 2rem 3rem 2rem;
+    }
 
 @media (min-width: 1180px) {
 
-.enrollment {
-        width: 65.625rem;
-        margin: 0 auto 3rem auto
-}
+.enrollment__content {
+            width: 65.625rem;
+            margin: 0 auto 3rem auto
+    }
     }
 
 .enrollment__steps {
@@ -2012,6 +2016,7 @@ ul {
 
 .events {
     margin-bottom: 2rem;
+    background-image: url("../../assets/images/pattern.svg");
 }
 
 .events__content__event {
@@ -2633,3 +2638,43 @@ ul {
             font-size: 0.9rem
     }
     }
+
+.flaticon-attr-parent {
+        position: relative;
+    }
+
+.flaticon-attr-parent:hover .flaticon-attr-child {
+            visibility: visible;
+            opacity: 1;
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+
+.flaticon-attr-child {
+        position: absolute;
+        top: -7rem;
+        left: -70%;
+        background-color: #fff;
+        color: #545454;
+        border: 2px solid #ff4e31;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 8rem;
+        transition: all 0.2s linear;
+        opacity: 0;
+        -webkit-transform: translateY(20%);
+                transform: translateY(20%);
+        font-size: 0.7rem;
+        visibility: none;
+    }
+
+.flaticon-attr-child--banner {
+            left: 0;
+        }
+
+.flaticon-attr-child--header {
+            top: -1rem;
+            left: -11rem;
+            width: 10rem;
+            z-index: 2;
+        }

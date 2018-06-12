@@ -1,5 +1,6 @@
 .events {
     margin-bottom: 2rem;
+    background-image: url("../../assets/images/pattern.svg");
     
     &__content {
 

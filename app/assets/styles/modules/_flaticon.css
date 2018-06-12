@@ -1,0 +1,40 @@
+.flaticon {
+
+    &-attr-parent {
+        position: relative;
+
+        &:hover .flaticon-attr-child {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &-attr-child {
+        position: absolute;
+        top: -7rem;
+        left: -70%;
+        background-color: #fff;
+        color: $darkGray;
+        border: 2px solid $mainRed;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 8rem;
+        transition: all 0.2s linear;
+        opacity: 0;
+        transform: translateY(20%);
+        font-size: 0.7rem;
+        visibility: none;
+
+        &--banner {
+            left: 0;
+        }
+
+        &--header {
+            top: -1rem;
+            left: -11rem;
+            width: 10rem;
+            z-index: 2;
+        }
+    }
+}

@@ -1,10 +1,16 @@
 .enrollment {
-    margin: 0 2rem 3rem 2rem;
+    background-image: url("../../assets/images/pattern.svg");
 
-    @mixin atLarger {
-        width: 65.625rem;
-        margin: 0 auto 3rem auto;
+    &__content {
+        margin: 0 2rem 3rem 2rem;
+
+        @mixin atLarger {
+            width: 65.625rem;
+            margin: 0 auto 3rem auto;
+        }
     }
+
+    
     
     &__steps {
         display: flex;
