@@ -8,6 +8,26 @@ window.onload = function() {
   imageZoom();
 }
 
+//Preloader
+
+document.onreadystatechange = function () {
+    var state = document.readyState;
+    if (state == 'interactive') {
+         document.getElementById('contents').style.visibility = "hidden";
+    } else if (state == 'complete') {
+        setTimeout(function(){
+        //    document.getElementById('interactive');
+           document.getElementById('load').style.opacity = "0";
+           document.getElementById('load__animation').style.opacity = "0";
+           document.getElementById('contents').style.visibility = "visible";
+        }, 2000);
+        setTimeout(function(){
+            document.getElementById('load').style.display = "none";
+           document.getElementById('load__animation').style.display = "none";
+        }, 2500)
+    }
+  }
+
 //Mobile Menu
 
 var menuBtn = document.querySelector(".main-nav__other__menu-icon");
@@ -34,7 +54,8 @@ var slider = tns({
     nav: false,
     autoplayText: ["", ""],
     autoplayButtonOutput: false,
-    autoplayButton: ".large-hero__autoplay"
+    autoplayButton: ".large-hero__autoplay",
+    autoplayTimeout: 10000
 });
 
 //Direction-aware hover

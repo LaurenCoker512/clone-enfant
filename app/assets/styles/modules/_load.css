@@ -1,0 +1,40 @@
+#load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    transition: all 0.5s linear;
+}
+
+#load__animation {
+    position: fixed;
+    top: 45%;
+    bottom: 50%;
+    left: 50%;
+    right: 500%;
+    height: 4rem;
+    width: 4rem;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-top: 2px solid rgba(255, 78, 49, 1);
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    z-index: 1000;
+    transition: all 0.2s linear;
+  }
+
+  .loaded {
+      opacity: 0;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

@@ -67,14 +67,22 @@
             border-radius: 3rem;
             text-transform: uppercase;
             color: $mainRed;
+            background-color: transparent;
             border: 2px solid $mainRed;
             font-weight: 300;
             font-size: 0.9rem;
             display: block;
             margin: 0 auto 2rem auto;
+            transition: all 0.2s linear;
 
             @mixin atSmall {
                 margin: 0;
+            }
+
+            &:hover {
+                background-color: $mainRed;
+                color: #fff;
+                cursor: pointer;
             }
         }
 
