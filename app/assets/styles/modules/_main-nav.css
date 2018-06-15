@@ -1,6 +1,12 @@
 .main-nav {
     height: 5.25rem;
 
+    &--sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
     &__logo {
         padding: 1.6rem;
 

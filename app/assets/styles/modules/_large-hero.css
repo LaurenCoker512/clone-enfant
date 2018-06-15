@@ -19,7 +19,7 @@
 
         & img {
             height: 100%;
-            transition: all 5s linear;
+            transition: all 10s linear;
 
             @mixin atSmall {
                 width: 100%;

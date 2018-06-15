@@ -466,6 +466,12 @@ ul {
     height: 5.25rem;
 }
 
+.main-nav--sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
 .main-nav__logo {
         padding: 1.6rem;
     }
@@ -816,7 +822,7 @@ ul {
 
 .large-hero__hero img {
             height: 100%;
-            transition: all 5s linear;
+            transition: all 10s linear;
         }
 
 @media (min-width: 750px) {
@@ -1502,6 +1508,7 @@ ul {
 .enrollment__nav__btn {
             text-transform: uppercase;
             color: #ff4e31;
+            background-color: transparent;
             font-size: 0.8rem;
             font-weight: 300;
             padding: 0.4rem 0.75rem;
@@ -2478,6 +2485,7 @@ ul {
     }
 
 .banner {
+    /* Banner container styles */
     background-color: #002749;
     color: #fff;
     height: 20.5rem;
@@ -2498,6 +2506,8 @@ ul {
         height: 10rem
 }
     }
+
+/* White banner styles */
 
 .banner--white {
         background-color: rgba(0, 0, 0, 0.05);
@@ -2521,12 +2531,14 @@ ul {
                 color: #fff;
             }
 
+/* Banner content wrap */
+
 .banner__content {
-        margin: 0 auto;
+        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        margin: 0 auto;
     }
 
 @media (min-width: 750px) {
@@ -2550,6 +2562,8 @@ ul {
     }
     }
 
+/* Left-pulled section */
+
 .banner__left {
         display: flex;
         flex-direction: column;
@@ -2564,14 +2578,16 @@ ul {
     }
     }
 
+/* Icon wrapper */
+
 .banner__img {
         background-color: #fff;
-        width: 6.8rem;
-        height: 6.8rem;
         border: transparent;
         border-radius: 50%;
         display: inline-block;
+        height: 6.8rem;
         margin: 0 auto;
+        width: 6.8rem;
     }
 
 @media (min-width: 750px) {
@@ -2582,9 +2598,11 @@ ul {
     }
 
 .banner__img img {
-                width: 3.5rem;
-                margin: 25%;
+            margin: 25%;
+            width: 3.5rem;    
         }
+
+/* Text wrapper */
 
 .banner__text {
         float: right;
@@ -2600,11 +2618,11 @@ ul {
     }
 
 .banner__text h3 {
-            text-transform: uppercase;
-            font-weight: 300;
             font-size: 1.4rem;
-            margin-bottom: 0;
+            font-weight: 300;
             letter-spacing: 1.5px;
+            margin-bottom: 0;
+            text-transform: uppercase;
         }
 
 .banner__text p {
@@ -2613,17 +2631,19 @@ ul {
             margin-left: 0;
         }
 
+/* Banner button */
+
 .banner__btn {
+        background-color: transparent;
         border: 2px solid #fff;
         border-radius: 3rem;
-        height: 2.5rem;
-        padding: 0 1.3rem;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1.1px;
-        background-color: transparent;
         color: #fff;
+        font-size: 0.8rem;
         font-weight: 300;
+        height: 2.5rem;
+        letter-spacing: 1.1px;
+        padding: 0 1.3rem;
+        text-transform: uppercase;
         transition: all 0.2s linear;
     }
 
@@ -2660,7 +2680,7 @@ ul {
 
 .flaticon-attr-child {
         position: absolute;
-        top: -7rem;
+        top: -1rem;
         left: -70%;
         background-color: #fff;
         color: #545454;

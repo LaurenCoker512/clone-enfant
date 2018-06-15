@@ -1,44 +1,60 @@
-import jarallax from "jarallax";
+// import jarallax from "jarallax";
 import $ from "jquery";
 import CountUp from "countup.js";
 import Countdown from "countdown-js";
 import waypoints from "../../../node_modules/waypoints/lib/noframework.waypoints";
 
-window.onload = function() {
+window.onload = () => {
   imageZoom();
 }
 
-//Preloader
+window.onscroll = function() {
+    stickyHeader();
+};
 
-document.onreadystatechange = function () {
-    var state = document.readyState;
-    if (state == 'interactive') {
-         document.getElementById('contents').style.visibility = "hidden";
-    } else if (state == 'complete') {
-        setTimeout(function(){
-        //    document.getElementById('interactive');
-           document.getElementById('load').style.opacity = "0";
-           document.getElementById('load__animation').style.opacity = "0";
-           document.getElementById('contents').style.visibility = "visible";
-        }, 2000);
-        setTimeout(function(){
-            document.getElementById('load').style.display = "none";
-           document.getElementById('load__animation').style.display = "none";
-        }, 2500)
+window.onresize = function() {
+    removeStickyHeader();
+};
+
+// Sticky header on scroll
+
+var header = document.querySelector(".main-nav");
+var sticky = 184;
+// var sticky = header.offsetTop;
+var mobileWidth = 750;
+
+console.log("Reached the function!");
+
+function stickyHeader() {
+    if (window.innerWidth >= mobileWidth) {
+        if (window.pageYOffset >= sticky) {
+            header.classList.add("main-nav--sticky");
+        } else if (window.innerWidth <= mobileWidth && header.classList.contains("main-nav--sticky")) {
+            header.classList.remove("main-nav--sticky");
+        }
+        else {
+            header.classList.remove("main-nav--sticky");
+        }
     }
-  }
+}
 
 //Mobile Menu
 
 var menuBtn = document.querySelector(".main-nav__other__menu-icon");
 
-menuBtn.addEventListener("click", function() {
+menuBtn.addEventListener("click", {
     if (menuBtn.classList.contains("main-nav__other__menu-icon--close-x")) {
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
     } else {
         menuBtn.classList.add("main-nav__other__menu-icon--close-x");
     }
 });
+
+function removeStickyHeader() {
+    if (window.innerWidth < mobileWidth) {
+        header.classList.remove("main-nav--sticky");
+    }
+}
 
 //Large Hero Slider
 
@@ -188,6 +204,25 @@ var timer = Countdown.timer(end, function(timeLeft) {
 
 timer();
 
+//Preloader
+
+document.onreadystatechange = () => {
+    var state = document.readyState;
+    if (state == 'interactive') {
+         document.getElementById('contents').style.visibility = "hidden";
+    } else if (state == 'complete') {
+        setTimeout(function(){
+            document.getElementById('load').style.opacity = "0";
+            document.getElementById('load__animation').style.opacity = "0";
+            document.getElementById('contents').style.visibility = "visible";
+        }, 2000);
+        setTimeout(function(){
+            document.getElementById('load').style.display = "none";
+            document.getElementById('load__animation').style.display = "none";
+        }, 2500)
+    }
+  }
+
 //Parallax scrolling
 
 jarallax(document.querySelectorAll('.jarallax'), {
@@ -198,4 +233,6 @@ jarallax(document.querySelectorAll('.jarallax'), {
         return /iPad|iPhone|iPod|Android/.test(navigator.userAgent);
     }
 });
+
+
 

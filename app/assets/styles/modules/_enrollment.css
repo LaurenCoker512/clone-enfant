@@ -9,8 +9,6 @@
             margin: 0 auto 3rem auto;
         }
     }
-
-    
     
     &__steps {
         display: flex;
@@ -108,6 +106,7 @@
         &__btn {
             text-transform: uppercase;
             color: $mainRed;
+            background-color: transparent;
             font-size: 0.8rem;
             font-weight: 300;
             padding: 0.4rem 0.75rem;

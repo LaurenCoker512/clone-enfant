@@ -1,4 +1,5 @@
 .banner {
+    /* Banner container styles */
     background-color: $navyBlue;
     color: #fff;
     height: 20.5rem;
@@ -13,6 +14,7 @@
         height: 10rem;
     }
 
+    /* White banner styles */
     &--white {
         background-color: rgba(0, 0, 0, 0.05);
         color: $navyBlue;
@@ -35,12 +37,13 @@
         }
     }
 
+    /* Banner content wrap */
     &__content {
-        margin: 0 auto;
+        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        margin: 0 auto;
 
         @mixin atSmall {
             flex-direction: row;
@@ -55,6 +58,7 @@
         }
     }
 
+    /* Left-pulled section */
     &__left {
         display: flex;
         flex-direction: column;
@@ -66,25 +70,27 @@
         }
     }
 
+    /* Icon wrapper */
     &__img {
         background-color: #fff;
-        width: 6.8rem;
-        height: 6.8rem;
         border: transparent;
         border-radius: 50%;
         display: inline-block;
+        height: 6.8rem;
         margin: 0 auto;
+        width: 6.8rem;
 
         @mixin atSmall {
             margin: auto;
         }
 
         & img {
-                width: 3.5rem;
-                margin: 25%;
+            margin: 25%;
+            width: 3.5rem;    
         }
     }
 
+    /* Text wrapper */
     &__text {
         float: right;
         line-height: 1.5;
@@ -95,11 +101,11 @@
         }
 
         & h3 {
-            text-transform: uppercase;
-            font-weight: 300;
             font-size: 1.4rem;
-            margin-bottom: 0;
+            font-weight: 300;
             letter-spacing: 1.5px;
+            margin-bottom: 0;
+            text-transform: uppercase;
         }
 
         & p {
@@ -109,17 +115,18 @@
         }
     }
 
+    /* Banner button */
     &__btn {
+        background-color: transparent;
         border: 2px solid #fff;
         border-radius: 3rem;
-        height: 2.5rem;
-        padding: 0 1.3rem;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1.1px;
-        background-color: transparent;
         color: #fff;
+        font-size: 0.8rem;
         font-weight: 300;
+        height: 2.5rem;
+        letter-spacing: 1.1px;
+        padding: 0 1.3rem;
+        text-transform: uppercase;
         transition: all 0.2s linear;
 
         &:hover {
