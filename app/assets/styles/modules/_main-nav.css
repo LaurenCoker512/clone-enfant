@@ -80,6 +80,11 @@
             display: block;
         }
 
+        & .main-nav__main-menu--mobile {
+            display: flex;
+            flex-direction: column;
+        }
+
         &:first-child {
             padding-left: 0;
         }
@@ -228,8 +233,12 @@
 
         &__img {
             display: inline;
-            padding: 0.2rem 1rem;
+            padding: 0.2rem 0.6rem;
             border-left: 0.5px solid rgba(0, 0, 0, 0.2);
+
+            @mixin atSmall {
+                padding: 0.2rem 1rem;
+            }
 
             &--shopping {
                 position: relative;
@@ -315,6 +324,7 @@
         &__menu-icon--close-x {
             &::before {
                 transform: rotate(45deg) scaleX(1);
+                width: 1.9rem;
             }
     
             .main-nav__other__menu-icon__middle {
@@ -324,6 +334,7 @@
     
             &::after {
                 transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
+                width: 1.8rem;
             }
         }
     }
