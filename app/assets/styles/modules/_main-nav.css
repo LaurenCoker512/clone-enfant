@@ -3,7 +3,10 @@
 .main-nav {
     background-color: #fff;
     height: 5.25rem;
-    z-index: 1000;
+
+    @mixin atSmall {
+        z-index: 1000;
+    }
 }
 
 /* Sticky Menu Styles */
@@ -73,8 +76,15 @@
 /* Dropdown Arrows */
 
 .main-nav__arrow {
-    width: 0.6rem;
+    float: right;
     margin-left: 0.4rem;
+    margin-right: 2rem;
+    width: 0.6rem;
+
+    @mixin atSmall {
+        float: none;
+        margin-right: 0;
+    }
 }
 
 .main-nav__arrow--right {
@@ -82,276 +92,292 @@
     margin-top: 0.2rem;
 }
 
+/* Main Menu Styles */
+
+.main-nav__main-menu {
+    display: none;
+
+    @mixin atSmall {
+        display: block;
+    }
+}
+
+/* First Level Menu Items */
+
+.main-nav__main-menu:first-child {
+    padding-left: 0;
+}
+
+.main-nav__main-menu__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    float: left;
+    font-size: 0.9rem;
+    padding: 1rem 1rem 0.8rem 1rem;
+    position: relative;
+
+    @mixin atSmall {
+        border-bottom: none;
+        padding: 1rem 1rem 2.2rem 1rem;
+    }
+}
+
+.main-nav__main-menu__item a {
+    color: $navyBlue;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-nav__main-menu__item:hover > .main-nav__sub-menu {
+    @mixin atSmall {
+        display: block;
+    }
+}
+
+/* Submenu Styles */
+
+.main-nav__sub-menu {
+    background-color: $mainRed;
+    border: 1px solid $mainRed;
+    border-radius: 10px;
+    color: #fff;
+    display: none;
+    margin-top: 0.6rem;
+    padding: 0.8rem;
+    position: absolute;
+    top: 4.25rem;
+    width: 14rem;
+    z-index: 3;  
+}
+
+.main-nav__sub-menu:before {
+    border: 0.7rem solid transparent;
+    border-bottom-color: $mainRed;
+    border-top: 0;
+    content: "";
+    height: 0;
+    left: 15%;
+    margin-left: -0.7rem;
+    margin-top: -0.7rem;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: 4;
+}
+
+.main-nav__sub-menu:after {
+    background-color: transparent;
+    content: "";
+    height: 1rem;
+    left: 0;
+    position: absolute;
+    top: -0.65rem;
+    width: 13rem;
+}
+
+.main-nav__sub-menu__item {
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 0.8rem;
+    transition: all 0.2s linear;
+}
+
+.main-nav__sub-menu__item a {
+    color: #fff;
+    font-weight: 300;
+}
+
+.main-nav__sub-menu__item:hover {
+    cursor: pointer;
+    transform: translateX(0.4rem);
+}
+
+/* Second-Level Submenu Styles */
+
+.main-nav__sub-menu__item:hover > .main-nav__sub-sub-menu {
+
+    @mixin atSmall {
+        display: block;
+    }
+}
+
+.main-nav__sub-sub-menu {
+    background-color: $mainRed;
+    border: 1px solid $mainRed;
+    border-radius: 10px;
+    color: #fff;
+    display: none;
+    left: 12.5rem;
+    margin-left: 1rem;
+    padding: 0.8rem;
+    position: absolute;
+    top: -0.8rem;
+    width: 14rem;
+    z-index: 3; 
+}
+
+.main-nav__sub-sub-menu:before {
+    background-color: transparent;
+    content: "";
+    height: 5rem;
+    left: -1.2rem;
+    position: absolute;
+    top: 0;
+    width: 1.9rem;
+}
+
+.main-nav__sub-sub-menu:after {
+    border: 0.7rem solid transparent;
+    border-left: 0;
+    border-right-color: $mainRed;
+    content: '';
+    height: 0;
+    left: 0;
+    margin-left: -0.7rem;
+    margin-top: -0.7rem;
+    position: absolute;
+    top: 30%;
+    width: 0;
+}
+
+.main-nav__sub-sub-menu__item {
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 0.8rem;
+    transition: all 0.2s linear;
+}
+
+.main-nav__sub-sub-menu__item a {
+    color: #fff;
+    font-weight: 300;
+}
+
+.main-nav__sub-sub-menu__item:hover {
+    cursor: pointer;
+    transform: translateX(0.4rem);
+}
+
+/* Search and Cart Icons */
+
+.main-nav__other {
+    float: right;
+    margin-top: -3rem;
+
+    @mixin atSmall {
+        margin-top: 2rem;
+    }
+}
+
+.main-nav__other__img {
+    border-left: 0.5px solid rgba(0, 0, 0, 0.2);
+    display: inline;
+    padding: 0.2rem 0.6rem;
+
+    @mixin atSmall {
+        padding: 0.2rem 1rem;
+    }
+}
+
+.main-nav__other__img--shopping {
+    position: relative;
+}
+
+.main-nav__other__img img {
+    transition: all 0.2s linear;
+    width: 20px;
+}
+
+.main-nav__other__img img:hover {
+    cursor: pointer;
+    filter:
+        invert(100%)
+        brightness(50%)
+        sepia(1)
+        hue-rotate(-40deg)
+        saturate(1626%)
+        brightness(99.4%)
+}
+
+.main-nav__other__cart-num {
+    background-color: $mainRed;
+    border: 1px solid $mainRed;
+    border-radius: 50%;
+    height: 1rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 1rem; 
+}
+
+/* Menu Icon */
+
+.main-nav__other__menu-icon {
+    border-left: none;
+    cursor: pointer;
+    height: 19px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    width: 1.7rem; 
+
+    @mixin atSmall {
+        display: none;
+    }
+}
+
+.main-nav__other__menu-icon:before {
+    background-color: $mainRed;
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform-origin: 0 0;
+    transition: transform .3s ease-out;
+    width: 1.7rem; 
+}
+
+.main-nav__other__menu-icon__middle {
+    background-color: $mainRed;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    transition: all .3s ease-out;
+    width: 1.7rem;
+}
+
+.main-nav__other__menu-icon:after {
+    background-color: $mainRed;
+    bottom: 6px;
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    transform-origin: 0 100%;
+    transition: transform .3s ease-out;
+    width: 1.7rem;
+}
+
+.main-nav__other__menu-icon--close-x:before {
+    transform: rotate(45deg) scaleX(1);
+    width: 1.9rem;
+}
+
+.main-nav__other__menu-icon--close-x > .main-nav__other__menu-icon__middle {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.main-nav__other__menu-icon--close-x:after {
+    transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
+    width: 1.8rem;
+}
+
 /* Mobile Menu Styles */
 
 .main-nav__nav--mobile > .main-nav__main-menu {
     display: flex;
     flex-direction: column;
-    width: 100vw;
     height: 10rem;
+    width: 100vw;
 }
-
-.main-nav {
-
-    &__main-menu {
-        display: none;
-
-        @mixin atSmall {
-            display: block;
-        }
-
-        &:first-child {
-            padding-left: 0;
-        }
-
-        &__item {
-            float: left;
-            position: relative;
-            font-size: 0.9rem;
-            padding: 1rem 1rem 2.2rem 1rem;
-
-            & a {
-                color: $navyBlue;
-                text-decoration: none;
-                font-weight: 700;
-            }
-        }
-
-        &__item:hover > .main-nav__sub-menu {
-            display: block;
-        }
-    }
-
-    &__sub-menu {
-        display: none;
-        position: absolute;
-        top: 4.25rem;
-        background-color: $mainRed;
-        color: #fff;
-        z-index: 3;
-        padding: 0.8rem;
-        width: 14rem;
-        border: 1px solid $mainRed;
-        border-radius: 10px;
-        margin-top: 0.6rem;
-
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 15%;
-            width: 0;
-            height: 0;
-            border: 0.7rem solid transparent;
-            border-bottom-color: $mainRed;
-            border-top: 0;
-            margin-left: -0.7rem;
-            margin-top: -0.7rem;
-            z-index: 4;
-        }
-
-        &:after {
-            content: "";
-            position: absolute;
-            top: -0.65rem;
-            left: 0;
-            width: 13rem;
-            height: 1rem;
-            background-color: transparent;
-        }
-
-        &__item {
-            padding: 0.8rem;
-            font-size: 0.95rem;
-            font-weight: 300;
-            transition: all 0.2s linear;
-
-            & a {
-                color: #fff;
-                font-weight: 300;
-            }
-
-            &:hover {
-                cursor: pointer;
-                transform: translateX(0.4rem);
-            }
-        }
-
-        &__item:hover > .main-nav__sub-sub-menu {
-            display: block;
-        }
-    }
-
-    &__sub-sub-menu {
-        display: none;
-        position: absolute;
-        top: -0.8rem;
-        left: 12.5rem;
-        background-color: $mainRed;
-        color: #fff;
-        z-index: 3;
-        padding: 0.8rem;
-        width: 14rem;
-        border: 1px solid $mainRed;
-        border-radius: 10px;
-        margin-left: 1rem;
-
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -1.2rem;
-            width: 1.9rem;
-            height: 5rem;
-            background-color: transparent;
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 30%;
-            width: 0;
-            height: 0;
-            border: 0.7rem solid transparent;
-            border-right-color: $mainRed;
-            border-left: 0;
-            margin-top: -0.7rem;
-            margin-left: -0.7rem;
-        }
-
-        &__item {
-            padding: 0.8rem;
-            font-size: 0.95rem;
-            font-weight: 300;
-            transition: all 0.2s linear;
-
-            & a {
-                color: #fff;
-                font-weight: 300;
-            }
-
-            &:hover {
-                cursor: pointer;
-                transform: translateX(0.4rem);
-            }
-        }
-    }
-
-    &__other {
-        float: right;
-        margin-top: -3rem;
-
-        @mixin atSmall {
-            margin-top: 2rem;
-        }
-
-        &__img {
-            display: inline;
-            padding: 0.2rem 0.6rem;
-            border-left: 0.5px solid rgba(0, 0, 0, 0.2);
-
-            @mixin atSmall {
-                padding: 0.2rem 1rem;
-            }
-
-            &--shopping {
-                position: relative;
-            }
-
-            & img {
-                width: 20px;
-                transition: all 0.2s linear;
-
-                &:hover {
-                    cursor: pointer;
-                    filter:
-                        invert(100%)
-                        brightness(50%)
-                        sepia(1)
-                        hue-rotate(-40deg)
-                        saturate(1626%)
-                        brightness(99.4%)
-                }
-            }
-        }
-
-        &__cart-num {
-            width: 1rem;
-            height: 1rem;
-            background-color: $mainRed;
-            border: 1px solid $mainRed;
-            border-radius: 50%;
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-        }
-
-        &__menu-icon {
-            width: 1.7rem;
-            height: 19px;
-            cursor: pointer;
-            position: relative;
-            border-left: none;
-            margin-left: 1rem;
-            margin-right: 1rem;
-    
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 1.7rem;
-                height: 3px;
-                background-color: $mainRed;
-                transform-origin: 0 0;
-                transition: transform .3s ease-out;
-            }
-    
-            &__middle {
-                position: absolute;
-                top: 8px;
-                left: 0;
-                width: 1.7rem;
-                height: 3px;
-                background-color: $mainRed;
-                transition: all .3s ease-out;
-                /* transform-origin: 0 50%; */
-            }
-    
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 6px;
-                left: 0;
-                width: 1.7rem;
-                height: 3px;
-                background-color: $mainRed;
-                transform-origin: 0 100%;
-                transition: transform .3s ease-out;
-            }
-    
-            @mixin atSmall {
-                display: none;
-            }
-        }
-    
-        &__menu-icon--close-x {
-            &::before {
-                transform: rotate(45deg) scaleX(1);
-                width: 1.9rem;
-            }
-    
-            .main-nav__other__menu-icon__middle {
-                opacity: 0;
-                transform: scaleX(0);
-            }
-    
-            &::after {
-                transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
-                width: 1.8rem;
-            }
-        }
-    }
-}
-

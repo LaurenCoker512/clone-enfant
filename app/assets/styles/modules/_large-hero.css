@@ -1,158 +1,171 @@
+/* Large Hero General Styles */
+
 .large-hero {
-    position: relative;
     overflow: hidden;
+    position: relative;
     transition: margin 1s ease;
+    z-index: 10;
 
-    &:hover .large-hero__arrow {
-        opacity: 1;
-    }
-
-    &--mobile-active {
-        margin-top: 30rem;
-    }
-
-    &__hero {
-        height: 25.625rem;
-        position: relative;
+    @mixin atSmall {
         z-index: 0;
+    }
+}
+
+/* Mobile Menu Push-down */
+
+.large-hero--mobile-active {
+    margin-top: 21.3rem;
+}
+
+/* Large Hero Slides */
+
+.large-hero__hero {
+    height: 25.625rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+
+    @mixin atSmall {
+        height: auto;
+        max-height: 37.5rem;
+    }
+
+    @mixin atLarger {
         overflow: hidden;
+    }
+}
 
-        @mixin atSmall {
-            height: auto;
-            max-height: 37.5rem;
-        }
+.large-hero__hero img {
+    height: 100%;
+    transition: all 10s linear;
 
-        & img {
-            height: 100%;
-            transition: all 10s linear;
+    @mixin atSmall {
+        height: auto;
+        width: 100%;
+    }
+}
 
-            @mixin atSmall {
-                width: 100%;
-                height: auto;
-            }
-        }
+/* Text Area */
 
-        @mixin atLarger {
-            overflow: hidden;
-        }
+.large-hero__text {
+    bottom: 10%;
+    color: #fff;
+    left: 0;
+    padding-left: 1rem;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    top: 0;
+    transform: translateY(20%);
+    width: 35rem;
+
+    @mixin atXSmall {
+        padding-left: 2rem;
     }
 
-    &__text {
-        width: 35rem;
-        padding-left: 1rem;
-        position: absolute;
-        top: 0;
-        bottom: 10%;
-        left: 0;
-        right: 0;
-        transform: translateY(20%);
-        color: #fff;
-        text-transform: uppercase;
+    @mixin atLarge {
+        width: 69rem;
+        margin: 0 auto;
+    }
+}
 
-        @mixin atXSmall {
-            padding-left: 2rem;
-        }
+.large-hero__title-small {
+    font-size: 1.2rem;
+    font-weight: 100;
 
-        @mixin atLarge {
-            width: 69rem;
-            margin: 0 auto;
-        }
+    @mixin atXSmall {
+        font-size: 1.5rem;
     }
 
-    &__title-small {
-        font-weight: 100;
-        font-size: 1.2rem;
-
-        @mixin atXSmall {
-            font-size: 1.5rem;
-        }
-
-        @mixin atSmall {
-            font-size: 1.7rem;
-        }
-
-        @mixin atLarge {
-            font-size: 2rem;
-        }
-
-        @mixin atLarger {
-            font-size: 2.2rem;
-        }
+    @mixin atSmall {
+        font-size: 1.7rem;
     }
 
-    &__title-large {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 400;
-        font-size: 1.4rem;
-        letter-spacing: 1.5px;
-        line-height: 1.5;
-
-        @mixin atXSmall {
-            font-size: 1.8rem;
-        }
-
-        @mixin atSmall {
-            font-size: 2rem;
-        }
-
-        @mixin atLarge {
-            font-size: 2.3rem;
-        }
-
-        @mixin atLarger {
-            font-size: 2.5rem;
-        }
+    @mixin atLarge {
+        font-size: 2rem;
     }
 
-    &__btn {
-        background-color: $mainRed;
-        border: 2px solid transparent;
-        border-radius: 3rem;
-        padding: 0.8rem 1.5rem;
-        color: #fff;
-        font-weight: 300;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1.1px;
-        transition: all 0.2s linear;
-        display: none;
+    @mixin atLarger {
+        font-size: 2.2rem;
+    }
+}
 
-        &:hover {
-            background-color: transparent;
-            border: 2px solid #fff;
-            cursor: pointer;
-        }
+.large-hero__title-large {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
 
-        @mixin atSmall {
-            display: block;
-        }
+    @mixin atXSmall {
+        font-size: 1.8rem;
     }
 
-    &__arrow {
-        position: absolute;
-        top: 67%;
-        border: solid #fff;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 0.7rem;
-        z-index: 100;
-        opacity: 0;
-        transition: all 0.2s linear;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &--left {
-            transform: rotate(135deg);
-            left: 2rem;
-        }
-
-        &--right {
-            transform: rotate(-45deg);
-            right: 2rem;
-        }
+    @mixin atSmall {
+        font-size: 2rem;
     }
+
+    @mixin atLarge {
+        font-size: 2.3rem;
+    }
+
+    @mixin atLarger {
+        font-size: 2.5rem;
+    }
+}
+
+.large-hero__btn {
+    background-color: $mainRed;
+    border: 2px solid transparent;
+    border-radius: 3rem;
+    color: #fff;
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    padding: 0.8rem 1.5rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+
+    @mixin atSmall {
+        display: block;
+    }
+}
+
+.large-hero__btn:hover {
+    background-color: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.large-hero__arrow {
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    opacity: 0;
+    padding: 0.7rem;
+    position: absolute;
+    top: 67%;
+    transition: all 0.2s linear;
+    z-index: 100; 
+}
+
+.large-hero__arrow--left {
+    left: 2rem;
+    transform: rotate(135deg);   
+}
+
+.large-hero__arrow--right {
+    right: 2rem;
+    transform: rotate(-45deg);
+}
+
+.large-hero:hover.large-hero__arrow {
+    opacity: 1;
+}
+
+.large-hero__arrow:hover {
+    cursor: pointer;
 }
 
 .image-zoom--active {
