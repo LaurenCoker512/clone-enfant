@@ -67,15 +67,18 @@ function removeStickyHeader() {
 //Mobile Menu
 
 var menuBtn = document.getElementById("main-nav__other__menu-icon");
-var mobileMenu = document.querySelector("main-nav__main-menu");
+var mobileNav = document.getElementById("main-nav__nav");
+var largeHero = document.getElementById("large-hero");
 
 menuBtn.addEventListener("click", () => {
     if (menuBtn.classList.contains("main-nav__other__menu-icon--close-x")) {
-        mobileMenu.classList.remove("main-nav__main-menu--mobile");
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
+        mobileNav.classList.remove("main-nav__nav--mobile");
+        largeHero.classList.remove("large-hero--mobile-active");
     } else {
         menuBtn.classList.add("main-nav__other__menu-icon--close-x");
-        mobileMenu.classList.add("main-nav__main-menu--mobile");
+        mobileNav.classList.add("main-nav__nav--mobile");
+        largeHero.classList.add("large-hero--mobile-active");
     }
 });
 

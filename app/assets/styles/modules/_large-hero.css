@@ -1,9 +1,14 @@
 .large-hero {
     position: relative;
     overflow: hidden;
+    transition: margin 1s ease;
 
     &:hover .large-hero__arrow {
         opacity: 1;
+    }
+
+    &--mobile-active {
+        margin-top: 30rem;
     }
 
     &__hero {

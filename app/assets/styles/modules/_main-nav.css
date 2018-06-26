@@ -1,88 +1,103 @@
+/* Main Navigation Styles */
+
 .main-nav {
-    height: 5.25rem;
     background-color: #fff;
+    height: 5.25rem;
     z-index: 1000;
+}
 
-    &--sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 3.9rem;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+/* Sticky Menu Styles */
+
+.main-nav--sticky {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    display: none;
+    height: 3.9rem;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
+
+.main-nav--sticky.main-nav__logo {
+    display: inline-block;
+    padding: 1rem;
+}
+
+.main-nav--sticky.main-nav__logo img {
+    width: 7.5rem;
+}
+
+.main-nav--sticky.main-nav__other {
+    display: none;
+}
+
+.main-nav--sticky.main-nav__nav {
+    float: right;
+    margin-top: -0.5rem;
+}
+
+.main-nav--sticky.main-nav__sub-menu {
+    top: 3.5rem;
+}
+
+/* Logo Styles */
+
+.main-nav__logo {
+    padding: 1.6rem;
+
+    @mixin atSmall {
         display: none;
     }
+}
 
-    &--sticky .main-nav__logo {
-        display: inline-block;
-        padding: 1rem;
+.main-nav__logo img {
+    width: 8rem;
+}
 
-        & img {
-            width: 7.5rem;
-        }
+/* Content of Main Nav */
+
+.main-nav__content {
+    margin: 0 auto;
+    padding: 0 0.5rem;
+
+    @mixin atLarger {
+        width: 66rem;
     }
+}
 
-    &--sticky .main-nav__other {
-        display: none;
-    }
+/* Navigation Elements of Nav */
 
-    &--sticky .main-nav__nav {
-        float: right;
-        margin-top: -0.5rem;
-    }
+.main-nav__nav {
+    float: left;
+}
 
-    &--sticky .main-nav__sub-menu {
-        top: 3.5rem;
-    }
+/* Dropdown Arrows */
 
-    &__logo {
-        padding: 1.6rem;
+.main-nav__arrow {
+    width: 0.6rem;
+    margin-left: 0.4rem;
+}
 
-        @mixin atSmall {
-            display: none;
-        }
+.main-nav__arrow--right {
+    float: right;
+    margin-top: 0.2rem;
+}
 
-        & img {
-            width: 8rem;
-        }
-    }
+/* Mobile Menu Styles */
 
-    &__content {
-        margin: 0 auto;
-        padding: 0 0.5rem;
+.main-nav__nav--mobile > .main-nav__main-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 10rem;
+}
 
-        @mixin atSmall {
-            
-        }
-        
-        @mixin atLarger {
-            width: 66rem;
-        }
-    }
-
-    &__nav {
-        float: left;
-    }
-
-    &__arrow {
-        width: 0.6rem;
-        margin-left: 0.4rem;
-
-        &--right {
-            float: right;
-            margin-top: 0.2rem;
-        }
-    }
+.main-nav {
 
     &__main-menu {
         display: none;
 
         @mixin atSmall {
             display: block;
-        }
-
-        & .main-nav__main-menu--mobile {
-            display: flex;
-            flex-direction: column;
         }
 
         &:first-child {
