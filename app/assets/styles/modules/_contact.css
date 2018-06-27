@@ -1,3 +1,5 @@
+/* General Contact Form Styles */
+
 .contact {
     background-color: rgba(0, 0, 0, 0.05);
     color: $navyBlue;
@@ -7,94 +9,98 @@
     @mixin atMedium {
         height: 10rem;
     }
+}
 
-    &__content {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+/* Content Wrap */
 
-        @mixin atMedium {
-            width: 46rem;
-            flex-direction: row;
-            justify-content: space-between;
-        }
+.contact__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 
-        @mixin atLarge {
-            width: 61rem;
-        }
-
-        @mixin atXLarge {
-            width: 66rem;
-        }
+    @mixin atMedium {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 46rem;
     }
 
-    &__img {
-        background-color: #fff;
-        width: 6.8rem;
-        height: 6.8rem;
-        border: transparent;
-        border-radius: 50%;
-        display: inline-block;
-
-        & img {
-                width: 3.5rem;
-                margin: 25%;
-        }
+    @mixin atLarge {
+        width: 61rem;
     }
 
-    &__form {
-        text-align: center;
-        width: 38rem;
-        display: flex;
-        flex-direction: column;
+    @mixin atXLarge {
+        width: 66rem;
+    }
+}
 
-        & h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            margin-top: 0.5rem;
-        }
+/* Icon Styles */
 
-        & input {
-            padding: 0.8rem 7rem 0.8rem 1.5rem;
-            border: 1px solid transparent;
-            border-radius: 3rem;
-            font-size: 0.9rem;
-            flex-grow: 2;
-            width: 60%;
+.contact__img {
+    background-color: #fff;
+    border: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    height: 6.8rem;
+    width: 6.8rem;
+}
 
-            @mixin atXSmall {
-                width: 75%;
-            }
+.contact__img img {
+    margin: 25%;
+    width: 3.5rem;
+}
 
-            @mixin atSmall {
-                width: 37rem;
-            }
-        }
+/* Form Element Styles */
 
-        & button {
-            margin-left: -7rem;
-            border: 2px solid $mainRed;
-            border-radius: 3rem;
-            height: 2.5rem;
-            padding: 0 1.3rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.1px;
-            background-color: $mainRed;
-            color: #fff;
-            font-weight: 300;
-            transition: all 0.2s linear;
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 38rem;
+}
 
-            &:hover {
-                background-color: transparent;
-                border: 2px solid $mainRed;
-                cursor: pointer;
-                color: $mainRed;
-            }
-        }
+.contact__form h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.contact__form input {
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    flex-grow: 2;
+    font-size: 0.9rem;
+    padding: 0.8rem 7rem 0.8rem 1.5rem;
+    width: 60%;
+
+    @mixin atXSmall {
+        width: 75%;
     }
 
-    
+    @mixin atSmall {
+        width: 37rem;
+    }
+}
+
+.contact__form button {
+    background-color: $mainRed;
+    border: 2px solid $mainRed;
+    border-radius: 3rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 300;
+    height: 2.5rem;
+    letter-spacing: 1.1px;
+    margin-left: -7rem;
+    padding: 0 1.3rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+}
+
+.content__form button:hover {
+    background-color: transparent;
+    border: 2px solid $mainRed;
+    color: $mainRed;
+    cursor: pointer;
 }

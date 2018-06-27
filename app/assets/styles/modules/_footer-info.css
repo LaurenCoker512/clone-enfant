@@ -1,3 +1,5 @@
+/* General Footer Styles */
+
 .footer-info {
     background-color: $navyBlue;
     color: #fff;
@@ -14,106 +16,112 @@
     @mixin atML {
         height: 30.625rem;
     }
-    
+}
 
-    &__content {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+/* Content Wrap */
 
-        @mixin atSmall {
-            flex-direction: row;
-        }
+.footer-info__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 
-        @mixin atLarger {
-            width: 66rem;
-        }
+    @mixin atSmall {
+        flex-direction: row;
     }
 
-    &__section {
-        padding: 1.5rem;
-
-        @mixin atSmall {
-            width: 33%;
-        }
-
-        & h3 {
-            text-transform: uppercase;
-            font-weight: 300;
-            font-family: "Montserrat", sans-serif;
-        }
-
-        & p {
-            font-weight: 300;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        &__logo {
-            width: 9rem;
-        }
-
-        & ul {
-            line-height: 1.9;
-            font-weight: 300;
-            list-style-image: url("../../assets/images/tick-inside-circle-white.png");
-            margin-left: -1rem;
-        }
-
-        &__border {
-            width: 2.5rem;
-            height: 2px;
-            background-color: $mainRed;
-            margin-bottom: 2.5rem;
-        }
-
-        &__item {
-            display: flex;
-            margin-bottom: 1rem;
-
-            &__img {
-                width: 5rem;
-                height: 5rem;
-                overflow: hidden;
-                margin-right: 1.5rem;
-
-                & img {
-                    width: 7rem;
-                }
-
-            }
-
-            & h4 {
-                margin-top: 0.5rem;
-                font-weight: 300;
-                margin-bottom: 0.5rem;
-            }
-
-            & h5 {
-                text-transform: uppercase;
-                font-size: 0.7rem;
-                font-weight: 300;
-                margin-top: 0;
-            }
-
-            &__text {
-
-                @mixin atSmall {
-                    width: 8rem;
-                }
-
-                @mixin atML {
-                    width: 12rem;
-                }
-
-                &__date {
-                    font-size: 1.5rem;
-                    color: $mainRed;
-                    font-weight: 400;
-                }
-            }
-
-            
-        }
+    @mixin atLarger {
+        width: 66rem;
     }
 }
+
+/* Section Styles */
+
+.footer-info__section {
+    padding: 1.5rem;
+
+    @mixin atSmall {
+        width: 33%;
+    }
+}
+
+.footer-info__section__logo {
+    width: 9rem;
+}
+
+.footer-info__section__border {
+    background-color: $mainRed;
+    height: 2px;
+    margin-bottom: 2.5rem;
+    width: 2.5rem;
+}
+
+/* Section Text Styles */
+
+.footer-info__section h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.footer-info__section p {
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.footer-info__section ul {
+    font-weight: 300;
+    line-height: 1.9;
+    margin-left: -1rem;
+    list-style-image: url("../../assets/images/tick-inside-circle-white.png");
+}
+
+/* Item Styles */
+
+.footer-info__section__item {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.footer-info__section__item h4 {
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.footer-info__section__item h5 {
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.footer-info__section__item__img {
+    height: 5rem;
+    margin-right: 1.5rem;
+    overflow: hidden;
+    width: 5rem;
+}
+
+.footer-info__section__item__img img {
+    width: 7rem;
+}
+
+/* Item Text Styles */
+
+.footer-info__section__item__text {
+    @mixin atSmall {
+        width: 8rem;
+    }
+
+    @mixin atML {
+        width: 12rem;
+    }
+}
+
+.footer-info__section__item__text__date {
+    color: $mainRed;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+

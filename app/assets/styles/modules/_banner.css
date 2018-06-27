@@ -1,5 +1,6 @@
+/* Banner container styles */
+
 .banner {
-    /* Banner container styles */
     background-color: $navyBlue;
     color: #fff;
     height: 20.5rem;
@@ -13,134 +14,140 @@
     @mixin atSmall {
         height: 10rem;
     }
+}
 
-    /* White banner styles */
-    &--white {
-        background-color: rgba(0, 0, 0, 0.05);
-        color: $navyBlue;
+/* Banner content wrap */
 
-        & .banner__text h3 {
-            font-weight: 400;
-        }
+.banner__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
 
-        & .banner__text p {
-            font-weight: 400;
-        }
-
-        & .banner__btn {
-            border: 2px solid $mainRed;
-            color: $mainRed;
-
-            &:hover {
-                color: #fff;
-            }
-        }
+    @mixin atSmall {
+        flex-direction: row;
+    }
+    
+    @mixin atLarge {
+        width: 61rem;
     }
 
-    /* Banner content wrap */
-    &__content {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 0 auto;
+    @mixin atXLarge {
+        width: 66rem;
+    }
+}
 
-        @mixin atSmall {
-            flex-direction: row;
-        }
-        
-        @mixin atLarge {
-            width: 61rem;
-        }
+/* Left-pulled section */
 
-        @mixin atXLarge {
-            width: 66rem;
-        }
+.banner__left {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @mixin atSmall {
+        text-align: left;
+        display: block;
+    }
+}
+
+/* Icon wrapper */
+
+.banner__img {
+    background-color: #fff;
+    border: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    height: 6.8rem;
+    margin: 0 auto;
+    width: 6.8rem;
+
+    @mixin atSmall {
+        margin: auto;
+    }
+}
+
+.banner__img img {
+    margin: 25%;
+    width: 3.5rem; 
+}
+
+/* Text wrapper */
+
+.banner__text {
+    float: right;
+    line-height: 1.5;
+
+    @mixin atSmall {
+        margin-left: 2rem;
+        max-width: 23rem;
+    }
+}
+
+.banner__text h3 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.banner__text p {
+    font-weight: 300;
+    margin-top: 0.5rem;
+    margin-left: 0;
+}
+
+/* Banner button */
+
+.banner__btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 3rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 300;
+    height: 2.5rem;
+    letter-spacing: 1.1px;
+    padding: 0 1.3rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+
+    @mixin atSmall {
+        margin-right: 2rem;
     }
 
-    /* Left-pulled section */
-    &__left {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-
-        @mixin atSmall {
-            text-align: left;
-            display: block;
-        }
+    @mixin atLarge {
+        font-size: 0.9rem;
     }
+}
 
-    /* Icon wrapper */
-    &__img {
-        background-color: #fff;
-        border: transparent;
-        border-radius: 50%;
-        display: inline-block;
-        height: 6.8rem;
-        margin: 0 auto;
-        width: 6.8rem;
+.banner__btn:hover {
+    background-color: $mainRed;
+    border: 2px solid $mainRed;
+    cursor: pointer;
+}
 
-        @mixin atSmall {
-            margin: auto;
-        }
+/* White banner styles */
 
-        & img {
-            margin: 25%;
-            width: 3.5rem;    
-        }
-    }
+.banner--white {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: $navyBlue;
+}
 
-    /* Text wrapper */
-    &__text {
-        float: right;
-        line-height: 1.5;
+.banner--white .banner__text h3 {
+    font-weight: 400;
+}
 
-        @mixin atSmall {
-            margin-left: 2rem;
-            max-width: 23rem;
-        }
+.banner--white .banner__text p {
+    font-weight: 400;
+}
 
-        & h3 {
-            font-size: 1.4rem;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            margin-bottom: 0;
-            text-transform: uppercase;
-        }
+.banner--white .banner__btn {
+    border: 2px solid $mainRed;
+    color: $mainRed;
+}
 
-        & p {
-            font-weight: 300;
-            margin-top: 0.5rem;
-            margin-left: 0;
-        }
-    }
-
-    /* Banner button */
-    &__btn {
-        background-color: transparent;
-        border: 2px solid #fff;
-        border-radius: 3rem;
-        color: #fff;
-        font-size: 0.8rem;
-        font-weight: 300;
-        height: 2.5rem;
-        letter-spacing: 1.1px;
-        padding: 0 1.3rem;
-        text-transform: uppercase;
-        transition: all 0.2s linear;
-
-        &:hover {
-            background-color: $mainRed;
-            border: 2px solid $mainRed;
-            cursor: pointer;
-        }
-
-        @mixin atSmall {
-            margin-right: 2rem;
-        }
-
-        @mixin atLarge {
-            font-size: 0.9rem;
-        }
-    }
+.banner--white .banner__btn:hover {
+    color: #fff;
 }

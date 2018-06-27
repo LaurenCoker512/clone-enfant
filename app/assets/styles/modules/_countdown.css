@@ -1,74 +1,75 @@
-.countdown {
-    
-    &__background {
-        height: 16.75rem;
-        padding: 4.5rem 0;
+/* Countdown Background */
 
-        @mixin atSmall {
-            padding: 4rem 0;
-        }
+.countdown__background {
+    height: 16.75rem;
+    padding: 4.5rem 0;
+
+    @mixin atSmall {
+        padding: 4rem 0;
+    }
+}
+
+/* Content Wrap */
+
+.countdown__content {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+
+    @mixin atLarger {
+        width: 66rem;
+    }
+}
+
+.countdown__content__section {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 25%;
+}
+
+.countdown__content__section__number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+
+    @mixin atXSmall {
+        font-size: 3rem;
     }
 
-    &__content {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        padding: 0 1rem;
+    @mixin atSmall {
+        font-size: 3.5rem;
+    }
+}
 
-        @mixin atLarger {
-            width: 66rem;
-        }
+.countdown__content__section__number--seconds {
+    font-size: 3.2rem;
 
-        &__section {
-            width: 25%;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
+    @mixin atXSmall {
+        font-size: 4rem;
+    }
 
-            &__number {
-                font-family: "Montserrat", sans-serif;
-                font-size: 2.5rem;
+    @mixin atSmall {
+        font-size: 4.7rem;
+    }
+}
 
-                @mixin atXSmall {
-                    font-size: 3rem;
-                }
+.countdown__content__section__time {
+    font-size: 1.1rem;
+    font-weight: 300;
 
-                @mixin atSmall {
-                    font-size: 3.5rem;
-                }
+    @mixin atSmall {
+        font-size: 1.2rem;
+    }
+}
 
-                &--seconds {
-                    font-size: 3.2rem;
+.countdown__content__section__time--seconds {
+    margin-top: 0.7rem;
 
-                    @mixin atXSmall {
-                        font-size: 4rem;
-                    }
-
-                    @mixin atSmall {
-                        font-size: 4.7rem;
-                    }
-                }
-            }
-
-            &__time {
-                font-size: 1.1rem;
-                font-weight: 300;
-
-                @mixin atSmall {
-                    font-size: 1.2rem;
-                }
-
-                &--seconds {
-                    margin-top: 0.7rem;
-
-                    @mixin atXSmall {
-                        margin-top: 0.5rem;
-                    }
-                }
-            }
-        }
+    @mixin atXSmall {
+        margin-top: 0.5rem;
     }
 }

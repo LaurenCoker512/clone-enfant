@@ -3,6 +3,7 @@
 .main-nav {
     background-color: #fff;
     height: 5.25rem;
+    /* z-index: 10; */
 
     @mixin atSmall {
         z-index: 1000;
@@ -20,25 +21,25 @@
     width: 100%; 
 }
 
-.main-nav--sticky.main-nav__logo {
+.main-nav--sticky .main-nav__logo {
     display: inline-block;
     padding: 1rem;
 }
 
-.main-nav--sticky.main-nav__logo img {
+.main-nav--sticky .main-nav__logo img {
     width: 7.5rem;
 }
 
-.main-nav--sticky.main-nav__other {
+.main-nav--sticky .main-nav__other {
     display: none;
 }
 
-.main-nav--sticky.main-nav__nav {
+.main-nav--sticky .main-nav__nav {
     float: right;
     margin-top: -0.5rem;
 }
 
-.main-nav--sticky.main-nav__sub-menu {
+.main-nav--sticky .main-nav__sub-menu {
     top: 3.5rem;
 }
 

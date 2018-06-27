@@ -1,7 +1,9 @@
+/* Current Count General Styles */
+
 .current-count {
     height: 51.5rem;
-    padding-top: 5rem;
     margin-top: 4.5rem;
+    padding-top: 5rem;
 
     @mixin atSmall {
         height: 28.25rem;
@@ -15,97 +17,100 @@
     @mixin atLarge {
         height: 16.625rem;
     }
+}
+
+/* Content Wrap */
+
+.current-count__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    justify-content: space-between;
+
+    @mixin atSmall {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        margin: 0 auto;
+        width: 45rem;
+    }
+
+    @mixin atML {
+        flex-wrap: nowrap;
+        width: 57rem;
+    }
+
+    @mixin atXLarge {
+        width: 66rem;
+    }
+}
+
+/* Section Styles */
+
+.current-count__section {
+    align-items: flex-start;
+    color: #fff;
+    display: flex;
+    width: 15rem;
     
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 40rem;
-
-        @mixin atSmall {
-            flex-direction: row;
-            height: auto;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            width: 45rem;
-        }
-
-        @mixin atML {
-            flex-wrap: nowrap;
-            width: 57rem;
-        }
-
-        @mixin atXLarge {
-            width: 66rem;
-        }
+    @mixin atSmall {
+        align-items: stretch;
+        justify-content: center;
+        width: 50%;
     }
 
-    &__section {
-        color: #fff;
-        display: flex;
-        align-items: flex-start;
-        width: 15rem;
-        
-        @mixin atSmall {
-            width: 50%;
-            align-items: stretch;
-            justify-content: center;
-        }
-
-        @mixin atML {
-            width: 25%;
-            margin: auto;
-        }
-
-        &--top {
-
-            @mixin atSmall {
-                margin-bottom: 2.5rem;
-            }
-
-            @mixin atML {
-                margin-bottom: 0;
-            }
-            
-        }
-
-        &--bottom {
-
-            @mixin atSmall {
-                margin-top: 2.5rem;
-            }
-
-            @mixin atML {
-                margin-top: 0;
-            }
-        }
-
-        &__img {
-            width: 3.5rem;
-            margin-right: 1.5rem;
-            padding-top: 0.5rem;
-
-            & img {
-                width: 100%;
-            }
-        }
-
-        &__number {
-            font-family: "Montserrat", sans-serif;
-            font-weight: 300;
-            font-size: 3.7rem;
-        }
-
-        &__text {
-            font-size: 1.1rem;
-            font-weight: 300;
-
-            & p {
-                margin-top: 0.5rem;
-            }
-        }
-
-        
+    @mixin atML {
+        margin: auto;
+        width: 25%;
     }
+}
+
+.current-count__section--top {
+    @mixin atSmall {
+        margin-bottom: 2.5rem;
+    }
+
+    @mixin atML {
+        margin-bottom: 0;
+    }
+}
+
+.current-count__section--bottom {
+    @mixin atSmall {
+        margin-top: 2.5rem;
+    }
+
+    @mixin atML {
+        margin-top: 0;
+    }
+}
+
+/* Icons */
+
+.current-count__section__img {
+    margin-right: 1.5rem;
+    padding-top: 0.5rem;
+    width: 3.5rem;
+}
+
+.current-count__section__img img {
+    width: 100%;
+}
+
+/* Numbers and Text */
+
+.current-count__section__number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.7rem;
+    font-weight: 300;
+}
+
+.current-count__section__text {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.current-count__section__text p {
+    margin-top: 0.5rem;
 }

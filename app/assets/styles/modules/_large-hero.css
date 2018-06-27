@@ -1,13 +1,13 @@
 /* Large Hero General Styles */
 
 .large-hero {
-    overflow: hidden;
     position: relative;
     transition: margin 1s ease;
-    z-index: 10;
+    /* z-index: 10; */
 
     @mixin atSmall {
-        z-index: 0;
+        overflow: hidden;
+        /* z-index: 0; */
     }
 }
 
@@ -160,7 +160,7 @@
     transform: rotate(-45deg);
 }
 
-.large-hero:hover.large-hero__arrow {
+.large-hero:hover .large-hero__arrow {
     opacity: 1;
 }
 

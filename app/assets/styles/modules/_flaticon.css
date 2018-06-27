@@ -1,40 +1,41 @@
-.flaticon {
+/* Flaticon Parent Styles */
 
-    &-attr-parent {
-        position: relative;
+.flaticon-attr-parent {
+    position: relative;
+}
 
-        &:hover .flaticon-attr-child {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+/* Flaticon Child Styles */
 
-    &-attr-child {
-        position: absolute;
-        top: -1rem;
-        left: -70%;
-        background-color: #fff;
-        color: $darkGray;
-        border: 2px solid $mainRed;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        width: 8rem;
-        transition: all 0.2s linear;
-        opacity: 0;
-        transform: translateY(20%);
-        font-size: 0.7rem;
-        visibility: none;
+.flaticon-attr-parent:hover .flaticon-attr-child {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
 
-        &--banner {
-            left: 0;
-        }
+.flaticon-attr-child {
+    background-color: #fff;
+    border: 2px solid $mainRed;
+    border-radius: 0.5rem;
+    color: $darkGray;
+    font-size: 0.7rem;
+    left: -70%;
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+    transform: translateY(20%);
+    transition: all 0.2s linear;
+    top: -1rem;
+    visibility: none;
+    width: 8rem;
+}
 
-        &--header {
-            top: -1rem;
-            left: -11rem;
-            width: 10rem;
-            z-index: 2;
-        }
-    }
+.flaticon-attr-child--banner {
+    left: 0;
+}
+
+.flaticon-attr-child--header {
+    left: -11rem;
+    top: -1rem;
+    width: 10rem;
+    z-index: 2;
 }
