@@ -1,90 +1,98 @@
+/* General Header Styles */
+
 .header {
     background-color: $navyBlue;
     color: #fff;
-    height: 6.25rem;
-    padding: 1.7rem 1.7rem;
-    overflow: hidden;
     display: none;
+    height: 6.25rem;
+    overflow: hidden;
+    padding: 1.7rem 1.7rem;
 
     @mixin atSmall {
         display: block;
     }
+}
 
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
+/* Content Wrap */
 
-        @mixin atLarger {
-            width: 66rem;
-        }
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 
+    @mixin atLarger {
+        width: 66rem;
     }
+}
 
-    &__logo {
-        & > img {
-            width: 10rem;
-            margin-top: 0.4rem;
-        }
-    } 
+/* Logo Styles */
 
-    &__title {
+.header__logo > img {
+    margin-top: 0.4rem;
+    width: 10rem;
+}
+
+/* Title Styles */
+
+.header__title {
+    color: $mainRed;
+    font-size: 0.85rem;
+    font-weight: 300;
+
+    @mixin atML {
+        font-size: 0.9rem;
+    }
+}
+
+.header__title__info {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-left: 0.3rem;
+
+    @mixin atML {
         font-size: 0.85rem;
-        font-weight: 300;
-        color: $mainRed;
-
-        @mixin atML {
-            font-size: 0.9rem;
-        }
-
-        &__info {
-            margin-left: 0.3rem;
-            font-size: 0.8rem;
-            font-weight: 300;
-
-            @mixin atML {
-                font-size: 0.85rem;
-            }
-        }
     }
+}
 
-    &__info {
-        font-size: 0.8rem;
-        font-weight: 300;
-        margin-top: 0.3rem;
-        margin-bottom: 0.3rem;
+/* Info Styles */
 
-        @mixin atML {
-            font-size: 0.85rem;
-        }
+.header__info {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+
+    @mixin atML {
+        font-size: 0.85rem;
     }
+}
 
-    &--right {
+/* Right Section Styles */
 
-        &__section {
-            float: right;
-            margin-left: 2.3rem;
+.header--right__section {
+    float: right;
+    margin-left: 2.3rem;
+}
 
-            & img {
-                width: 2.5rem;
-                margin-right: 0.5rem;
+.header--right__section img {
+    margin-right: 0.5rem;
+    width: 2.5rem;
 
-                @mixin atML {
-                    width: 3rem;
-                    margin-right: 1rem;
-                }
-            }
+    @mixin atML {
+        margin-right: 1rem;
+        width: 3rem;
+    }
+}
 
-            &__text {
-                padding-left: 1rem;
-                margin-top: 0.3rem;
-                border-left: 1px solid rgba(255, 255, 255, 0.15);
-                float: right;
+/* Text Styles */
 
-                @mixin atML {
-                    padding-left: 1.5rem;
-                }
-            }
-        }
+.header--right__section__text {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    float: right;
+    margin-top: 0.3rem;
+    padding-left: 1rem;
+
+    @mixin atML {
+        padding-left: 1.5rem;
     }
 }

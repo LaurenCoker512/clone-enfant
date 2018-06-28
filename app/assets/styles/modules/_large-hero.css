@@ -114,6 +114,8 @@
     }
 }
 
+/* Button Styles */
+
 .large-hero__btn {
     background-color: $mainRed;
     border: 2px solid transparent;
@@ -137,6 +139,8 @@
     border: 2px solid #fff;
     cursor: pointer;
 }
+
+/* Arrow Styles */
 
 .large-hero__arrow {
     border: solid #fff;

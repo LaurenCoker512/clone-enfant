@@ -1,161 +1,167 @@
+/* General Services Styles */
+
 .services {
-    padding: 0 1rem;
-    margin-bottom: 4rem;
     color: $darkGray;
-    
-    &__content {
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
 
-        @mixin atSmall {
-            flex-direction: row;
-        }
+.services__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 2rem;
 
-        @mixin atLarger {
-            width: 66rem;
-        }
+    @mixin atSmall {
+        flex-direction: row;
     }
 
-    &__overview {
-        width: 20rem;
-        margin: 0 auto;
+    @mixin atLarger {
+        width: 66rem;
+    }
+}
 
-        @mixin atXSmall {
-            width: 28rem;
-        }
+/* Services Overview Styles */
 
-        @mixin atSmall {
-            width: 33%;
-            margin: auto;
-            padding-left: 1rem;
-        }
+.services__overview {
+    margin: 0 auto;
+    width: 20rem;
 
-        & h3 {
-            text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 1.3px;
-            font-size: 1.5rem;
-            margin-bottom: 0.7rem;
-            text-align: center;
-
-            @mixin atSmall {
-                text-align: left;
-            }
-        }
-
-        & h4 {
-            text-transform: uppercase;
-            font-weight: 100;
-            font-size: 1.2rem;
-            margin-top: 0;
-            text-align: center;
-
-            @mixin atSmall {
-                text-align: left;
-            }
-        }
-
-        & p {
-            font-weight: 300;
-            line-height: 1.5;
-        }
-
-        & button {
-            padding: 0.7rem 1.3rem;
-            border-radius: 3rem;
-            text-transform: uppercase;
-            color: $mainRed;
-            background-color: transparent;
-            border: 2px solid $mainRed;
-            font-weight: 300;
-            font-size: 0.9rem;
-            display: block;
-            margin: 0 auto 2rem auto;
-            transition: all 0.2s linear;
-
-            @mixin atSmall {
-                margin: 0;
-            }
-
-            &:hover {
-                background-color: $mainRed;
-                color: #fff;
-                cursor: pointer;
-            }
-        }
-
-        & ul {
-            list-style-image: url("../../assets/images/tick-inside-circle-red.png");
-            margin: 2rem 0;
-            margin-left: -1rem;
-        }
-
-        & li {
-            font-weight: 300;
-            line-height: 2;
-        }
+    @mixin atXSmall {
+        width: 28rem;
     }
 
-    &__options {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-
-        @mixin atSmall {
-            flex-wrap: wrap;
-            flex-direction: row;
-            width: 66%;
-            margin-left: 1.5rem;
-        }
-
-        &__option {
-            width: 20rem;
-            margin: 0 auto;
-            padding: 1rem;
-            line-height: 1.5;
-            font-weight: 300;
-            text-align: center;
-
-            @mixin atXSmall {
-                width: 28rem;
-            }
-
-            @mixin atSmall {
-                width: 33%;
-                text-align: left;
-            }
-
-            &__img {
-                width: 7rem;
-                height: 7rem;
-                border: 2px solid rgba(0, 0, 0, 0.1);
-                border-radius: 50%;
-                text-align: center;
-                padding: 1.5rem 0;
-                margin: 0 auto;
-
-                @mixin atSmall {
-                    margin: 0;
-                }
-
-                & img {
-                    width: 3.5rem;
-                }
-            }
-
-            & h4 {
-                text-transform: uppercase;
-                font-weight: 400;
-                font-size: 1.1rem;
-                letter-spacing: 1.1px;
-                margin-bottom: 0;
-            }
-
-            & p {
-                margin-top: 0.5rem;
-            }
-        }
+    @mixin atSmall {
+        margin: auto;
+        padding-left: 1rem;
+        width: 33%;
     }
+}
+
+.services__overview h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @mixin atSmall {
+        text-align: left;
+    }
+}
+
+.services__overview h4 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @mixin atSmall {
+        text-align: left;
+    }
+}
+
+.services__overview p {
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.services__overview button {
+    background-color: transparent;
+    border: 2px solid $mainRed;
+    border-radius: 3rem;
+    color: $mainRed;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 0 auto 2rem auto;
+    padding: 0.7rem 1.3rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+
+    @mixin atSmall {
+        margin: 0;
+    }
+}
+
+.services__overview button:hover {
+    background-color: $mainRed;
+    color: #fff;
+    cursor: pointer;
+}
+
+.services__overview ul {
+    list-style-image: url("../../assets/images/tick-inside-circle-red.png");
+    margin: 2rem 0;
+    margin-left: -1rem;
+}
+
+.services__overview li {
+    font-weight: 300;
+    line-height: 2;
+}
+
+/* Services Options Styles */
+
+.services__options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @mixin atSmall {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 1.5rem;
+        width: 66%;
+    }
+}
+
+.services__options__option {
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+    width: 20rem;
+
+    @mixin atXSmall {
+        width: 28rem;
+    }
+
+    @mixin atSmall {
+        text-align: left;
+        width: 33%;
+    }
+}
+
+.services__options__option__img {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    height: 7rem;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    text-align: center;
+    width: 7rem;
+
+    @mixin atSmall {
+        margin: 0;
+    }
+}
+
+.services__options__option__img img {
+    width: 3.5rem;
+}
+
+.services__options__option h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1.1px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.services__options__option p {
+    margin-top: 0.5rem;
 }

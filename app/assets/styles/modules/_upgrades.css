@@ -1,105 +1,106 @@
-.upgrades {
-    
-    &__plans {
-        display: flex;
-        flex-direction: column;
-        margin: 2rem auto 0 auto;
+/* Upgrades Plans Wrapper Styles */
 
-        @mixin atSmall {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
+.upgrades__plans {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto 0 auto;
 
-        @mixin atLarger {
-            width: 66rem;
-        }
-
-        &__plan {
-            width: 20rem;
-            display: flex;
-            margin: 0 auto;
-            margin-bottom: 3.5rem;
-
-            @mixin atXSmall {
-                width: 28rem;
-            }
-
-            @mixin atSmall {
-                width: 33%;
-            }
-
-            &__price {
-                margin-right: 1.5rem;
-                margin-left: 1.5rem;
-                padding-top: 1rem;
-
-                @mixin atSmall {
-                    padding-top: 2rem;
-                }
-                
-                &__container {
-                    width: 7rem;
-                    height: 7rem;
-                    background-color: $mainRed;
-                    border: 1px solid $mainRed;
-                    border-radius: 50%;
-                    color: #fff;
-                    text-align: center;
-                    position: relative;
-
-                    &__num {
-                        font-size: 1.5rem;
-                        font-weight: 300;
-                        font-family: "Montserrat", sans-serif;
-                        position: absolute;
-                        top: 2rem;
-                        left: 1.5rem;
-                    }
-
-                    &__cents {
-                        font-size: 0.8rem;
-                        font-weight: 300;
-                        position: absolute;
-                        top: 1.3rem;
-                        left: 4.3rem;
-                    }
-
-                    &__frequency {
-                        position: absolute;
-                        width: 7rem;
-                        top: 3rem;
-                        left: 0;
-                        text-transform: uppercase;
-                        font-weight: 300;
-                        font-size: 0.8rem;
-                        letter-spacing: 1.3px;
-                    }
-                }
-
-                &__container--blue {
-                    background-color: $navyBlue;
-                    border: 1px solid $navyBlue;
-                }
-            }
-
-            &__text {
-                font-weight: 300;
-                line-height: 1.5;
-
-                @mixin atSmall {
-                    max-width: 12rem;
-                }
-
-                & h3 {
-                    font-weight: 400;
-                    font-size: 1.3rem;
-                    margin-bottom: 0;
-                }
-
-                & p {
-                    margin-top: 0.5rem;
-                }
-            }
-        }
+    @mixin atSmall {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
+
+    @mixin atLarger {
+        width: 66rem;
+    }
+}
+
+/* Upgrades Individual Plans Styles */
+
+.upgrades__plans__plan {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 3.5rem;
+    width: 20rem;
+
+    @mixin atXSmall {
+        width: 28rem;
+    }
+
+    @mixin atSmall {
+        width: 33%;
+    }
+}
+
+.upgrades__plans__plan__price {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-top: 1rem;
+
+    @mixin atSmall {
+        padding-top: 2rem;
+    }
+}
+
+.upgrades__plans__plan__price__container {
+    background-color: $mainRed;
+    border: 1px solid $mainRed;
+    border-radius: 50%;
+    color: #fff;
+    height: 7rem;
+    position: relative;
+    text-align: center;
+    width: 7rem;
+}
+
+.upgrades__plans__plan__price__container__num {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    left: 1.5rem;
+    position: absolute;
+    top: 2rem;
+}
+
+.upgrades__plans__plan__price__container__cents {
+    font-size: 0.8rem;
+    font-weight: 300;
+    left: 4.3rem;
+    position: absolute;
+    top: 1.3rem;
+}
+
+.upgrades__plans__plan__price__container__frequency {
+    font-size: 0.8rem;
+    font-weight: 300;
+    left: 0;
+    letter-spacing: 1.3px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 3rem;
+    width: 7rem;
+}
+
+.upgrades__plans__plan__price__container--blue {
+    background-color: $navyBlue;
+    border: 1px solid $navyBlue;
+}
+
+.upgrades__plans__plan__text {
+    font-weight: 300;
+    line-height: 1.5;
+
+    @mixin atSmall {
+        max-width: 12rem;
+    }
+}
+
+.upgrades__plans__plan__text h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.upgrades__plans__plan__text p {
+    margin-top: 0.5rem;
 }

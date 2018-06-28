@@ -1,52 +1,50 @@
-.section-title {
-    
+/* Section Title Styles */
 
-    &__title {
-        text-transform: uppercase;
-        color: $darkGray;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        font-size: 1.8rem;
-        letter-spacing: 1.2px;
-        margin-top: 3.5rem;
-        margin-bottom: 0;
-        text-align: center;
-    }
+.section-title__title {
+    color: $darkGray;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    margin-bottom: 0;
+    margin-top: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
 
-    &__subtitle {
-        color: $darkGray;
-        text-align: center;
-        font-weight: 300;
-    }
+.section-title__subtitle {
+    color: $darkGray;
+    font-weight: 300;
+    text-align: center;
+}
 
-    &__underline {
-        display: block;
-        margin: 0 auto;
-        background-color: transparent;
-        border: 2px solid $mainRed;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        position: relative;
+.section-title__underline {
+    background-color: transparent;
+    border: 2px solid $mainRed;
+    border-radius: 50%;
+    display: block;
+    height: 15px;
+    margin: 0 auto;
+    position: relative;
+    width: 15px;
+}
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 2px;
-            background-color: $mainRed;
-            top: 0.25rem;
-            left: -1.9rem;
-        }
+.section-title__underline:before {
+    background-color: $mainRed;
+    content: '';
+    height: 2px;
+    left: -1.9rem;
+    position: absolute;
+    top: 0.25rem;
+    width: 30px;
+}
 
-        &::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 2px;
-            background-color: $mainRed;
-            top: 0.25rem;
-            right: -1.9rem;
-        }
-    }
+.section-title__underline:after {
+    background-color: $mainRed;
+    content: '';
+    height: 2px;
+    position: absolute;
+    right: -1.9rem;
+    top: 0.25rem;
+    width: 30px;
 }

@@ -1,129 +1,134 @@
-.gallery {
-    
-    &__slider {
-        display: flex;
-        width: 100%;
-        margin-bottom: 0;
+/* Gallery Slider */
 
-        &__img {
-            width: 25%;
-            position: relative;
-            overflow: hidden;
+.gallery__slider {
+    display: flex;
+    margin-bottom: 0;
+    width: 100%;
+}
 
-            @mixin atSmall {
-                width: 33%;
-            }
+/* Slider Image Styles */
 
-            & img {
-                width: 100%;
-            }
+.gallery__slider__img {
+    overflow: hidden;
+    position: relative;
+    width: 25%;
 
-            &--xsmall {
-                width: 100%;
-
-                @mixin atSmall {
-                    width: 33%;
-                }
-            }
-
-            &--small {
-                display: none;
-
-                @mixin atSmall {
-                    display: block;
-                }
-            }
-
-            &--large {
-                display: none;
-
-                @mixin atLarge {
-                    display: block;
-                }
-            }
-
-            &--xlarge {
-                display: none;
-
-                @mixin atXLarge {
-                    display: block;
-                }
-            }
-
-            &__overlay {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                z-index: 2;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.3);
-                opacity: 0;
-                transition: all 0.2s linear;
-
-                &:hover {
-                    opacity: 1;
-                }
-
-                &__btn {
-                    position: relative;
-                    width: 1.3rem;
-                    height: 1.3rem;
-                    transform: translate(-50%, -50%);
-                    margin-left: 1.8rem;
-                    margin-top: 1.2rem;
-                    transition: background-color 0.2s linear;
-
-                    &:before {
-                        content:"";
-                        position: absolute;
-                        top: 0;
-                        left: 45%;
-                        width: 10%;
-                        height: 100%;
-                        background-color: #fff;
-                    }
-
-                    &:after {
-                        content:"";
-                        position: absolute;
-                        top: 45%;
-                        left: 0;
-                        width: 100%;
-                        height: 10%;
-                        background-color: #fff;
-                    }
-                }
-
-                & button {
-                    width: 4.5rem;
-                    height: 4.5rem;
-                    background-color: $mainRed;
-                    border: 1px solid $mainRed;
-                    border-radius: 50%;
-                    transition: all 0.2s linear;
-
-                    &:hover {
-                        background-color: #fff;
-                        border: 1px solid #fff;
-                    }
-
-                    &:hover > .gallery__slider__img__overlay__btn {
-                        &:before {
-                            background-color: $mainRed;
-                        }
-
-                        &:after {
-                            background-color: $mainRed;
-                        }
-                    }
-                }
-            }
-        }
+    @mixin atSmall {
+        width: 33%;
     }
+}
 
-    &__banner {
-        margin-top: -0.5rem;
+.gallery__slider__img img {
+    width: 100%;
+}
+
+.gallery__slider__img--xsmall {
+    width: 100%;
+
+    @mixin atSmall {
+        width: 33%;
     }
+}
+
+.gallery__slider__img--small {
+    display: none;
+
+    @mixin atSmall {
+        display: block;
+    }
+}
+
+.gallery__slider__img--large {
+    display: none;
+
+    @mixin atLarge {
+        display: block;
+    }
+}
+
+.gallery__slider__img--xlarge {
+    display: none;
+
+    @mixin atXLarge {
+        display: block;
+    }
+}
+
+/* Image Overlay Styles */
+
+.gallery__slider__img__overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.2s linear;
+    width: 100%;
+    z-index: 2; 
+}
+
+.gallery__slider__img__overlay:hover {
+    opacity: 1;
+}
+
+/* Image Overlay Button Styles */
+
+.gallery__slider__img__overlay__btn {
+    height: 1.3rem;
+    margin-left: 1.8rem;
+    margin-top: 1.2rem;
+    position: relative;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s linear;
+    width: 1.3rem;
+}
+
+.gallery__slider__img__overlay__btn:before {
+    background-color: #fff;
+    content: "";
+    height: 100%;
+    left: 45%;
+    position: absolute;
+    top: 0;
+    width: 10%;
+}
+
+.gallery__slider__img__overlay__btn:after {
+    background-color: #fff;
+    content: "";
+    height: 10%;
+    left: 0;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+}
+
+.gallery__slider__img__overlay button {
+    background-color: $mainRed;
+    border: 1px solid $mainRed;
+    border-radius: 50%;
+    height: 4.5rem;
+    transition: all 0.2s linear;
+    width: 4.5rem;
+}
+
+.gallery__slider__img__overlay button:hover {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.gallery__slider__img__overlay button:hover > .gallery__slider__img__overlay__btn:before {
+    background-color: $mainRed;
+}
+
+.gallery__slider__img__overlay button:hover > .gallery__slider__img__overlay__btn:after {
+    background-color: $mainRed;
+}
+
+/* Gallery Banner */
+
+.gallery__banner {
+    margin-top: -0.5rem;
 }

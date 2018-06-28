@@ -1,28 +1,34 @@
+/* General Footer Styles */
+
 .footer {
-    text-align: center;
     height: 9.875rem;
     padding: 2.5rem;
+    text-align: center;
+}
 
-    &__icon {
-        height: 8rem;
-        width: 8rem;
-        padding: 1rem;
-        border: 2px solid rgba(0, 0, 0, 0.1);
-        border-radius: 50%;
-        display: inline;
-        margin: 0.8rem;
+/* Footer Icon */
 
-        & img {
-            width: 1.3rem;
-        }
-    } 
+.footer__icon {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: inline;
+    /* height: 8rem; */
+    margin: 0.8rem;
+    padding: 1rem;
+    /* width: 8rem; */
+}
 
-    & p {
-        margin-top: 3rem;
-        color: $navyBlue;
-    }
+.footer__icon img {
+    width: 1.3rem;
+}
 
-    &__heart {
-        color: $mainRed;
-    }
+/* Other Footer */
+
+.footer p {
+    color: $navyBlue;
+    margin-top: 3rem;
+}
+
+.footer__heart {
+    color: $mainRed;
 }
