@@ -8,12 +8,12 @@ window.onload = () => {
   imageZoom();
 }
 
-window.onscroll = function() {
-    stickyHeader();
-};
+// window.onscroll = function() {
+//     stickyHeader();
+// };
 
 window.onresize = function() {
-    removeMobileStyles();
+    removeLargeStyles();
 };
 
 //Preloader
@@ -38,25 +38,19 @@ document.onreadystatechange = () => {
 // Sticky header on scroll
 
 var header = document.querySelector(".main-nav");
-// var sticky = 184;
-var sticky = 200;
-var mobileWidth = 750;
-var scrolled = false;
 
-function stickyHeader() {
-    if (window.innerWidth >= mobileWidth) {
-        if (window.pageYOffset >= sticky) {
+var stickyHeader = new Waypoint({
+    element: document.querySelector(".large-hero__text"),
+    handler: function(direction) {
+        if (direction == "down") {
             header.classList.add('main-nav--sticky');
             $(header).slideDown(1000);
-        } else if (window.innerWidth <= mobileWidth && header.classList.contains("main-nav--sticky")) {
-            header.classList.remove('main-nav--sticky');
-            $(header).removeAttr("style");
         } else {
-            header.classList.remove("main-nav--sticky");
+            header.classList.remove('main-nav--sticky');
             $(header).removeAttr("style");
         }
     }
-}
+});
 
 //Mobile Menu
 
@@ -76,7 +70,7 @@ menuBtn.addEventListener("click", () => {
     }
 });
 
-function removeMobileStyles() {
+function removeLargeStyles() {
     if (window.innerWidth < mobileWidth) {
         header.classList.remove("main-nav--sticky");
         largeHero.classList.remove("large-hero--mobile-active");
@@ -195,7 +189,7 @@ var options = {
       decimal: '.',
   };
   
-  function createCounter(item, count) {
+function createCounter(item, count) {
       var countUp = new CountUp(item, 0, count, 0, 2, options);
       if (!countUp.error) {
           countUp.start();
@@ -203,17 +197,26 @@ var options = {
           console.error(countUp.error);
       }
   }
-  
-  new Waypoint({
-      element: counterArea,
-      handler: function() {
-          createCounter(itemActivities, countActivities);
-          createCounter(itemLessons, countLessons);
-          createCounter(itemTeachers, countTeachers);
-          createCounter(itemPencils, countPencils);
-      },
-      offset: "70%"
-  });
+
+function createAllCounters() {
+    createCounter(itemActivities, countActivities);
+    createCounter(itemLessons, countLessons);
+    createCounter(itemTeachers, countTeachers);
+    createCounter(itemPencils, countPencils); 
+}
+
+let done = false;
+
+new Waypoint({
+    element: counterArea,
+    handler: function() {
+        if (!done) {
+            done = true;
+            createAllCounters();
+        }
+    },
+    offset: "70%"
+});
 
 //Countdown
 
@@ -243,6 +246,3 @@ jarallax(document.querySelectorAll('.jarallax'), {
         return /iPad|iPhone|iPod|Android/.test(navigator.userAgent);
     }
 });
-
-
-
