@@ -60,11 +60,13 @@ var largeHero = document.getElementById("large-hero");
 
 menuBtn.addEventListener("click", () => {
     if (menuBtn.classList.contains("main-nav__other__menu-icon--close-x")) {
-        // largeHero.classList.remove("large-hero--mobile-active");
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
-        mobileNav.classList.remove("main-nav__nav--mobile");
+        largeHero.classList.remove("large-hero--mobile-active");
+        setTimeout(() => {
+            mobileNav.classList.remove("main-nav__nav--mobile");
+        }, 1000);
     } else {
-        // largeHero.classList.add("large-hero--mobile-active");
+        largeHero.classList.add("large-hero--mobile-active");
         menuBtn.classList.add("main-nav__other__menu-icon--close-x");
         mobileNav.classList.add("main-nav__nav--mobile");
     }
@@ -78,6 +80,19 @@ function removeLargeStyles() {
         mobileNav.classList.remove("main-nav__nav--mobile");
     }
 }
+
+//Image Zoom
+
+function imageZoom() {
+    var images = document.querySelectorAll(".image-zoom");
+    for (var i = 0; i < images.length; i++) {
+      if (images[i].classList.contains("image-zoom--active")) {
+          images[i].classList.remove("image-zoom--active");
+      }
+      images[i].classList.add("image-zoom--active");
+    }
+    console.log(images);
+  }
 
 //Large Hero Slider
 
@@ -96,6 +111,8 @@ var slider = tns({
     autoplayButton: ".large-hero__autoplay",
     autoplayTimeout: 10000
 });
+
+slider.events.on("indexChanged", imageZoom);
 
 //Direction-aware hover
 
@@ -136,15 +153,6 @@ function getMouseDirection(event) {
       y = (event.pageY - offset.top - h / 2) * ((h > w) ? w / h: 1),
       direction = Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90  + 3) % 4;
   return direction;
-}
-
-//Image Zoom
-
-function imageZoom() {
-  var images = document.querySelectorAll(".image-zoom");
-  for (var i = 0; i < images.length; i++) {
-    images[i].classList.add("image-zoom--active");
-  }
 }
 
 //Enrollment Slider

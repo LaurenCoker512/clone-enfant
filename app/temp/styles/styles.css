@@ -2472,7 +2472,7 @@ ul {
 .main-nav__nav--mobile > .main-nav__main-menu {
     display: flex;
     flex-direction: column;
-    height: 10rem;
+    /* height: 10rem; */
     width: 100vw;
 }
 
