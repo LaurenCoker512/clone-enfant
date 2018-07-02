@@ -4,14 +4,6 @@ import CountUp from "countup.js";
 import Countdown from "countdown-js";
 import waypoints from "../../../node_modules/waypoints/lib/noframework.waypoints";
 
-window.onload = () => {
-  imageZoom();
-}
-
-// window.onscroll = function() {
-//     stickyHeader();
-// };
-
 window.onresize = function() {
     removeLargeStyles();
 };
@@ -83,16 +75,16 @@ function removeLargeStyles() {
 
 //Image Zoom
 
-function imageZoom() {
-    var images = document.querySelectorAll(".image-zoom");
-    for (var i = 0; i < images.length; i++) {
-      if (images[i].classList.contains("image-zoom--active")) {
-          images[i].classList.remove("image-zoom--active");
-      }
-      images[i].classList.add("image-zoom--active");
-    }
-    console.log(images);
-  }
+// function imageZoom() {
+//     var images = document.querySelectorAll(".image-zoom");
+//     for (var i = 0; i < images.length; i++) {
+//       if (images[i].classList.contains("image-zoom--active")) {
+//           images[i].classList.remove("image-zoom--active");
+//       }
+//       images[i].classList.add("image-zoom--active");
+//     }
+//     console.log(images);
+//   }
 
 //Large Hero Slider
 
@@ -111,8 +103,6 @@ var slider = tns({
     autoplayButton: ".large-hero__autoplay",
     autoplayTimeout: 10000
 });
-
-slider.events.on("indexChanged", imageZoom);
 
 //Direction-aware hover
 

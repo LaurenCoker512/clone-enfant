@@ -1332,11 +1332,18 @@ ul {
 
 .footer p {
     color: #002749;
+}
+
+.footer__copyright {
     margin-top: 3rem;
 }
 
 .footer__heart {
     color: #ff4e31;
+}
+
+.footer__link a {
+    text-decoration: none;
 }
 
 /* General Footer Styles */
@@ -1808,7 +1815,8 @@ ul {
 
 .large-hero__hero img {
     height: 100%;
-    transition: all 10s linear;
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
 }
 
 @media (min-width: 750px) {
@@ -1983,8 +1991,40 @@ ul {
 }
 
 .image-zoom--active {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    /* transform: scale(1.1); */
+    /* animation: zoomIn 10s 1 forwards; */
+}
+
+@-webkit-keyframes zoomIn {
+    from {
+        -webkit-transform: scale(1.02);
+                transform: scale(1.02);
+    }
+    to {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        -webkit-transform: scale(1.02);
+                transform: scale(1.02);
+    }
+    to {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+}
+
+.tns-fadeIn .jarallax-img {
+    -webkit-animation: zoomIn 10s 1 forwards;
+            animation: zoomIn 10s 1 forwards;
+}
+
+.tns-fadeOut .jarallax-img {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
 }
 
 /* Loader Styles */

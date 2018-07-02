@@ -26,9 +26,16 @@
 
 .footer p {
     color: $navyBlue;
+}
+
+.footer__copyright {
     margin-top: 3rem;
 }
 
 .footer__heart {
     color: $mainRed;
+}
+
+.footer__link a {
+    text-decoration: none;
 }

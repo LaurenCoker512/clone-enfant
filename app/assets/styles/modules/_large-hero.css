@@ -37,7 +37,7 @@
 
 .large-hero__hero img {
     height: 100%;
-    transition: all 10s linear;
+    transform: scale(1.02);
 
     @mixin atSmall {
         height: auto;
@@ -173,5 +173,23 @@
 }
 
 .image-zoom--active {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    /* animation: zoomIn 10s 1 forwards; */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.02);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.tns-fadeIn .jarallax-img {
+    animation: zoomIn 10s 1 forwards;
+}
+
+.tns-fadeOut .jarallax-img {
+    transform: scale(1.08);
 }
