@@ -137,59 +137,97 @@
 /* Submenu Styles */
 
 .main-nav__sub-menu {
-    background-color: $mainRed;
-    border: 1px solid $mainRed;
-    border-radius: 10px;
-    color: #fff;
     display: none;
-    margin-top: 0.6rem;
-    padding: 0.8rem;
-    position: absolute;
-    top: 4.25rem;
-    width: 14rem;
-    z-index: 3;  
+    /* overflow: hidden;
+    transition: height 1s linear; */
+
+    @mixin atSmall {
+        background-color: $mainRed;
+        border: 1px solid $mainRed;
+        border-radius: 10px;
+        color: #fff;
+        margin-top: 0.6rem;
+        padding: 0.8rem;
+        position: absolute;
+        top: 4.25rem;
+        width: 14rem;
+        z-index: 3; 
+    }
 }
 
 .main-nav__sub-menu:before {
-    border: 0.7rem solid transparent;
-    border-bottom-color: $mainRed;
-    border-top: 0;
-    content: "";
-    height: 0;
-    left: 15%;
-    margin-left: -0.7rem;
-    margin-top: -0.7rem;
-    position: absolute;
-    top: 0;
-    width: 0;
-    z-index: 4;
+
+    @mixin atSmall {
+        border: 0.7rem solid transparent;
+        border-bottom-color: $mainRed;
+        border-top: 0;
+        content: "";
+        height: 0;
+        left: 15%;
+        margin-left: -0.7rem;
+        margin-top: -0.7rem;
+        position: absolute;
+        top: 0;
+        width: 0;
+        z-index: 4;
+    }
 }
 
 .main-nav__sub-menu:after {
-    background-color: transparent;
-    content: "";
-    height: 1rem;
-    left: 0;
-    position: absolute;
-    top: -0.65rem;
-    width: 13rem;
+
+    @mixin atSmall {
+        background-color: transparent;
+        content: "";
+        height: 1rem;
+        left: 0;
+        position: absolute;
+        top: -0.65rem;
+        width: 13rem;
+    }
 }
 
 .main-nav__sub-menu__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.95rem;
     font-weight: 300;
-    padding: 0.8rem;
-    transition: all 0.2s linear;
-}
+    margin-right: 2rem;
+    padding: 0.8rem 0;
 
-.main-nav__sub-menu__item a {
-    color: #fff;
-    font-weight: 300;
+    @mixin atSmall {
+        border-top: none;
+        margin-right: 0;
+        padding: 0.8rem;
+        transition: all 0.2s linear;
+    }
 }
 
 .main-nav__sub-menu__item:hover {
     cursor: pointer;
-    transform: translateX(0.4rem);
+}
+
+.main-nav__sub-menu__item a {
+
+    @mixin atSmall {
+        color: #fff;
+        font-weight: 300;
+    }
+}
+
+.main-nav__sub-menu__item:hover {
+
+    @mixin atSmall {
+        cursor: pointer;
+        transform: translateX(0.4rem);
+    }
+}
+
+.main-nav__sub-menu.main-nav__sub-menu--active {
+    display: block;
+    height: 0;
+
+    @mixin atSmall {
+        display: none;
+    }
 }
 
 /* Second-Level Submenu Styles */

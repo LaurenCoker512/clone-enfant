@@ -2,19 +2,11 @@
 
 .large-hero {
     position: relative;
-    transition: margin 1s ease;
-    /* z-index: 10; */
+    transition: margin 1s linear;
 
     @mixin atSmall {
         overflow: hidden;
-        /* z-index: 0; */
     }
-}
-
-/* Mobile Menu Push-down */
-
-.large-hero--mobile-active {
-    margin-top: 21.3rem;
 }
 
 /* Large Hero Slides */
