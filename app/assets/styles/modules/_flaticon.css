@@ -1,41 +1,56 @@
-/* Flaticon Parent Styles */
+/* Flaticon Section Styles */
 
-.flaticon-attr-parent {
-    position: relative;
+.flaticon__page {
+    background-color: $navyBlue;
 }
 
-/* Flaticon Child Styles */
-
-.flaticon-attr-parent:hover .flaticon-attr-child {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
+.flaticon__page a {
+    text-decoration: none;
 }
 
-.flaticon-attr-child {
+.flaticon__wrapper {
+    width: 80%;
+    margin: 0 auto;
     background-color: #fff;
-    border: 2px solid $mainRed;
-    border-radius: 0.5rem;
-    color: $darkGray;
-    font-size: 0.7rem;
-    left: -70%;
-    opacity: 0;
-    padding: 1rem;
-    position: absolute;
-    transform: translateY(20%);
-    transition: all 0.2s linear;
-    top: -1rem;
-    visibility: none;
-    width: 8rem;
+    padding: 1.5rem;
+
+    @mixin atML {
+        width: 40rem; 
+    }
 }
 
-.flaticon-attr-child--banner {
-    left: 0;
+.flaticon__section {
+    display: flex;
+    margin: 1rem 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    @mixin atML {
+        flex-direction: row;
+    }
 }
 
-.flaticon-attr-child--header {
-    left: -11rem;
-    top: -1rem;
-    width: 10rem;
-    z-index: 2;
+.flaticon__section__img {
+    width: 7rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+
+    @mixin atML {
+        width: 20%;
+    }
+}
+
+.flaticon__section__img--darker {
+    background-color: rgb(80, 80, 80);
+}
+
+.flaticon__section__img img {
+    max-width: 80%;
+    padding: 0.6rem;
+}
+
+.flaticon__section p {
+    padding-left: 2rem;
 }
