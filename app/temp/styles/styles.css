@@ -2496,11 +2496,11 @@ ul {
 .main-nav__other__menu-icon {
     border-left: none;
     cursor: pointer;
-    height: 19px;
+    height: 15px;
     margin-left: 1rem;
     margin-right: 1rem;
     position: relative;
-    width: 1.7rem;
+    width: 25px;
 }
 
 @media (min-width: 750px) {
@@ -2522,7 +2522,7 @@ ul {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-    width: 1.7rem; 
+    width: 25px; 
 }
 
 .main-nav__other__menu-icon__middle {
@@ -2531,29 +2531,30 @@ ul {
     left: 0;
     position: absolute;
     top: 8px;
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
     transition: all .3s ease-out;
-    width: 1.7rem;
+    width: 25px;
 }
 
 .main-nav__other__menu-icon:after {
     background-color: #ff4e31;
-    bottom: 6px;
     content: "";
     height: 3px;
     left: 0;
     position: absolute;
+    top: 16px;
     -webkit-transform-origin: 0 100%;
             transform-origin: 0 100%;
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-    width: 1.7rem;
+    width: 25px;
 }
 
 .main-nav__other__menu-icon--close-x:before {
     -webkit-transform: rotate(45deg) scaleX(1);
             transform: rotate(45deg) scaleX(1);
-    width: 1.9rem;
 }
 
 .main-nav__other__menu-icon--close-x > .main-nav__other__menu-icon__middle {
@@ -2563,9 +2564,8 @@ ul {
 }
 
 .main-nav__other__menu-icon--close-x:after {
-    -webkit-transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
-            transform: rotate(-45deg) scaleX(1) translateX(-1px) translateY(2px);
-    width: 1.8rem;
+    -webkit-transform: rotate(-45deg) scaleX(1) translateX(-1px);
+            transform: rotate(-45deg) scaleX(1) translateX(-1px);
 }
 
 /* Mobile Menu Styles */
@@ -2573,7 +2573,6 @@ ul {
 .main-nav__nav--mobile > .main-nav__main-menu {
     display: flex;
     flex-direction: column;
-    /* height: 10rem; */
     width: 100vw;
 }
 

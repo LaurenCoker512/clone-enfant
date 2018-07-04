@@ -95,8 +95,8 @@ for (let dropdownArrow of dropdownArrows) {
                 height: "0px"
             }, 1000, () => {
                 selectedUl.classList.remove("main-nav__sub-menu--active");
+                checkSubMenus();
             });
-            checkSubMenus();
         } else if (window.innerWidth < mobileWidth) {
             selectedUl.classList.add("main-nav__sub-menu--active");
             let addedPixels = selectedUl.childElementCount * 45;
