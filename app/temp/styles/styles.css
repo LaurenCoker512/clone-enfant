@@ -1978,10 +1978,24 @@ ul {
     opacity: 0;
     padding: 0.7rem;
     position: absolute;
-    top: 67%;
+    top: 48%;
     transition: all 0.2s linear;
-    z-index: 100; 
+    z-index: 100;
 }
+
+@media (min-width: 750px) {
+
+.large-hero__arrow {
+        top: 60%
+}
+    }
+
+@media (min-width: 770px) {
+
+.large-hero__arrow {
+        top: 67%
+}
+    }
 
 .large-hero__arrow--left {
     left: 2rem;
@@ -2001,11 +2015,6 @@ ul {
 
 .large-hero__arrow:hover {
     cursor: pointer;
-}
-
-.image-zoom--active {
-    /* transform: scale(1.1); */
-    /* animation: zoomIn 10s 1 forwards; */
 }
 
 @-webkit-keyframes zoomIn {

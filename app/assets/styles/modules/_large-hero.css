@@ -141,9 +141,17 @@
     opacity: 0;
     padding: 0.7rem;
     position: absolute;
-    top: 67%;
+    top: 48%;
     transition: all 0.2s linear;
-    z-index: 100; 
+    z-index: 100;
+    
+    @mixin atSmall {
+        top: 60%;
+    }
+
+    @mixin atMedium {
+        top: 67%;
+    }
 }
 
 .large-hero__arrow--left {
@@ -162,11 +170,6 @@
 
 .large-hero__arrow:hover {
     cursor: pointer;
-}
-
-.image-zoom--active {
-    /* transform: scale(1.1); */
-    /* animation: zoomIn 10s 1 forwards; */
 }
 
 @keyframes zoomIn {
