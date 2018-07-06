@@ -7,7 +7,6 @@ var gulp = require("gulp"),
     mixins = require("postcss-mixins"),
     watch = require("gulp-watch"),
     browserSync = require("browser-sync").create(),
-    modernizr = require("modernizr"),
     webpack = require("webpack"),
     imagemin = require("gulp-imagemin"),
     del = require("del"),
@@ -49,4 +48,50 @@ gulp.task("styles", function(){
 
 gulp.task("scriptsRefresh", ["scripts"], function(){
     browserSync.reload();
+});
+
+gulp.task("deleteDistFolder", () => {
+    return del("./docs");
+});
+
+gulp.task('usemin', ['deleteDistFolder', 'styles', 'scripts'], () => {
+    return gulp.src("./app/index.html")
+        .pipe(usemin({
+            css: [() =>  rev(), () =>  cssnano()],
+            js: [() => rev(), () => uglify()]
+        }))
+        .pipe(gulp.dest("./docs"));
+});
+
+gulp.task('copyGeneralFiles', ['deleteDistFolder'], () => {
+    const pathsToCopy = [
+        './app/**/*',
+        '!./app/index.html',
+        '!./app/assets/images/**',
+        '!./app/assets/styles/**',
+        '!./app/assets/scripts/**',
+        '!./app/temp',
+        '!./app/temp/**'
+    ];
+
+    return gulp.src(pathsToCopy)
+        .pipe(gulp.dest("./docs"));
+});
+
+gulp.task("optimizeImages", ['deleteDistFolder'], () => {
+    return gulp.src("./app/assets/images/**/*")
+        .pipe(imagemin({
+            progressive: true,
+            interlaced: true,
+            multipass: true
+        }))
+        .pipe(gulp.dest("./dist/assets/images"));
+});
+
+gulp.task("build", ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'usemin']);
+
+gulp.task("previewDist", () => {
+    browserSync.init({
+        server: "./docs"
+    });
 })

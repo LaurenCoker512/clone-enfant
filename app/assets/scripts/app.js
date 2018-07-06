@@ -1,4 +1,5 @@
-import jarallax from "jarallax";
+// import jarallax from "jarallax";
+import jarallax from "./jarallax.min.js";
 import $ from "jquery";
 import CountUp from "countup.js";
 import Countdown from "countdown-js";
