@@ -2135,11 +2135,11 @@ ul {
 
 .main-nav--sticky .main-nav__logo {
     display: inline-block;
-    padding: 1rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
 }
 
 .main-nav--sticky .main-nav__logo img {
-    width: 7.5rem;
+    width: 6.8rem;
 }
 
 .main-nav--sticky .main-nav__other {

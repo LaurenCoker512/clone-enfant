@@ -50,20 +50,20 @@ gulp.task("scriptsRefresh", ["scripts"], function(){
     browserSync.reload();
 });
 
-gulp.task("deleteDistFolder", () => {
+gulp.task("deleteDistFolder", function() {
     return del("./docs");
 });
 
-gulp.task('usemin', ['deleteDistFolder', 'styles', 'scripts'], () => {
+gulp.task('usemin', ['deleteDistFolder', 'styles', 'scripts'], function() {
     return gulp.src("./app/index.html")
         .pipe(usemin({
-            css: [() =>  rev(), () =>  cssnano()],
-            js: [() => rev(), () => uglify()]
+            css: [function() {return rev()}, function() {return cssnano()}],
+            js: [function() {return rev()}, function() {return uglify()}]
         }))
         .pipe(gulp.dest("./docs"));
 });
 
-gulp.task('copyGeneralFiles', ['deleteDistFolder'], () => {
+gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
     const pathsToCopy = [
         './app/**/*',
         '!./app/index.html',
@@ -78,20 +78,20 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder'], () => {
         .pipe(gulp.dest("./docs"));
 });
 
-gulp.task("optimizeImages", ['deleteDistFolder'], () => {
+gulp.task("optimizeImages", ['deleteDistFolder'], function() {
     return gulp.src("./app/assets/images/**/*")
         .pipe(imagemin({
             progressive: true,
             interlaced: true,
             multipass: true
         }))
-        .pipe(gulp.dest("./dist/assets/images"));
+        .pipe(gulp.dest("./docs/assets/images"));
 });
 
 gulp.task("build", ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'usemin']);
 
-gulp.task("previewDist", () => {
+gulp.task("previewDist", function() {
     browserSync.init({
         server: "./docs"
     });
-})
+});
