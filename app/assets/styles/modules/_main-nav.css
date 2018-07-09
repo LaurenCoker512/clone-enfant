@@ -23,11 +23,11 @@
 
 .main-nav--sticky .main-nav__logo {
     display: inline-block;
-    padding: 1rem 0.5rem 1rem 0.5rem;
+    padding: 1rem 0.5rem 1rem 1rem;
 }
 
 .main-nav--sticky .main-nav__logo img {
-    width: 6.8rem;
+    width: 7.5rem;
 }
 
 .main-nav--sticky .main-nav__other {
@@ -39,7 +39,12 @@
     margin-top: -0.5rem;
 }
 
+.main-nav__main-menu--sticky > .main-nav__main-menu__item {
+    padding: 1rem 0.6rem 1rem 1rem;
+}
+
 .main-nav--sticky .main-nav__sub-menu {
+    left: 0;
     top: 3.5rem;
 }
 
@@ -138,8 +143,6 @@
 
 .main-nav__sub-menu {
     display: none;
-    /* overflow: hidden;
-    transition: height 1s linear; */
 
     @mixin atSmall {
         background-color: $mainRed;

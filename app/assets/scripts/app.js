@@ -31,6 +31,7 @@ document.onreadystatechange = () => {
 // Sticky header on scroll
 
 var header = document.querySelector(".main-nav");
+var mainMenu = document.querySelector(".main-nav__main-menu");
 var mobileWidth = 750;
 
 var stickyHeader = new Waypoint({
@@ -38,9 +39,11 @@ var stickyHeader = new Waypoint({
     handler: function(direction) {
         if (window.innerWidth > mobileWidth && direction == "down") {
             header.classList.add('main-nav--sticky');
+            mainMenu.classList.add('main-nav__main-menu--sticky');
             $(header).slideDown(1000);
         } else {
             header.classList.remove('main-nav--sticky');
+            mainMenu.classList.remove('main-nav__main-menu--sticky');
             $(header).removeAttr("style");
         }
     }
@@ -70,6 +73,7 @@ menuBtn.addEventListener("click", () => {
 function removeLargeStyles() {
     if (window.innerWidth < mobileWidth) {
         header.classList.remove("main-nav--sticky");
+        mainMenu.classList.remove('main-nav__main-menu--sticky');
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
         mobileNav.classList.remove("main-nav__nav--mobile");
     }
