@@ -2290,10 +2290,9 @@ ul {
 }
     }
 
-.main-nav__main-menu__item a {
+.main-nav__main-menu__item__text {
     color: #002749;
     font-weight: 700;
-    text-decoration: none;
 }
 
 @media (min-width: 750px) {

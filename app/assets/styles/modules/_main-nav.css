@@ -150,10 +150,9 @@
     }
 }
 
-.main-nav__main-menu__item a {
+.main-nav__main-menu__item__text {
     color: $navyBlue;
     font-weight: 700;
-    text-decoration: none;
 }
 
 .main-nav__main-menu__item:hover > .main-nav__sub-menu {

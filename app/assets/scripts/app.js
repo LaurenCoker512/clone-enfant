@@ -9,6 +9,17 @@ window.onresize = function() {
     removeSizeStyles();
 };
 
+// window.onfocus = function() {
+//     removeSizeStyles();
+// };
+
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+        console.log("Changed!");
+        removeSizeStyles();
+    }
+});
+
 //Preloader
 
 document.onreadystatechange = () => {
@@ -77,9 +88,11 @@ function removeSizeStyles() {
         header.classList.remove("main-nav--sticky");
         mainMenu.classList.remove('main-nav__main-menu--sticky');
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
-        mobileNav.classList.remove("main-nav__nav--mobile");
+        // mobileNav.classList.remove("main-nav__nav--mobile");
     } else if (window.innerWidth > mobileWidth) {
         largeHero.style.marginTop = "0";
+        mobileNav.classList.remove("main-nav__nav--mobile");
+        console.log("Margin!");
     }
 }
 
