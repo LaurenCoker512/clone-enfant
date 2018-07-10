@@ -1536,7 +1536,7 @@ ul {
 @media (min-width: 750px) {
 
 .gallery__slider__img {
-        width: 33%
+        width: 33.33%
 }
     }
 
@@ -1551,7 +1551,7 @@ ul {
 @media (min-width: 750px) {
 
 .gallery__slider__img--xsmall {
-        width: 33%
+        width: 33.33%
 }
     }
 
@@ -1594,7 +1594,7 @@ ul {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
-    height: 100%;
+    height: 98.5%;
     justify-content: center;
     opacity: 0;
     position: absolute;
@@ -2210,21 +2210,50 @@ ul {
     float: right;
     margin-left: 0.4rem;
     margin-right: 2rem;
-    width: 0.6rem;
+    margin-top: 3px;
+    border: solid #ff4e31;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 @media (min-width: 750px) {
 
 .main-nav__arrow {
         float: none;
-        margin-right: 0
+        margin-bottom: 3px;
+        margin-right: 0;
+        margin-top: 0
 }
     }
 
 .main-nav__arrow--right {
+    border: solid #ff4e31;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
     float: right;
-    margin-top: 0.2rem;
+    margin-left: 0.4rem;
+    margin-right: 2rem;
+    margin-top: 3px;
+    padding: 3px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
+
+@media (min-width: 750px) {
+
+.main-nav__arrow--right {
+        border: solid #fff;
+        border-width: 0 1px 1px 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0.2rem;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg)
+}
+    }
 
 /* Main Menu Styles */
 
@@ -2349,6 +2378,10 @@ ul {
     cursor: pointer;
 }
 
+.main-nav__sub-menu__item a {
+    font-weight: 300;
+}
+
 @media (min-width: 750px) {
 
 .main-nav__sub-menu__item a {
@@ -2388,50 +2421,77 @@ ul {
     }
 
 .main-nav__sub-sub-menu {
-    background-color: #ff4e31;
-    border: 1px solid #ff4e31;
-    border-radius: 10px;
-    color: #fff;
     display: none;
-    left: 12.5rem;
-    margin-left: 1rem;
-    padding: 0.8rem;
-    position: absolute;
-    top: -0.8rem;
-    width: 14rem;
-    z-index: 3; 
+    
 }
+
+@media (min-width: 750px) {
+
+.main-nav__sub-sub-menu {
+        background-color: #ff4e31;
+        border: 1px solid #ff4e31;
+        border-radius: 10px;
+        color: #fff;
+        left: 12.5rem;
+        margin-left: 1rem;
+        padding: 0.8rem;
+        position: absolute;
+        top: -0.8rem;
+        width: 14rem;
+        z-index: 3
+    
+}
+    }
+
+@media (min-width: 750px) {
 
 .main-nav__sub-sub-menu:before {
-    background-color: transparent;
-    content: "";
-    height: 5rem;
-    left: -1.2rem;
-    position: absolute;
-    top: 0;
-    width: 1.9rem;
+        background-color: transparent;
+        content: "";
+        height: 5rem;
+        left: -1.2rem;
+        position: absolute;
+        top: 0;
+        width: 1.9rem
+    
 }
+    }
+
+@media (min-width: 750px) {
 
 .main-nav__sub-sub-menu:after {
-    border: 0.7rem solid transparent;
-    border-left: 0;
-    border-right-color: #ff4e31;
-    content: '';
-    height: 0;
-    left: 0;
-    margin-left: -0.7rem;
-    margin-top: -0.7rem;
-    position: absolute;
-    top: 30%;
-    width: 0;
+        border: 0.7rem solid transparent;
+        border-left: 0;
+        border-right-color: #ff4e31;
+        content: '';
+        height: 0;
+        left: 0;
+        margin-left: -0.7rem;
+        margin-top: -0.7rem;
+        position: absolute;
+        top: 30%;
+        width: 0
+    
 }
+    }
 
 .main-nav__sub-sub-menu__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.95rem;
     font-weight: 300;
-    padding: 0.8rem;
-    transition: all 0.2s linear;
+    margin-right: 2rem;
+    padding: 0.8rem 0;
 }
+
+@media (min-width: 750px) {
+
+.main-nav__sub-sub-menu__item {
+        border-top: none;
+        margin-right: 0;
+        padding: 0.8rem;
+        transition: all 0.2s linear
+}
+    }
 
 .main-nav__sub-sub-menu__item a {
     color: #fff;
@@ -2443,6 +2503,18 @@ ul {
     -webkit-transform: translateX(0.4rem);
             transform: translateX(0.4rem);
 }
+
+.main-nav__sub-sub-menu.main-nav__sub-menu--active {
+    display: block;
+    height: 0;
+}
+
+@media (min-width: 750px) {
+
+.main-nav__sub-sub-menu.main-nav__sub-menu--active {
+        display: none
+}
+    }
 
 /* Search and Cart Icons */
 

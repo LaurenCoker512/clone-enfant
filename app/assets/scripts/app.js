@@ -6,7 +6,7 @@ import Countdown from "countdown-js";
 import waypoints from "../../../node_modules/waypoints/lib/noframework.waypoints";
 
 window.onresize = function() {
-    removeLargeStyles();
+    removeSizeStyles();
 };
 
 //Preloader
@@ -54,7 +54,9 @@ var stickyHeader = new Waypoint({
 var menuBtn = document.getElementById("main-nav__other__menu-icon");
 var mobileNav = document.getElementById("main-nav__nav");
 var largeHero = document.getElementById("large-hero");
-var dropdownArrows = document.querySelectorAll(".main-nav__arrow");
+var dropdownArrowsDown = document.querySelectorAll(".main-nav__arrow");
+var dropdownArrowsRight = document.querySelectorAll(".main-nav__arrow--right");
+var dropdownArrows = [...dropdownArrowsDown, ...dropdownArrowsRight];
 
 menuBtn.addEventListener("click", () => {
     if (menuBtn.classList.contains("main-nav__other__menu-icon--close-x")) {
@@ -70,16 +72,18 @@ menuBtn.addEventListener("click", () => {
     }
 });
 
-function removeLargeStyles() {
+function removeSizeStyles() {
     if (window.innerWidth < mobileWidth) {
         header.classList.remove("main-nav--sticky");
         mainMenu.classList.remove('main-nav__main-menu--sticky');
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
         mobileNav.classList.remove("main-nav__nav--mobile");
+    } else if (window.innerWidth > mobileWidth) {
+        largeHero.style.marginTop = "0";
     }
 }
 
-function checkSubMenus() {
+function checkSubMenus(subtracted = 0) {
     let margin = 340.8;
     for (let dropdownArrow of dropdownArrows) {
         let selectedUl = dropdownArrow.parentNode.nextElementSibling;
@@ -89,26 +93,27 @@ function checkSubMenus() {
             margin += addedPixels;
         }
     }
-    largeHero.style.marginTop = `${String(margin)}px`;
+    largeHero.style.marginTop = `${String(margin - subtracted)}px`;
 }
 
 for (let dropdownArrow of dropdownArrows) {
     dropdownArrow.addEventListener("click", () => {
         let selectedUl = dropdownArrow.parentNode.nextElementSibling;
+        let addedPixels = selectedUl.childElementCount * 45;
         if (window.innerWidth < mobileWidth && selectedUl.classList.contains("main-nav__sub-menu--active")) {
             $(selectedUl).animate({
                 height: "0px"
-            }, 1000, () => {
+            }, 1000, "linear", () => {
                 selectedUl.classList.remove("main-nav__sub-menu--active");
-                checkSubMenus();
             });
+            checkSubMenus(addedPixels);
         } else if (window.innerWidth < mobileWidth) {
             selectedUl.classList.add("main-nav__sub-menu--active");
-            let addedPixels = selectedUl.childElementCount * 45;
             $(selectedUl).animate({
+                display: "block",
                 height: `${addedPixels}px`
-            }, 1000, () => {
-
+            }, 1000, "linear", () => {
+                
             });
             checkSubMenus();
         }
