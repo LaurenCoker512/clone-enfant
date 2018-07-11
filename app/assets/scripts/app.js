@@ -77,6 +77,9 @@ menuBtn.addEventListener("click", () => {
         }, 1000);
     } else {
         checkSubMenus();
+        // for (let dropdownArrowRight of dropdownArrowsRights) {
+        //     checkThirdLevelMenus(dropdownArrowRight);
+        // }
         menuBtn.classList.add("main-nav__other__menu-icon--close-x");
         mobileNav.classList.add("main-nav__nav--mobile");
     }
@@ -108,7 +111,6 @@ function checkSubMenus(subtracted = 0) {
 
 function checkThirdLevelMenus(el, subtract = 0) {
     let elementParent = el.parentNode.parentNode;
-    // let parentChildren = elementParent.querySelectorAll(".main-nav__sub-menu__item");
     let parentChildren = elementParent.children;
     let parentHeight = elementParent.childElementCount * 45;
 
@@ -119,11 +121,21 @@ function checkThirdLevelMenus(el, subtract = 0) {
             parentHeight += tempPixels;
         }
     }
-    $(elementParent).animate({
-        height: `${parentHeight - subtract}px`
-    }, 750, "linear", () => {
 
-    });
+    // if (closing) {
+    //     elementParent.style.transition = "height .75s linear";
+    //     elementParent.style.height = `${String(parentHeight - subtract)}px`;
+    //     setTimeout(() => {
+    //         elementParent.style.transitionProperty = "none";
+    //     }, 750);
+    // } else {
+        // elementParent.style.transitionProperty = "none";
+        $(elementParent).animate({
+            height: `${parentHeight - subtract}px`
+        }, 750, "linear", () => {
+                
+        });
+    // }
 }
 
 for (let dropdownArrow of dropdownArrows) {
@@ -135,13 +147,15 @@ for (let dropdownArrow of dropdownArrows) {
             $(selectedUl).animate({
                 height: "0px"
             }, 750, "linear", () => {
+                //Removing the active class from the third-level menu
                 selectedUl.classList.remove("main-nav__sub-menu--active");
             });
+            //Changing the large hero height by counting number of active items (starting animation)
             checkSubMenus(addedPixels);
+            //If a third level menu, then readjust first level menu height (starting animation)
             if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
                 checkThirdLevelMenus(selectedUl, addedPixels);
             }
-        // Closing is jumping because active class is being removed from sub-menu, causing the checkSubMenus function to calculate a smaller height for Pages and jump the content up rather than animating it. Maybe add animation to checkSubMenus? Would that break things? Maybe add animation to this particular instance of it?
         } else if (window.innerWidth < mobileWidth) {
             selectedUl.classList.add("main-nav__sub-menu--active");
             $(selectedUl).animate({

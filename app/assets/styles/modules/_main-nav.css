@@ -141,13 +141,19 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     float: left;
     font-size: 0.9rem;
+    margin-right: 2rem;
     padding: 1rem 1rem 0.8rem 1rem;
     position: relative;
 
     @mixin atSmall {
         border-bottom: none;
+        margin-right: 0;
         padding: 1rem 1rem 2.2rem 1rem;
     }
+}
+
+.main-nav__main-menu__item:hover {
+    cursor: pointer;
 }
 
 .main-nav__main-menu__item__text {
