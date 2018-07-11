@@ -338,7 +338,10 @@
 
 .main-nav__sub-sub-menu__item:hover {
     cursor: pointer;
-    transform: translateX(0.4rem);
+
+    @mixin atSmall {
+        transform: translateX(0.4rem);
+    }
 }
 
 .main-nav__sub-sub-menu.main-nav__sub-menu--active {
@@ -395,7 +398,11 @@
     background-color: $mainRed;
     border: 1px solid $mainRed;
     border-radius: 50%;
+    color: #fff;
+    font-size: 0.6rem;
     height: 1rem;
+    padding-left: 0.25rem;
+    padding-top: 0.1rem;
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;

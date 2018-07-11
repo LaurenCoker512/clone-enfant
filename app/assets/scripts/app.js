@@ -15,7 +15,6 @@ window.onresize = function() {
 
 document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
-        console.log("Changed!");
         removeSizeStyles();
     }
 });
@@ -88,11 +87,9 @@ function removeSizeStyles() {
         header.classList.remove("main-nav--sticky");
         mainMenu.classList.remove('main-nav__main-menu--sticky');
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
-        // mobileNav.classList.remove("main-nav__nav--mobile");
     } else if (window.innerWidth > mobileWidth) {
         largeHero.style.marginTop = "0";
         mobileNav.classList.remove("main-nav__nav--mobile");
-        console.log("Margin!");
     }
 }
 
@@ -109,29 +106,59 @@ function checkSubMenus(subtracted = 0) {
     largeHero.style.marginTop = `${String(margin - subtracted)}px`;
 }
 
+function checkThirdLevelMenus(el, subtract = 0) {
+    let elementParent = el.parentNode.parentNode;
+    // let parentChildren = elementParent.querySelectorAll(".main-nav__sub-menu__item");
+    let parentChildren = elementParent.children;
+    let parentHeight = elementParent.childElementCount * 45;
+
+    for (let child of parentChildren) {
+        let unorderedList = child.querySelector("ul");
+        if (unorderedList && unorderedList.classList.contains("main-nav__sub-menu--active")) {
+            let tempPixels = unorderedList.childElementCount * 45;
+            parentHeight += tempPixels;
+        }
+    }
+    $(elementParent).animate({
+        height: `${parentHeight - subtract}px`
+    }, 750, "linear", () => {
+
+    });
+}
+
 for (let dropdownArrow of dropdownArrows) {
     dropdownArrow.addEventListener("click", () => {
         let selectedUl = dropdownArrow.parentNode.nextElementSibling;
         let addedPixels = selectedUl.childElementCount * 45;
+        //Add height directly to clicked parent element
         if (window.innerWidth < mobileWidth && selectedUl.classList.contains("main-nav__sub-menu--active")) {
             $(selectedUl).animate({
                 height: "0px"
-            }, 1000, "linear", () => {
+            }, 750, "linear", () => {
                 selectedUl.classList.remove("main-nav__sub-menu--active");
             });
             checkSubMenus(addedPixels);
+            if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
+                checkThirdLevelMenus(selectedUl, addedPixels);
+            }
+        // Closing is jumping because active class is being removed from sub-menu, causing the checkSubMenus function to calculate a smaller height for Pages and jump the content up rather than animating it. Maybe add animation to checkSubMenus? Would that break things? Maybe add animation to this particular instance of it?
         } else if (window.innerWidth < mobileWidth) {
             selectedUl.classList.add("main-nav__sub-menu--active");
             $(selectedUl).animate({
                 display: "block",
                 height: `${addedPixels}px`
-            }, 1000, "linear", () => {
+            }, 750, "linear", () => {
                 
             });
             checkSubMenus();
+            if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
+                checkThirdLevelMenus(selectedUl);
+            }
         }
     });
 }
+
+
 
 //Large Hero Slider
 

@@ -1799,7 +1799,7 @@ ul {
 
 .large-hero {
     position: relative;
-    transition: margin 1s linear;
+    transition: margin .75s linear;
 }
 
 @media (min-width: 750px) {
@@ -2499,9 +2499,15 @@ ul {
 
 .main-nav__sub-sub-menu__item:hover {
     cursor: pointer;
-    -webkit-transform: translateX(0.4rem);
-            transform: translateX(0.4rem);
 }
+
+@media (min-width: 750px) {
+
+.main-nav__sub-sub-menu__item:hover {
+        -webkit-transform: translateX(0.4rem);
+                transform: translateX(0.4rem)
+}
+    }
 
 .main-nav__sub-sub-menu.main-nav__sub-menu--active {
     display: block;
@@ -2573,7 +2579,11 @@ ul {
     background-color: #ff4e31;
     border: 1px solid #ff4e31;
     border-radius: 50%;
+    color: #fff;
+    font-size: 0.6rem;
     height: 1rem;
+    padding-left: 0.25rem;
+    padding-top: 0.1rem;
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;

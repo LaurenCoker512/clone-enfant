@@ -2,7 +2,7 @@
 
 .large-hero {
     position: relative;
-    transition: margin 1s linear;
+    transition: margin .75s linear;
 
     @mixin atSmall {
         overflow: hidden;
