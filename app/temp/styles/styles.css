@@ -2209,7 +2209,7 @@ ul {
 .main-nav__arrow {
     float: right;
     margin-left: 0.4rem;
-    margin-right: 2rem;
+    margin-right: 0;
     margin-top: 3px;
     border: solid #ff4e31;
     border-width: 0 1px 1px 0;
@@ -2259,12 +2259,14 @@ ul {
 
 .main-nav__main-menu {
     display: none;
+    margin-top: 0;
 }
 
 @media (min-width: 750px) {
 
 .main-nav__main-menu {
-        display: block
+        display: block;
+        margin-top: 1rem
 }
     }
 
@@ -2278,7 +2280,8 @@ ul {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     float: left;
     font-size: 0.9rem;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
     padding: 1rem 1rem 0.8rem 1rem;
     position: relative;
 }
@@ -2287,10 +2290,15 @@ ul {
 
 .main-nav__main-menu__item {
         border-bottom: none;
+        margin: 0;
         margin-right: 0;
         padding: 1rem 1rem 2.2rem 1rem
 }
     }
+
+.main-nav__main-menu__item:last-of-type {
+    border-bottom: none;
+}
 
 .main-nav__main-menu__item:hover {
     cursor: pointer;
@@ -2312,6 +2320,7 @@ ul {
 
 .main-nav__sub-menu {
     display: none;
+    padding-top: 1rem;
 }
 
 @media (min-width: 750px) {
@@ -2365,7 +2374,6 @@ ul {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.95rem;
     font-weight: 300;
-    margin-right: 2rem;
     padding: 0.8rem 0;
 }
 
@@ -2427,6 +2435,7 @@ ul {
 
 .main-nav__sub-sub-menu {
     display: none;
+    padding-top: 1rem;
     
 }
 
@@ -2484,7 +2493,6 @@ ul {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.95rem;
     font-weight: 300;
-    margin-right: 2rem;
     padding: 0.8rem 0;
 }
 

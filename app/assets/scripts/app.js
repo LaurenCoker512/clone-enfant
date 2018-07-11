@@ -77,9 +77,6 @@ menuBtn.addEventListener("click", () => {
         }, 1000);
     } else {
         checkSubMenus();
-        // for (let dropdownArrowRight of dropdownArrowsRights) {
-        //     checkThirdLevelMenus(dropdownArrowRight);
-        // }
         menuBtn.classList.add("main-nav__other__menu-icon--close-x");
         mobileNav.classList.add("main-nav__nav--mobile");
     }
@@ -96,20 +93,22 @@ function removeSizeStyles() {
     }
 }
 
-function checkSubMenus(subtracted = 0) {
-    let margin = 340.8;
+function checkSubMenus(subtracted = 0, calculateHeight = true) {
+    let margin = 330;
     for (let dropdownArrow of dropdownArrows) {
         let selectedUl = dropdownArrow.parentNode.nextElementSibling;
         if (selectedUl.classList.contains("main-nav__sub-menu--active")) {
             let addedPixels = selectedUl.childElementCount * 45;
-            selectedUl.style.height = `${addedPixels}px`;
+            if (calculateHeight) {
+                selectedUl.style.height = `${addedPixels}px`;
+            }
             margin += addedPixels;
         }
     }
     largeHero.style.marginTop = `${String(margin - subtracted)}px`;
 }
 
-function checkThirdLevelMenus(el, subtract = 0) {
+function checkThirdLevelMenus(el, subtract = 0, closing = false) {
     let elementParent = el.parentNode.parentNode;
     let parentChildren = elementParent.children;
     let parentHeight = elementParent.childElementCount * 45;
@@ -122,20 +121,20 @@ function checkThirdLevelMenus(el, subtract = 0) {
         }
     }
 
-    // if (closing) {
-    //     elementParent.style.transition = "height .75s linear";
-    //     elementParent.style.height = `${String(parentHeight - subtract)}px`;
-    //     setTimeout(() => {
-    //         elementParent.style.transitionProperty = "none";
-    //     }, 750);
-    // } else {
-        // elementParent.style.transitionProperty = "none";
+    if (closing) {
+        elementParent.style.transition = "height .75s linear";
+        elementParent.style.height = `${String(parentHeight - subtract)}px`;
+        setTimeout(() => {
+            elementParent.style.transitionProperty = "none";
+        }, 750);
+    } else {
+        elementParent.style.transitionProperty = "none";
         $(elementParent).animate({
             height: `${parentHeight - subtract}px`
         }, 750, "linear", () => {
                 
         });
-    // }
+    }
 }
 
 for (let dropdownArrow of dropdownArrows) {
@@ -150,11 +149,12 @@ for (let dropdownArrow of dropdownArrows) {
                 //Removing the active class from the third-level menu
                 selectedUl.classList.remove("main-nav__sub-menu--active");
             });
-            //Changing the large hero height by counting number of active items (starting animation)
-            checkSubMenus(addedPixels);
-            //If a third level menu, then readjust first level menu height (starting animation)
             if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
-                checkThirdLevelMenus(selectedUl, addedPixels);
+                checkSubMenus(addedPixels, false);
+                checkThirdLevelMenus(selectedUl, addedPixels, true);
+                console.log("click event", selectedUl);
+            } else {
+                checkSubMenus(addedPixels);
             }
         } else if (window.innerWidth < mobileWidth) {
             selectedUl.classList.add("main-nav__sub-menu--active");
@@ -164,9 +164,11 @@ for (let dropdownArrow of dropdownArrows) {
             }, 750, "linear", () => {
                 
             });
-            checkSubMenus();
             if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
+                checkSubMenus(0, false);
                 checkThirdLevelMenus(selectedUl);
+            } else {
+                checkSubMenus();
             }
         }
     });
