@@ -6,16 +6,36 @@
     text-align: center;
 }
 
+.footer__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 15rem;
+
+    @mixin atSmall {
+        flex-wrap: nowrap;
+        width: 27rem;
+    }
+}
+
+.footer__section {
+    margin-bottom: 2.5rem;
+    width: 33%;
+
+    @mixin atXSmall {
+        margin-bottom: 0;
+        width: 25%;
+    }
+}
+
 /* Footer Icon */
 
 .footer__icon {
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     display: inline;
-    /* height: 8rem; */
-    margin: 0.8rem;
     padding: 1rem;
-    /* width: 8rem; */
 }
 
 .footer__icon img {

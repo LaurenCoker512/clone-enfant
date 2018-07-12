@@ -56,7 +56,11 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 38rem;
+    width: 29rem;
+
+    @mixin atXSmall {
+        width: 38rem;
+    }
 }
 
 .contact__form h2 {

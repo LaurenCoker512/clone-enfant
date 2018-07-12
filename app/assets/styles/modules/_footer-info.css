@@ -3,10 +3,10 @@
 .footer-info {
     background-color: $navyBlue;
     color: #fff;
-    height: 84rem;
+    height: 85rem;
 
     @mixin atXSmall {
-        height: 74.125rem;
+        height: 79rem;
     }
 
     @mixin atSmall {
