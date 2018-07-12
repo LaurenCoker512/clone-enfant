@@ -2135,6 +2135,7 @@ ul {
     transition: all 0.5s linear;
     width: 100%;
     z-index: 999;
+
 }
 
 #load__animation {
@@ -2145,14 +2146,22 @@ ul {
     border-top: 2px solid rgba(255, 78, 49, 1);
     bottom: 50%;
     height: 4rem;
-    left: 47%;
+    left: 42%;
     position: fixed;
     right: 50%;
-    top: 45%;
+    top: 40%;
     transition: all 0.2s linear;
     width: 4rem;
     z-index: 1000;
   }
+
+@media (min-width: 750px) {
+
+#load__animation {
+      left: 47%;
+      top: 45%
+  }
+    }
 
 .loaded {
       opacity: 0;
