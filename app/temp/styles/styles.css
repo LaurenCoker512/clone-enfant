@@ -2094,6 +2094,10 @@ ul {
 
 /* Loader Styles */
 
+#content {
+  overflow-x: hidden;
+}
+
 #load {
     background-color: #fff;
     height: 100%;
@@ -2530,6 +2534,7 @@ ul {
     font-size: 0.95rem;
     font-weight: 300;
     padding: 0.8rem 0;
+    white-space: nowrap;
 }
 
 @media (min-width: 750px) {

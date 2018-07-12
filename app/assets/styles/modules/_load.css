@@ -1,5 +1,9 @@
 /* Loader Styles */
 
+#content {
+  overflow-x: hidden;
+}
+
 #load {
     background-color: #fff;
     height: 100%;

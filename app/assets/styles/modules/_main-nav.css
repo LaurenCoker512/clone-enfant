@@ -336,6 +336,7 @@
     font-size: 0.95rem;
     font-weight: 300;
     padding: 0.8rem 0;
+    white-space: nowrap;
 
     @mixin atSmall {
         border-top: none;
