@@ -5,10 +5,12 @@ import CountUp from "countup.js";
 import Countdown from "countdown-js";
 import waypoints from "../../../node_modules/waypoints/lib/noframework.waypoints";
 
+//Removing desktop- and mobile-specific sizes when screen is resized beyond mobile breakpoint
 window.onresize = function() {
     removeSizeStyles();
 };
 
+//Handling issue of user switching to another tab, resizing window, then returning to website tab
 document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
         removeSizeStyles();
@@ -20,13 +22,16 @@ document.addEventListener("visibilitychange", () => {
 document.onreadystatechange = () => {
     var state = document.readyState;
     if (state == 'interactive') {
+        //Hides contents of website while preloader runs
          document.getElementById('contents').style.visibility = "hidden";
     } else if (state == 'complete') {
         setTimeout(function(){
+            //Once site is finished loading, run preloader animation for 2sec, then fade out
             document.getElementById('load').style.opacity = "0";
             document.getElementById('load__animation').style.opacity = "0";
             document.getElementById('contents').style.visibility = "visible";
         }, 2000);
+        //After preloader has faded out, remove from page
         setTimeout(function(){
             document.getElementById('load').style.display = "none";
             document.getElementById('load__animation').style.display = "none";
@@ -43,13 +48,16 @@ var mobileWidth = 750;
 var stickyHeader = new Waypoint({
     element: document.querySelector(".large-hero__text"),
     handler: function(direction) {
+        //If screen is desktop-sized and user is scrolling down, add sticky class to menu and header and play slide-down animation
         if (window.innerWidth > mobileWidth && direction == "down") {
             header.classList.add('main-nav--sticky');
             mainMenu.classList.add('main-nav__main-menu--sticky');
             $(header).slideDown(1000);
+        //Otherwise, remove class from header and menu
         } else {
             header.classList.remove('main-nav--sticky');
             mainMenu.classList.remove('main-nav__main-menu--sticky');
+            //Fixed jQuery bug with slideDown animation only playing once
             $(header).removeAttr("style");
         }
     }
@@ -60,19 +68,23 @@ var stickyHeader = new Waypoint({
 var menuBtn = document.getElementById("main-nav__other__menu-icon");
 var mobileNav = document.getElementById("main-nav__nav");
 var largeHero = document.getElementById("large-hero");
+//Gather all dropdown arrows within mobile menu
 var dropdownArrowsDown = document.querySelectorAll(".main-nav__arrow");
 var dropdownArrowsRight = document.querySelectorAll(".main-nav__arrow--right");
 var dropdownArrows = [...dropdownArrowsDown, ...dropdownArrowsRight];
 
 menuBtn.addEventListener("click", () => {
+    //If mobile menu is open when user clicks, close it
     if (menuBtn.classList.contains("main-nav__other__menu-icon--close-x")) {
         menuBtn.classList.remove("main-nav__other__menu-icon--close-x");
         largeHero.style.marginTop = "0";
         setTimeout(() => {
             mobileNav.classList.remove("main-nav__nav--mobile");
         }, 1000);
+    //If mobile menu is closed on click, open it
     } else {
         checkSubMenus();
+        //Work on fixing bug where first-level menu height isn't recalculated when mobile menu closes and opens again with a third-level menu active
         // let selectedUl = dropdownArrowsRight[0].parentNode.nextElementSibling;
         // checkThirdLevelMenus(selectedUl);
         menuBtn.classList.add("main-nav__other__menu-icon--close-x");
@@ -91,6 +103,7 @@ function removeSizeStyles() {
     }
 }
 
+//Calculate the height of the immediate UL connected to each arrow, depending on whether or not it is active, and calculate the total number of pixels to push down the largeHero by
 function checkSubMenus(subtracted = 0, calculateHeight = true) {
     let margin = 330;
     for (let dropdownArrow of dropdownArrows) {
@@ -106,6 +119,7 @@ function checkSubMenus(subtracted = 0, calculateHeight = true) {
     largeHero.style.marginTop = `${String(margin - subtracted)}px`;
 }
 
+//Calculate the height of first-level menu items when child third-level menus are active - checkSubMenus wasn't taking care of this
 function checkThirdLevelMenus(el, subtract = 0, closing = false) {
     let elementParent = el.parentNode.parentNode;
     let parentChildren = elementParent.children;
@@ -119,6 +133,7 @@ function checkThirdLevelMenus(el, subtract = 0, closing = false) {
         }
     }
 
+    //jQuery animation only worked on open, not on close, while CSS transition only worked on close. This checks to see whether the given UL is being opened or closed and applies styles/animation accordingly.
     if (closing) {
         elementParent.style.transition = "height .75s linear";
         elementParent.style.height = `${String(parentHeight - subtract)}px`;
@@ -135,11 +150,14 @@ function checkThirdLevelMenus(el, subtract = 0, closing = false) {
     }
 }
 
+//Adds click event listeners for all dropdownArrows
 for (let dropdownArrow of dropdownArrows) {
     dropdownArrow.addEventListener("click", () => {
+        //Selects UL associated with arrow clicked
         let selectedUl = dropdownArrow.parentNode.nextElementSibling;
+        //Calculates how tall the UL needs to be based on how many children it has
         let addedPixels = selectedUl.childElementCount * 45;
-        //Add height directly to clicked parent element
+        //If window is mobile-sized and the selected UL is active, close it
         if (window.innerWidth < mobileWidth && selectedUl.classList.contains("main-nav__sub-menu--active")) {
             $(selectedUl).animate({
                 height: "0px"
@@ -147,13 +165,16 @@ for (let dropdownArrow of dropdownArrows) {
                 //Removing the active class from the third-level menu
                 selectedUl.classList.remove("main-nav__sub-menu--active");
             });
+            //If the dropdownArrow clicked is a third-level menu
             if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
                 checkSubMenus(addedPixels, false);
                 checkThirdLevelMenus(selectedUl, addedPixels, true);
                 console.log("click event", selectedUl);
+            //If the dropdownArrow is not a third-level menu
             } else {
                 checkSubMenus(addedPixels);
             }
+        //If window is mobile size and selected UL is not active, open it
         } else if (window.innerWidth < mobileWidth) {
             selectedUl.classList.add("main-nav__sub-menu--active");
             $(selectedUl).animate({
@@ -162,17 +183,17 @@ for (let dropdownArrow of dropdownArrows) {
             }, 750, "linear", () => {
                 
             });
+            //If the dropdownArrow clicked is a third-level menu
             if (dropdownArrow.classList.contains("main-nav__arrow--right")) {
                 checkSubMenus(0, false);
                 checkThirdLevelMenus(selectedUl);
+            //If the dropdownArrow is not a third-level menu
             } else {
                 checkSubMenus();
             }
         }
     });
 }
-
-
 
 //Large Hero Slider
 
@@ -192,7 +213,7 @@ var slider = tns({
     autoplayTimeout: 10000
 });
 
-//Direction-aware hover
+//Direction-aware hover (for gallery images with overlays)
 
 $('.gallery__slider__img').on('mouseenter mouseleave', hoverDirection);
 $('.news__items__item__img').on('mouseenter mouseleave', hoverDirection);
