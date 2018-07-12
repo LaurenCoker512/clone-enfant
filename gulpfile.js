@@ -55,7 +55,7 @@ gulp.task("deleteDistFolder", function() {
 });
 
 gulp.task('usemin', ['deleteDistFolder', 'styles', 'scripts'], function() {
-    return gulp.src("./app/index.html")
+    return gulp.src(["./app/index.html", "./app/credits.html"])
         .pipe(usemin({
             css: [function() {return rev()}, function() {return cssnano()}],
             js: [function() {return rev()}, function() {return uglify()}]
