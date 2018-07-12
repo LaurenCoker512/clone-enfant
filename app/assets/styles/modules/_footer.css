@@ -1,9 +1,18 @@
 /* General Footer Styles */
 
 .footer {
-    height: 9.875rem;
+    height: 20rem;
     padding: 2.5rem;
     text-align: center;
+
+    @mixin atXSmall {
+        height: 15rem;
+    }
+
+    @mixin atSmall {
+        /* height: 9.875rem; */
+        height: 12rem;
+    }
 }
 
 .footer__wrapper {

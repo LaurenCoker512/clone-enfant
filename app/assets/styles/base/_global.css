@@ -5,9 +5,17 @@
 body {
     font-family: "Lato", sans-serif;
     color: $darkGray;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 ul {
     list-style: none;
+}
+
+#all {
+    overflow: hidden;
+
+    @mixin atSmall {
+        overflow: auto;
+    }
 }

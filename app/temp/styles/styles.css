@@ -348,12 +348,23 @@ template {
 body {
     font-family: "Lato", sans-serif;
     color: #545454;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 ul {
     list-style: none;
 }
+
+#all {
+    overflow: hidden;
+}
+
+@media (min-width: 750px) {
+
+#all {
+        overflow: auto
+}
+    }
 
 /* Banner container styles */
 
@@ -671,6 +682,10 @@ ul {
     cursor: pointer;
 }
 
+.countdown {
+    overflow-x: hidden;
+}
+
 /* Countdown Background */
 
 .countdown__background {
@@ -776,6 +791,7 @@ ul {
 .current-count {
     height: 51.5rem;
     margin-top: 4.5rem;
+    overflow-x: hidden;
     padding-top: 5rem;
     width: 100%;
 }
@@ -1338,10 +1354,25 @@ ul {
 /* General Footer Styles */
 
 .footer {
-    height: 9.875rem;
+    height: 20rem;
     padding: 2.5rem;
     text-align: center;
 }
+
+@media (min-width: 448px) {
+
+.footer {
+        height: 15rem
+}
+    }
+
+@media (min-width: 750px) {
+
+.footer {
+        /* height: 9.875rem; */
+        height: 12rem
+}
+    }
 
 .footer__wrapper {
     display: flex;
@@ -1895,7 +1926,7 @@ ul {
     top: 0;
     -webkit-transform: translateY(20%);
             transform: translateY(20%);
-    width: 22rem;
+    width: 19rem;
 }
 
 @media (min-width: 448px) {
@@ -2093,10 +2124,6 @@ ul {
 }
 
 /* Loader Styles */
-
-#content {
-  overflow-x: hidden;
-}
 
 #load {
     background-color: #fff;

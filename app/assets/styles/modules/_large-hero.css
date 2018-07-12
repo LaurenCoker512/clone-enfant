@@ -49,7 +49,7 @@
     text-transform: uppercase;
     top: 0;
     transform: translateY(20%);
-    width: 22rem;
+    width: 19rem;
 
     @mixin atXSmall {
         padding-left: 2rem;

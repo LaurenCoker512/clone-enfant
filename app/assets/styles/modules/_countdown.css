@@ -1,3 +1,7 @@
+.countdown {
+    overflow-x: hidden;
+}
+
 /* Countdown Background */
 
 .countdown__background {
